@@ -2,6 +2,8 @@
 $main-background: rgba(255, 255, 255, 0);
 $content-background: rgba(156, 154, 154, 0);
 
+$border-color: #000;
+
 $space-xxs: 0.25rem;
 $space-xs: 0.5rem;
 $space-sm: 0.75rem;
@@ -34,7 +36,6 @@ $text-dark: 212121;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
   /* border-bottom: 2px solid black; */
 }
 .header-logo {
@@ -98,6 +99,23 @@ $text-dark: 212121;
   margin: 0;
 }
 .hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.hero-content div {
+  flex: 1;
+}
+.__text {
+  /* border: 1px solid black; */
+}
+.__img {
+  /* border: 3px solid black; */
+  border-radius: 9px;
+  padding: 15px;
+  background-color: rgba(187, 226, 246, 0.771);
 }
 .projects-content {
 }
