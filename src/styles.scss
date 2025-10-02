@@ -1,1 +1,123 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables */
+$main-background: rgba(255, 255, 255, 0);
+$content-background: rgba(156, 154, 154, 0);
+
+$space-xxs: 0.25rem;
+$space-xs: 0.5rem;
+$space-sm: 0.75rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+
+$bg-dark: #212121;
+$bg-secondary: #303030;
+$bg-tertiary: #414141;
+$text-primary: #fff;
+$text-secondary: #f3f3f3;
+$text-tertiary: #afafaf;
+$text-dark: 212121;
+
+// MOBILE FIRST
+
+.content {
+}
+
+.about-content {
+}
+.contact-content {
+}
+.footer-content {
+}
+.header-component {
+  box-sizing: border-box;
+  width: 100%;
+  padding: $space-sm $space-md;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  /* border-bottom: 2px solid black; */
+}
+.header-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-size: 32px;
+  /* background-color: lightgreen; */
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  margin-right: 20px;
+
+  min-height: 56px;
+  /* background-color: lightgreen; */
+}
+.header-nav ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  align-items: center;
+  /* background-color: red; */
+}
+.header-nav li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding-right: 20px;
+  border-right: 1px solid black;
+}
+.header-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.header-nav a:hover,
+.header-nav a:focus {
+  color: #0b6623;
+  outline: none;
+  background-color: rgba(11, 102, 35, 0.06);
+}
+
+.logo-img {
+  width: auto;
+  height: 40px; /* ok per header */
+  max-width: 160px; /* evita logo troppo largo */
+  object-fit: contain;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 3px;
+}
+.logo-nome {
+  margin: 0;
+}
+.hero-content {
+}
+.projects-content {
+}
+.btt-dark-mode {
+  border-radius: 13px;
+  padding: 5px;
+  color: $text-primary;
+  background-color: $bg-secondary;
+}
+.dark-mode {
+  background-color: $bg-dark;
+  color: $text-primary;
+}
+@media (max-width: 720px) {
+  .content {
+    /* background-color: lightyellow; */
+  }
+  .header-nav {
+    display: none;
+  }
+  .header-component {
+  }
+}
