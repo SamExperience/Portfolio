@@ -29,16 +29,17 @@ $text-dark: 212121;
 }
 .footer-content {
 }
+/* HEADER */
 .header-component {
   box-sizing: border-box;
   width: 100%;
-  padding: $space-sm $space-md;
+  padding: $space-sm 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border-bottom: 2px solid black; */
 }
-.header-logo {
+.header__logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -46,7 +47,7 @@ $text-dark: 212121;
   font-size: 32px;
   /* background-color: lightgreen; */
 }
-.header-nav {
+.header__nav {
   display: flex;
   align-items: center;
   padding: 0;
@@ -57,7 +58,7 @@ $text-dark: 212121;
   min-height: 56px;
   /* background-color: lightgreen; */
 }
-.header-nav ul {
+.header__nav ul {
   display: flex;
   gap: 20px;
   padding: 0;
@@ -66,38 +67,27 @@ $text-dark: 212121;
   align-items: center;
   /* background-color: red; */
 }
-.header-nav li {
+.header__nav li {
   display: flex;
   align-items: center;
   font-size: 18px;
   padding-right: 20px;
   border-right: 1px solid black;
 }
-.header-nav a {
+.header__nav a {
   text-decoration: none;
   color: black;
   font-weight: bold;
   transition: color 0.3s;
 }
-.header-nav a:hover,
-.header-nav a:focus {
+.header__nav a:hover,
+.header__nav a:focus {
   color: #0b6623;
   outline: none;
   background-color: rgba(11, 102, 35, 0.06);
 }
 
-.logo-img {
-  width: auto;
-  height: 40px; /* ok per header */
-  max-width: 160px; /* evita logo troppo largo */
-  object-fit: contain;
-  border: 2px solid #000;
-  border-radius: 10px;
-  padding: 3px;
-}
-.logo-nome {
-  margin: 0;
-}
+/* HERO */
 .hero-content {
   display: flex;
   align-items: center;
@@ -108,17 +98,33 @@ $text-dark: 212121;
 .hero-content div {
   flex: 1;
 }
-.__text {
+.hero__text {
   /* border: 1px solid black; */
 }
-.__img {
+.hero__img {
   /* border: 3px solid black; */
   border-radius: 9px;
   padding: 15px;
   background-color: rgba(187, 226, 246, 0.771);
 }
-.projects-content {
+
+/* PROJECTS */
+.projects-list-content {
+  display: grid;
+  width: 100%;
+
+  align-content: center;
+  justify-content: center;
+
+  align-items: center;
+  justify-items: center;
+
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1.5fr));
+  grid-auto-rows: 1fr;
+  gap: 10px;
+  background-color: #ffd90034;
 }
+
 .btt-dark-mode {
   border-radius: 13px;
   padding: 5px;

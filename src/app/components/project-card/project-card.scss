@@ -1,2 +1,76 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 100px;
+  min-height: 300px;
+  max-width: 120px;
+  max-height: 350px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+
+  background-color: rgba(221, 138, 138, 0.519);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale 1.05;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card__img {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  object-fit: contain;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+.card__img img {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+.card__cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid black;
+  overflow: none;
+}
+.card__tools {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  gap: 3px;
+
+  list-style: none;
+}
+.card__tools li {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 3px;
+}
+.card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.card button {
+  background: transparent;
+  border-radius: 10px;
+  padding: 3px;
+  border: 1px solid black;
+}
+.card button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
