@@ -21,6 +21,9 @@ $text-dark: 212121;
 // MOBILE FIRST
 
 .content {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
 }
 
 .about-content {
@@ -31,36 +34,47 @@ $text-dark: 212121;
 }
 /* HEADER */
 .header-component {
-  box-sizing: border-box;
-  width: 100%;
-  padding: $space-sm 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  /* border-bottom: 2px solid black; */
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  height: 60px;
+  border: 2px solid black;
+  margin-bottom: 30px;
 }
 .header__logo {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  font-size: 32px;
-  /* background-color: lightgreen; */
+  align-items: end;
+  height: 60px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* border: 1px solid black; */
 }
-.header__nav {
+.header__cont {
   display: flex;
+  height: 60px;
+  align-items: end;
+  gap: 0.75rem;
+  /*  border: 1px solid black; */
+}
+.header__cont .header__nav {
+  display: flex;
+  width: 100%;
   align-items: center;
   padding: 0;
   margin: 0;
-
-  margin-right: 20px;
+  /* border: 1px solid black; */
 
   min-height: 56px;
   /* background-color: lightgreen; */
 }
 .header__nav ul {
-  display: flex;
-  gap: 20px;
+  display: none;
+  /* gap: 20px; */
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -69,10 +83,23 @@ $text-dark: 212121;
 }
 .header__nav li {
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: center;
+
+  padding: 8px;
   font-size: 18px;
-  padding-right: 20px;
-  border-right: 1px solid black;
+  margin-right: 6px;
+  /*  border: 1px solid black; */
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.562);
+}
+.header__nav li:hover {
+  border-radius: 6px 6px 26px 26px;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.562);
+  cursor: pointer;
+  transition: border-radius 0.6s;
+}
+.header__nav li:last-child {
 }
 .header__nav a {
   text-decoration: none;
@@ -86,6 +113,22 @@ $text-dark: 212121;
   outline: none;
   background-color: rgba(11, 102, 35, 0.06);
 }
+.header__btt-dark-mode {
+  display: flex;
+  align-items: end;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: inherit;
+  transition: transform 0.2s;
+
+  /* border: 1px solid black; */
+}
+.header__btt-dark-mode:hover {
+}
 
 /* HERO */
 .hero-content {
@@ -96,7 +139,6 @@ $text-dark: 212121;
   margin: 0;
 }
 .hero-content div {
-  flex: 1;
 }
 .hero__text {
   /* border: 1px solid black; */
