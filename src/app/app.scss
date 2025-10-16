@@ -1,13 +1,6 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 .app-main {
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
+  max-width: 100%;
+  overflow-x: hidden;
 }
