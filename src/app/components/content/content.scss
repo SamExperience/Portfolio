@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+  justify-items: center;
+  /* for list title */
+  h3 {
+    font-size: 1.8rem;
+  }
+}

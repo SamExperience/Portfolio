@@ -1,8 +1,8 @@
 .hero-content {
-  display: flex;
+  display: block;
+  width: 100%;
   align-items: center;
   justify-content: center;
-
   /*   border: 2px solid red; */
   &__text {
     display: flex;
@@ -10,7 +10,7 @@
     text-align: center;
     gap: 0.5rem;
 
-    font-family: 'Zalando Sans Expanded', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;

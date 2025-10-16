@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Hero } from '../hero/hero';
 import { ProjectsList } from '../projects-list/projects-list';
 import { About } from '../about/about';
+import { Contact } from '../contact/contact';
 /* COMPONENTS */
 
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [Hero, ProjectsList, About],
+  imports: [Hero, ProjectsList, About, Contact],
   templateUrl: './content.html',
   styleUrl: './content.scss',
 })
