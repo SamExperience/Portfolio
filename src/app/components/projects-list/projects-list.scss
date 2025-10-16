@@ -1,0 +1,15 @@
+.projects-list-content {
+  display: grid;
+  width: 100%;
+
+  align-content: center;
+  justify-content: center;
+
+  align-items: center;
+  justify-items: center;
+
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1.5fr));
+  grid-auto-rows: 1fr;
+  gap: 10px;
+  background-color: #ffd90034;
+}

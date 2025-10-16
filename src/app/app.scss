@@ -1,4 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .app-main {
-  padding: 10px;
-  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  border: 1px solid black;
 }
