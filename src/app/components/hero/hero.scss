@@ -174,7 +174,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10%;
+    /* gap: 10%; */
     height: 113px;
     width: 100%;
     max-width: 100%;
@@ -186,6 +186,7 @@ body {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     flex-wrap: nowrap;
+    animation: iconsAnimation 3s ease-out forwards;
 
     &::-webkit-scrollbar {
       height: 8px;
@@ -263,5 +264,14 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+/* animation icons  */
+@keyframes iconsAnimation {
+  0% {
+    gap: 6%;
+  }
+  100% {
+    gap: 10%;
   }
 }
