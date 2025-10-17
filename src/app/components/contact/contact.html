@@ -1,40 +1,60 @@
 <section class="contact" id="contact">
+  <h4 id="contact-title" class="contact__title">Contact</h4>
+
   <div class="contact__inner">
     <!-- INFO -->
     <div class="contact__info" aria-labelledby="contact-title">
-      <h4 id="contact-title" class="contact__title">Contact</h4>
-
       <ul class="contact__list">
         <li>
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-envelope" aria-hidden="true"></i>
           <a href="mailto:samuele.deriu.dev@gmail.com?subject=Contatto%20dal%20sito%20portfolio">
             samuele.deriu.dev@gmail.com
           </a>
         </li>
+
         <li>
-          <i class="fab fa-linkedin"></i>
-          <a href="www.linkedin.com/in/samuelederiu" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <a
+            href="https://www.linkedin.com/in/samuelederiu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </a>
         </li>
+
         <li>
-          <i class="fab fa-github"></i>
+          <i class="fab fa-github" aria-hidden="true"></i>
           <a href="https://github.com/SamExperience" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
         </li>
       </ul>
 
-      <div class="contact__actions">
-        <h5>Download CV:</h5>
-        <a href="assets/CV_Samuele_Deriu_EN.pdf" download class="cv-btn">
-          <img src="../../../assets/images/icons/icon_flag_uk.png" alt="UK Flag" />
-          CV Eng
-        </a>
-        <a href="assets/CV_Samuele_Deriu_FR.pdf" download class="cv-btn">
-          <img src="../../../assets/images/icons/icon_flag_france.png" alt="France Flag" />
-          CV Fr
-        </a>
+      <div class="contact__actions" aria-labelledby="contact-title">
+        <h5>Download CV</h5>
+
+        <div class="contact__actions-btt">
+          <a
+            href="assets/CV_Samuele_Deriu_EN.pdf"
+            download
+            class="cv-btn"
+            aria-label="Download CV in English"
+          >
+            <img src="../../../assets/images/icons/icon_flag_uk.png" alt="UK flag" />
+            <span>CV Eng</span>
+          </a>
+
+          <a
+            href="assets/CV_Samuele_Deriu_FR.pdf"
+            download
+            class="cv-btn"
+            aria-label="Download CV in French"
+          >
+            <img src="../../../assets/images/icons/icon_flag_france.png" alt="France flag" />
+            <span>CV Fr</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
