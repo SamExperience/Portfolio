@@ -1,0 +1,107 @@
+@use '../../styles/variables';
+
+.project {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(0, 0, 0);
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+    background: linear-gradient(165deg, #f1f7ff, #9db0dc);
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0067cd;
+  }
+
+  &__header-description {
+    color: #242424;
+    max-width: 600px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    color: #0067cd;
+  }
+
+  &__tag {
+    background: #80a4cf;
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+
+  &__intro {
+  }
+
+  &__section-title {
+  }
+
+  &__intro-text {
+  }
+
+  &__objectives {
+  }
+
+  &__objectives-list {
+  }
+
+  &__objective-item {
+  }
+
+  &__technologies {
+  }
+
+  &__tech-categories {
+  }
+
+  &__tech-category {
+  }
+
+  &__tech-category-title {
+  }
+
+  &__tech-item {
+  }
+
+  &__gallery {
+  }
+
+  &__gallery-grid {
+  }
+
+  &__gallery-item {
+  }
+
+  &__image {
+  }
+
+  &__results {
+  }
+
+  &__results-text {
+  }
+
+  &__learned {
+  }
+
+  &__learned-text {
+  }
+
+  &__footer {
+  }
+
+  &__footer-item {
+  }
+}

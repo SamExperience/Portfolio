@@ -1,26 +1,119 @@
 <!-- 
 header(titolo,descrizione,tech bullets)
 section(descrizione progetto)
-section(obbiettivi progetto)
-section(tecnologie utilizzate[frontend,interazioni,design])
-section galleria(3 o piu immagini)
-sectione(risultato: text)
-section(cosa ho imparato:lista)
+section(obiettivi progetto)
+section(tecnologie utilizzate [frontend, interazioni, design])
+section(galleria: 3 o più immagini)
+section(risultato: testo)
+section(cosa ho imparato: testo)
 footer(© 2025 SamExperience — webSite Richie Who | Codice su GitHub)
 -->
+
 <div class="project">
-  <div>
-    <h2>Titolo</h2>
-    <p>
-      descrizione: Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, doloremque
-      tenetur aut adipisci aperiam ad, molestiae quod assumenda numquam quaerat eius harum
-      architecto! Nobis ipsam deleniti qui illum dolores necessitatibus.
+  <!-- HEADER -->
+  <header class="project__header">
+    <h1 class="project__title">Titolo</h1>
+    <p class="project__header-description">
+      descrizione: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem quaerat
+      cumque aliquam doloremque assumenda mollitia.
     </p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JQUERY</li>
-      <li>Responsive</li>
+    <div class="project__tags">
+      <span class="project__tag">HTML</span>
+      <span class="project__tag">CSS</span>
+      <span class="project__tag">JQUERY</span>
+      <span class="project__tag">Responsive</span>
+    </div>
+  </header>
+
+  <!-- INTRO / DESCRIZIONE GENERALE -->
+  <section class="project__intro">
+    <h2 class="project__section-title">Descrizione</h2>
+    <p class="project__intro-text">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quidem quaerat cumque aliquam
+      doloremque assumenda mollitia, eligendi necessitatibus, illo voluptate ex quos quibusdam
+      magnam incidunt nobis! Cumque consequuntur alias optio.
+    </p>
+  </section>
+
+  <!-- OBIETTIVI -->
+  <section class="project__objectives">
+    <h2 class="project__section-title">Obiettivi</h2>
+    <ul class="project__objectives-list">
+      <li class="project__objective-item">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi officia sunt atque animi
+        quis fugit pariatur cum.
+      </li>
+      <li class="project__objective-item">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi officia sunt atque animi
+        quis fugit pariatur cum.
+      </li>
+      <li class="project__objective-item">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi officia sunt atque animi
+        quis fugit pariatur cum.
+      </li>
     </ul>
-  </div>
+  </section>
+
+  <!-- TECNOLOGIE UTILIZZATE -->
+  <section class="project__technologies">
+    <h2 class="project__section-title">Tecnologie utilizzate</h2>
+    <div class="project__tech-categories">
+      <div class="project__tech-category">
+        <h3 class="project__tech-category-title">Frontend</h3>
+        <span class="project__tech-item">HTML</span>
+        <span class="project__tech-item">CSS</span>
+      </div>
+      <div class="project__tech-category">
+        <h3 class="project__tech-category-title">Interazioni</h3>
+        <span class="project__tech-item">jQuery</span>
+        <span class="project__tech-item">Animations</span>
+      </div>
+      <div class="project__tech-category">
+        <h3 class="project__tech-category-title">Design</h3>
+        <span class="project__tech-item">Responsive</span>
+        <span class="project__tech-item">Figma</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA -->
+  <section class="project__gallery">
+    <h2 class="project__section-title">Galleria</h2>
+    <div class="project__gallery-grid">
+      <figure class="project__gallery-item">
+        <img class="project__image" src="" alt="Screenshot 1" />
+      </figure>
+      <figure class="project__gallery-item">
+        <img class="project__image" src="" alt="Screenshot 2" />
+      </figure>
+      <figure class="project__gallery-item">
+        <img class="project__image" src="" alt="Screenshot 3" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- RISULTATI -->
+  <section class="project__results">
+    <h2 class="project__section-title">Risultati</h2>
+    <p class="project__results-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid praesentium illo nostrum
+      sequi omnis ex, beatae nisi eaque inventore eum aspernatur iste doloremque excepturi soluta.
+    </p>
+  </section>
+
+  <!-- COSA HO IMPARATO -->
+  <section class="project__learned">
+    <h2 class="project__section-title">Cosa ho imparato</h2>
+    <p class="project__learned-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quis commodi, dolore sequi
+      blanditiis libero enim reprehenderit eos pariatur odit dolorum, sunt, eum iusto quasi dicta.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="project__footer">
+    <span class="project__footer-item">© 2025 Samuele Deriu</span>
+    <span class="project__footer-item">Swiss 👑 Made</span>
+    <span class="project__footer-item">Developed with Angular 20</span>
+  </footer>
 </div>
