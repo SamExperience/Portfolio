@@ -1,3 +1,49 @@
-.icon-menu {
-  margin-right: 16px;
+/* src/app/components/menu-icon/menu-icon.scss */
+/* keep the icon tight; the wrapping button controls padding/size */
+
+@use '../../styles/variables' as *;
+
+:host {
+  display: inline-block;
+  width: 100%;
+  max-width: 36px;
+  max-height: 36px;
+  height: $height-header;
+  vertical-align: middle;
+  color: $third-color;
+}
+
+/* Ensure SVG fills the host and scales nicely */
+:host svg {
+  display: block;
+  width: 100%;
+  height: $height-header;
+  max-height: 36px;
+}
+
+/* short play animation (scale + subtle rotate) */
+:host.playing svg {
+  animation: menuIconPlay 420ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+/* keyframes */
+@keyframes menuIconPlay {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.08) rotate(-6deg);
+  }
+  70% {
+    transform: scale(0.99) rotate(3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@media screen and (min-width: 720px) {
+  :host {
+    display: none;
+  }
 }

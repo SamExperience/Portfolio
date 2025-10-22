@@ -11,6 +11,14 @@
       </ul>
     </nav>
   </div>
-  <app-menu-icon></app-menu-icon>
+  <div class="header-component__tools">
+    <label class="switch">
+      <input type="checkbox" />
+      <span class="slider round" aria-hidden="true"></span>
+    </label>
+
+    <app-menu-icon (click)="toggleMenu()"></app-menu-icon>
+  </div>
 </div>
-<app-menu-mobile></app-menu-mobile>
+
+<app-menu-mobile [open]="isMenuOpen" (closeRequest)="handleCloseMenu()"></app-menu-mobile>

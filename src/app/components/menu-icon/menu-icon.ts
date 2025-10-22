@@ -1,34 +1,30 @@
 // src/app/components/menu-icon/menu-icon.ts
-import { Component } from '@angular/core';
-import { LottieComponent, AnimationOptions } from 'ngx-lottie';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-menu-icon',
-  imports: [CommonModule, LottieComponent],
+  imports: [CommonModule],
   templateUrl: './menu-icon.html',
   styleUrls: ['./menu-icon.scss'],
 })
 export class MenuIconComponent {
-  options: AnimationOptions = {
-    path: 'assets/animations/icons8-menu.json', // usa .json minuscolo
-    autoplay: false,
-    loop: false,
-  };
+  private host: HTMLElement;
 
-  private anim: any;
-
-  animationCreated(animation: any) {
-    this.anim = animation;
-    this.anim.stop();
+  constructor(private el: ElementRef<HTMLElement>, private renderer: Renderer2) {
+    this.host = this.el.nativeElement;
   }
 
-  play() {
-    this.anim?.play();
+  /** Play a short visual animation on the icon */
+  play(): void {
+    this.renderer.addClass(this.host, 'playing');
+    // remove the class after animation duration to allow replay
+    window.setTimeout(() => this.renderer.removeClass(this.host, 'playing'), 420);
   }
 
-  stop() {
-    this.anim?.stop();
+  /** Stop any ongoing visual state (immediate) */
+  stop(): void {
+    this.renderer.removeClass(this.host, 'playing');
   }
 }

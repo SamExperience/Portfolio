@@ -1,3 +1,4 @@
+@if (open) {
 <div class="container">
   <div class="phone-frame">
     <nav class="menu-mobile-panel" aria-label="mobile menu">
@@ -6,7 +7,9 @@
           <img src="../../../assets/images/logo/Logo_page.png" alt="logo site" />
         </div>
         <h2>Menu</h2>
-        <button class="menu-close" aria-label="Close menu">×</button>
+        <div class="tools">
+          <button class="menu-close" (click)="onCloseClick()" aria-label="Close menu">×</button>
+        </div>
       </div>
 
       <ul class="menu-list" role="navigation">
@@ -31,3 +34,4 @@
     </nav>
   </div>
 </div>
+}
