@@ -1,4 +1,5 @@
 @use '../../styles/variables' as *;
+
 :host {
   position: relative;
   display: flex;
@@ -26,8 +27,70 @@
     grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     align-content: center;
     justify-content: center;
-    gap: 1.6rem;
+    gap: 0.5rem;
     width: 100%;
-    padding: 1.6rem 40px;
+    padding: 1.6rem 1rem;
+    padding-top: $height-header;
+  }
+}
+section {
+  padding-top: $height-header;
+}
+
+.nav-arrows {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  width: 40px;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  svg {
+    fill: black;
+    transition: transform 0.3s ease;
+  }
+}
+#nav-up svg {
+  transform: rotate(-90deg);
+}
+#nav-down svg {
+  transform: rotate(90deg);
+}
+
+#nav-up svg,
+#nav-down svg {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(111, 111, 111, 0.1);
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    background-color: rgba(153, 153, 153, 0.3);
   }
 }

@@ -2,33 +2,59 @@
 <div class="container">
   <div class="phone-frame">
     <nav class="menu-mobile-panel" aria-label="mobile menu">
+      <!-- MENU-HEADER -->
       <div class="menu-header">
         <div class="logo-menu">
           <img src="../../../assets/images/logo/Logo_page.png" alt="logo site" />
         </div>
-        <h2>Menu</h2>
+
         <div class="tools">
           <button class="menu-close" (click)="onCloseClick()" aria-label="Close menu">×</button>
         </div>
       </div>
 
+      <!-- <h2>Menu</h2> -->
       <ul class="menu-list" role="navigation">
         <li>
-          <a href="#projects" class="menu-link" aria-label="go to projects section">Projects</a>
+          <a
+            href="#projects-section"
+            class="menu-link"
+            (click)="onLinkClick()"
+            aria-label="go to projects section"
+            >Projects</a
+          >
         </li>
-        <li><a href="#about" class="menu-link" aria-label="go to about section">About me</a></li>
-        <li><a href="#contact" class="menu-link" aria-label="go to contact section">Contact</a></li>
+        <li>
+          <a
+            href="#about-section"
+            class="menu-link"
+            (click)="onLinkClick()"
+            aria-label="go to about section"
+            >About me</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact-section"
+            class="menu-link"
+            (click)="onLinkClick()"
+            aria-label="go to contact section"
+            >Contact</a
+          >
+        </li>
       </ul>
 
+      <!-- MENU-FOOTER -->
       <div class="menu-footer">
-        <a href="#" class="social-link" aria-label="go to GitHub">
+        <a href="https://github.com/SamExperience" class="social-link" aria-label="go to GitHub">
           <i class="devicon-github-original"></i>
         </a>
-        <a href="#" class="social-link" aria-label="go to LinkedIn">
+        <a
+          href="https://www.linkedin.com/in/samuelederiu"
+          class="social-link"
+          aria-label="go to LinkedIn"
+        >
           <i class="devicon-linkedin-plain"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="go to Twitter">
-          <i class="devicon-twitter-original"></i>
         </a>
       </div>
     </nav>
