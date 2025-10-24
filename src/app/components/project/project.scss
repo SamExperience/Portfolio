@@ -1,5 +1,5 @@
-@use '../../styles/variables';
-@import '../../styles/mixins';
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 $padding-items-sections: 40px 20px;
 $padding-footer: 20px;

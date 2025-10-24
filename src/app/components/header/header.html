@@ -19,7 +19,13 @@
   <!-- TOOLS -->
   <div class="header-component__tools">
     <label class="switch">
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        (click)="onToggle()"
+        id="theme-toggle"
+        [attr.aria-pressed]="themeService.isDark()"
+        title="Toggle theme"
+      />
       <span class="slider round" aria-hidden="true"></span>
     </label>
 
