@@ -15,8 +15,10 @@
   border-radius: 0.625rem;
   max-width: 380px;
   cursor: pointer;
-  box-shadow: $shadow-card;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-content);
+  border: var(--border-content);
+  background: var(--bg-content);
+  transition: transform 0.1s ease, box-shadow 0.3s ease;
 
   &__img {
     display: flex;
@@ -26,13 +28,19 @@
     border-radius: 0.625rem;
     background-color: rgba(0, 208, 255, 0.08);
     padding: 0;
-
+    overflow: hidden;
+    transition: filter 1s linear;
     img {
       display: block;
       width: 60%;
       max-width: 100%;
       height: auto;
       border-radius: 0.625rem;
+      &:hover {
+        filter: blur(10px);
+        transform: scale(0.95);
+        transition: all 60s ease-in-out;
+      }
     }
   }
 
@@ -62,8 +70,10 @@
     list-style: none;
 
     li {
-      padding: 0.25rem;
+      padding: 5px 9px 5px 9px;
       margin: 0;
+      background: var(--bg-bottom);
+      border-radius: 45px;
     }
   }
 
@@ -72,24 +82,75 @@
     gap: 0.9375rem;
     justify-content: center;
   }
+  p {
+    display: -webkit-box; // crea un box flessibile
+    -webkit-line-clamp: 3; // massimo 3 righe
+    -webkit-box-orient: vertical; // orientamento verticale
+    overflow: hidden; // nasconde il testo in eccesso
+    text-overflow: ellipsis;
 
+    padding: 0.5rem 0 0rem 0;
+  }
   &__btt {
-    background: rgba(211, 211, 211, 0.5);
+    background: var(--bg-bottom);
     border-radius: 0.3125rem;
     border: none;
     padding: 0.3125rem 0.625rem;
     cursor: pointer;
     min-width: 86px;
     min-height: 33px;
+
+    &:hover {
+      box-shadow: var(--shadow-btt-card);
+      font-weight: 600;
+    }
   }
 
   &:hover {
-    box-shadow: 0 0px 2px 0px rgba(114, 114, 114, 0.5);
-    /* transform: translateY(-2px); */
+    box-shadow: var(--shadow-content-hover);
+    transform: scale(1.006);
   }
-
   &:focus-within {
     outline: 2px solid rgba(11, 102, 35, 0.12);
+  }
+  &__link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: end;
+    justify-content: space-between;
+    margin: 0 0 1rem 0;
+    text-align: end;
+    font-size: 1rem;
+    font-weight: 600;
+    border-top: var(--border-content);
+    padding: 1rem 0 0.5rem 0;
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 100%;
+    }
+    span {
+      display: flex;
+      height: 40px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: start;
+      text-align: left;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      margin-left: 5px;
+    }
+    a {
+      text-decoration: none;
+      font-size: 12px;
+      &:hover {
+        transform: scale(1.06);
+      }
+    }
   }
 }
 

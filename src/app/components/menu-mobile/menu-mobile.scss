@@ -36,8 +36,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: $height-header;
-  box-shadow: $box-shadow-header;
+  height: var(--heigth-header);
+  box-shadow: var(--box-shadow-header);
 }
 
 .logo-menu {
@@ -59,7 +59,7 @@
   width: 100%;
   font-size: 1.75rem;
   font-weight: 700;
-  color: black;
+  color: var(--title-color);
   padding: 2px 0;
 }
 .tools {
@@ -75,7 +75,7 @@
   background: transparent;
   border: none;
   font-size: 2rem;
-  color: black;
+  color: var(--primary-color);
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -84,8 +84,7 @@
 }
 
 .menu-close:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #0067cd;
+  color: var(--title-color);
 }
 
 .menu-close:focus-visible {
@@ -112,7 +111,7 @@
 .menu-link {
   display: block;
   padding: 0.95rem 1rem;
-  color: black;
+  color: var(--primary-color);
 
   /* font-size: clamp(1.4rem, 3.5vw, 1.5rem);
  */
@@ -140,7 +139,7 @@
 
 .menu-link:hover {
   background: rgba(0, 103, 205, 0.08);
-  color: #0067cd;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -169,7 +168,7 @@
   justify-content: space-around;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.05);
-  color: black;
+  color: var(--primary-color);
   transition: all 0.3s ease;
   text-decoration: none;
 }

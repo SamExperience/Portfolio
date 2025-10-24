@@ -8,16 +8,16 @@
   width: 100%;
   max-width: 36px;
   max-height: 36px;
-  height: $height-header;
+  height: var(--heigth-header);
   vertical-align: middle;
-  color: $third-color;
+  color: var(--title-color);
 }
 
 /* Ensure SVG fills the host and scales nicely */
 :host svg {
   display: block;
   width: 100%;
-  height: $height-header;
+  height: var(--heigth-header);
   max-height: 36px;
 }
 

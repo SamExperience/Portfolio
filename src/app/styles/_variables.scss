@@ -1,4 +1,4 @@
-$main-background: rgba(255, 255, 255, 0);
+/* $main-background: rgba(255, 255, 255, 0);
 $content-background: rgba(156, 154, 154, 0);
 
 $border-color: #000;
@@ -16,6 +16,7 @@ $text-primary: #fff;
 $text-secondary: #1e1e1e;
 $text-tertiary: #afafaf;
 $text-dark: 212121;
+$text-tertiary: #afafaf;
 
 $shadow-card: 0 4px 10px rgba(8, 8, 8, 0.12);
 $margin-title-comp: 16px;
@@ -23,6 +24,80 @@ $padding-p-16: 16px;
 $padding-p-24: 24px;
 $height-header: 64px;
 $third-color: #0067cd;
+
 $background-toggle-white-theme: rgb(11, 11, 11);
 $background-toggle-dark-theme: #0067cd;
+
 $box-shadow-header: 0 0px 5px 0px rgba(0, 0, 0, 0.149);
+$background: linear-gradient(135deg, #050810 0%, #bcbcbd 30%, #0a0e27 70%);
+$background-hero: radial-gradient(circle, #0a0e27 30%, #050810 70%);
+ */
+:root {
+  /* text */
+  --primary-color: #1e1e1e;
+  --secondary-color: #fff;
+  --text-tertiary: #afafaf;
+  --title-color: #0067cd;
+  --font-primary: 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial;
+  --font-secondary: 'Source Sans Pro', sans-serif;
+  /* background */
+  --bg-background: rgb(255, 255, 255);
+  --bg-header: rgba(255, 255, 255, 0.6);
+  --bg-hero: rgba(255, 255, 255, 0);
+  --bg-content: #ffffffac;
+
+  --bg-profil-card: rgba(84, 0, 0, 0);
+  --bg-bottom: rgba(211, 211, 211, 0.5);
+  --bg-bottom-hover: rgba(164, 164, 164, 0.5);
+  --bg-bullet: rgba(211, 211, 211, 0.5);
+  --bg-arrow: rgba(211, 211, 211, 0.289);
+  --bg-arrow-hover: rgba(162, 162, 162, 0.505);
+  --background-toggle-white-theme: rgb(11, 11, 11);
+  --background-toggle-dark-theme: #0067cd;
+
+  /* bord & shadow */
+  --box-shadow-header: 0 0px 5px 0px rgba(107, 107, 107, 0.425);
+  --shadow-profil-card: 0px 1px 12px 0px #3628913a;
+  --shadow-bottom: 0px 1px 2px 0px #55555549;
+  --shadow-content: 0px 1px 2px 0px #55555549;
+  --shadow-content-hover: 1px 1px 10px 0px rgba(118, 118, 118, 0.332);
+  --shadow-icon-hero: 0 0 1px 0 rgba(115, 115, 115, 0.525);
+  --shadow-btt-card: 0 0 2px 0 rgb(110, 93, 173);
+  --border-content: 1px solid rgba(77, 77, 77, 0.147);
+  /* heigth & width */
+  --heigth-header: 66px;
+  --width-header: 100%;
+  --heigth-100vh: 100vh;
+}
+[theme='dark'] {
+  /* text */
+  --primary-color: #1e1e1e;
+  --secondary-color: #fff;
+  --text-tertiary: #afafaf;
+  --title-color: #0067cd;
+  /* background */
+  --background-toggle-white-theme: rgb(11, 11, 11);
+  --background-toggle-dark-theme: #0067cd;
+  --bg-background: #050810;
+  --bg-profil-card: rgba(255, 255, 255, 0.1);
+  --bg-bottom: rgba(211, 211, 211, 0.5);
+  --bg-arrow-hover: rgba(162, 162, 162, 0.505);
+  --bg-bullet: rgba(211, 211, 211, 0.5);
+  --bg-arrow: rgba(211, 211, 211, 0.289);
+  --bg-arrow-hover: rgba(211, 211, 211, 0.505);
+  --bg-header: #0a0e27;
+  --bg-hero: radial-gradient(circle, #0a0e27 30%, #050810 70%);
+  --bg-content: #121c375b;
+  /* bord & shadow */
+  --box-shadow-header: 0 0px 5px 0px rgba(0, 0, 0, 0.149);
+  --shadow-profil-card: 0px 1px 2px 0px #55555549;
+  --shadow-content: 0px 0px 2px 1px #1f3e9449;
+  --shadow-content-hover: 0px 0px 15px 0px rgba(0, 212, 255, 0.1);
+  --shadow-icon-hero: 0 0 1px 0 rgba(115, 115, 115, 0.525);
+  --border-content: 1px solid rgba(0, 212, 255, 0.1);
+  /* heigth & width */
+  --heigth-header: 66px;
+  --width-header: 100%;
+  --heigth-100vh: 100vh;
+}

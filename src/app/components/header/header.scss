@@ -1,9 +1,10 @@
 @use '../../styles/variables' as *;
+
 :host {
   position: fixed;
   display: block;
-  background-color: rgba(255, 255, 255, 0.75);
-  height: $height-header;
+  background: var(--bg-header);
+  height: var(--heigth-header);
   width: 100%;
   z-index: 1000;
 }
@@ -20,7 +21,7 @@
   width: 100%;
   height: 100%;
 
-  box-shadow: $box-shadow-header;
+  box-shadow: var(--box-shadow-header);
 
   &__logo {
     position: relative;
@@ -84,8 +85,7 @@
         height: 1px;
         /*         background: linear-gradient(90deg, #0067cd, #00d4ff); // Gradiente orizzontale
  */
-        background: linear-gradient(90deg, transparent, $third-color, transparent);
-
+        background: linear-gradient(90deg, transparent, var(--title-color));
         border-radius: 2px;
         transition: width 0.4s cubic-bezier(0.2, 0.9, 0.2, 1);
       }
@@ -98,7 +98,7 @@
 
     a {
       text-decoration: none;
-      color: $third-color;
+      color: var(--title-color);
       font-weight: bold;
       transition: all 0.3s ease;
       padding: 0.5rem 0.75rem;
@@ -125,8 +125,8 @@
     .switch {
       position: relative;
       display: inline-block;
-      width: 34px; /* prima 60px */
-      height: 20px; /* prima 34px */
+      width: 34px;
+      height: 20px;
       margin-right: 1rem;
       input {
         opacity: 0;
@@ -141,7 +141,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: $background-toggle-white-theme;
+        background-color: var(--background-toggle-white-theme);
         transition: background-color 0.3s;
 
         &::before {
@@ -165,11 +165,11 @@
       }
 
       input:checked + .slider {
-        background-color: $background-toggle-dark-theme;
+        background-color: var(--background-toggle-dark-theme);
       }
 
       input:focus + .slider {
-        box-shadow: 0 0 1px $background-toggle-dark-theme;
+        box-shadow: 0 0 1px var(--background-toggle-dark-theme);
       }
 
       input:checked + .slider::before {

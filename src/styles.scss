@@ -1,4 +1,5 @@
 @use 'app/styles/variables' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;700&family=Fira+Code:wght@400;500&family=Roboto+Mono:wght@400&family=Merriweather:wght@400;700&display=swap');
 
@@ -12,16 +13,21 @@ html {
   width: 100%;
   height: 100%;
   overflow-x: hidden !important;
-  background: transparent;
   scroll-behavior: smooth;
+  background: var(--bg-background);
 }
 body {
   width: 100%;
   max-width: 100%;
   height: auto;
   overflow-x: hidden !important;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $text-secondary;
+  font-family: var(--font-secondary);
+}
+h2,
+h3,
+h4,
+h5 {
+  color: var(--title-color);
 }
 
 app-root {
