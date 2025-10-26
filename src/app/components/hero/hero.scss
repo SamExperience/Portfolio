@@ -31,9 +31,11 @@ body {
   justify-content: center;
   gap: 3.25rem;
   width: 100%;
-  height: var(--heigth-100vh);
-  padding-top: var(--heigth-header);
+  height: var(--height-100vh);
+  padding-top: var(--height-header);
   z-index: -1;
+  background: var(--bg-hero);
+
   &__profile-state {
     position: absolute;
     bottom: 8px;
@@ -45,7 +47,7 @@ body {
     border: 2px solid white;
   }
 
-  &__profil {
+  &__profile {
     position: relative;
     width: 300px;
     height: auto;
@@ -54,11 +56,15 @@ body {
     gap: 0.5rem;
     padding: 6px 10px;
     border-radius: 8px;
-    background: var(--bg-profil-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-profile-card);
+    transition: all 0.3s ease;
 
     &:hover {
-      transition: box-shadow 1s ease-in;
-      box-shadow: var(--shadow-profil-card);
+      /* box-shadow: var(--shadow-profile-card); */
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 16px 40px rgba(0, 103, 205, 0.12);
+      transform: translateY(-1px);
     }
   }
 
@@ -147,7 +153,9 @@ body {
     width: 100%;
     max-width: 920px;
     padding: 0 1rem;
-
+    h1 {
+      text-shadow: var(--shadow-text-hero);
+    }
     span {
       position: relative;
       color: var(--primary-color);
@@ -205,6 +213,16 @@ body {
     height: 113px;
     overflow: hidden;
     box-shadow: var(--shadow-icon-hero);
+    background: linear-gradient(
+      190deg,
+      var(--bg-tech-icons-1) 0%,
+      var(--bg-tech-icons-2) 50%,
+      var(--bg-tech-icons-1) 100%
+    );
+    background-size: 200% 200%; // serve per far “muovere” il gradiente
+    animation: gradientMove 6s ease infinite;
+
+    transition: transform 0.3s ease;
   }
 
   .tech-icons {
@@ -227,7 +245,7 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-
+    box-shadow: var(--shadow-icon);
     scroll-behavior: smooth;
     flex-wrap: nowrap;
     animation: iconsAnimation 3s ease-out forwards;
@@ -325,7 +343,10 @@ body {
     &:hover,
     &:focus {
       transform: translateY(-6px) scale(1.06);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+      /* box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+       */
+      box-shadow: var(--shadow-icon-hero-hover);
+
       filter: brightness(1.06);
     }
 
@@ -422,7 +443,17 @@ body {
     font-size: var(--icon-size-center);
   }
 }
-
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 // Media Queries
 @media screen and (max-width: 896px) and (max-height: 450px) and (orientation: landscape) {
   .hero-content {

@@ -8,7 +8,7 @@
   width: 100%;
   max-width: 36px;
   max-height: 36px;
-  height: var(--heigth-header);
+  height: var(--height-header);
   vertical-align: middle;
   color: var(--title-color);
 }
@@ -17,7 +17,7 @@
 :host svg {
   display: block;
   width: 100%;
-  height: var(--heigth-header);
+  height: var(--height-header);
   max-height: 36px;
 }
 

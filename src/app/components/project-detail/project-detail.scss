@@ -6,12 +6,15 @@ $padding-footer: 20px;
 $font-titles-primary: #0067cd;
 $border-bottom-titles-primary: 1px solid #6795e0;
 $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
-
+:host {
+  display: block;
+  position: relative;
+}
 .project {
   display: flex;
   flex-direction: column;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: rgb(0, 0, 0);
+  color: var(--primary-color);
+  background: var(--bg-background);
 
   /* HEADER */
   &__header {
@@ -21,7 +24,7 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
     align-items: center;
     justify-items: center;
     padding: 20px;
-    background: linear-gradient(165deg, #f1f7ff, #9db0dc);
+    background: var(--bg-header-project);
   }
 
   &__title {

@@ -4,20 +4,34 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ThemeService {
-  private storageKey = 'theme'; // 'dark' | 'light'
-  private attrName = 'theme';
+  // storageKey values: 'dark' | 'light'
+  private storageKey = 'theme';
+  // attribute used on the root element: <html data-theme="dark">
+  private attrName = 'data-theme';
 
   constructor() {
     // Apply saved theme at service construction (early)
-    const saved = localStorage.getItem(this.storageKey);
-    if (saved === 'dark') {
-      this.enableDark();
-    } else if (saved === 'light') {
-      this.enableLight();
-    } else {
-      // Optional: follow system preference if no saved value
+    try {
+      const saved = localStorage.getItem(this.storageKey);
+      if (saved === 'dark') {
+        this.enableDark();
+      } else if (saved === 'light') {
+        this.enableLight();
+      } else {
+        // Optional: follow system preference if no saved value
+        const prefersDark =
+          typeof window !== 'undefined' &&
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) this.enableDark();
+        else this.enableLight();
+      }
+    } catch (e) {
+      // If localStorage is not available or throws, fall back to system preference
       const prefersDark =
-        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        typeof window !== 'undefined' &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (prefersDark) this.enableDark();
       else this.enableLight();
     }
@@ -34,12 +48,19 @@ export class ThemeService {
 
   enableDark(): void {
     document.documentElement.setAttribute(this.attrName, 'dark');
-    localStorage.setItem(this.storageKey, 'dark');
+    try {
+      localStorage.setItem(this.storageKey, 'dark');
+    } catch (e) {
+      // ignore localStorage errors
+    }
   }
 
   enableLight(): void {
     document.documentElement.removeAttribute(this.attrName); // uses :root for light defaults
-    // or: document.documentElement.setAttribute(this.attrName, 'light');
-    localStorage.setItem(this.storageKey, 'light');
+    try {
+      localStorage.setItem(this.storageKey, 'light');
+    } catch (e) {
+      // ignore localStorage errors
+    }
   }
 }

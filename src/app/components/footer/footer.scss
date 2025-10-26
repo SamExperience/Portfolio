@@ -1,3 +1,8 @@
+/* :host {
+  display: block;
+  position: relative;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
@@ -20,5 +25,72 @@
       white-space: nowrap;
       flex-shrink: 1;
     }
+  }
+}
+ */
+
+:host {
+  display: block;
+  position: relative;
+}
+
+/* Variabili utili (se le hai già nel progetto, usa quelle) */
+:root {
+  --footer-bg: transparent;
+  --footer-color: #6b6b6b;
+  --footer-sep: rgba(107, 107, 107, 0.12);
+  --footer-max-width: 1200px;
+}
+
+/* Footer wrapper */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: clamp(0.5rem, 2.2vw, 1rem) 0;
+  background: var(--footer-bg);
+  color: var(--footer-color);
+  font-size: 0.9rem;
+}
+
+/* Container interno per limitare la larghezza e gestire wrapping */
+.footer-content {
+  display: flex;
+  gap: clamp(0.5rem, 4vw, 2rem); /* spazio tra gli elementi */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* permette il wrap sui dispositivi piccoli */
+  width: 100%;
+  max-width: var(--footer-max-width);
+  padding: 0 1rem;
+}
+
+/* Singolo elemento (testo / item) */
+.footer-item {
+  flex: 0 1 auto; /* non cresce oltre la colonna ma può ridursi */
+  white-space: nowrap; /* mantiene singole frasi compatte */
+  text-align: center; /* utile quando va a capo */
+  min-width: 0; /* evita overflow nei flex children */
+}
+
+/* Separatore verticale */
+.footer-sep {
+  width: 1px;
+  height: 1.1em;
+  background: var(--footer-sep);
+  display: inline-block;
+  margin: 0 0.25rem;
+}
+
+/* Mobile tweak: permetti al testo di andare a capo (se preferisci) */
+@media (max-width: 420px) {
+  .footer-item {
+    white-space: normal;
+    font-size: 0.85rem;
+  }
+
+  .footer-sep {
+    display: none; /* meno rumore su schermi stretti */
   }
 }
