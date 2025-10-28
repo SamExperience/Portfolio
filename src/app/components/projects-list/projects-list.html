@@ -1,12 +1,7 @@
-<div class="projects-list-content" aria-label="you are looking projects list">
-  <app-project-card></app-project-card>
-  <app-project-card></app-project-card>
-  <app-project-card></app-project-card>
-
-  <app-project-card></app-project-card>
-  <app-project-card></app-project-card>
-  <app-project-card></app-project-card>
-  <app-project-card></app-project-card>
-  <app-project-card></app-project-card>
-  <app-project-card></app-project-card>
+<div
+  *ngFor="let p of projects$ | async"
+  class="projects-list-content"
+  aria-label="you are looking projects list"
+>
+  <app-project-card [project]="p"></app-project-card>
 </div>

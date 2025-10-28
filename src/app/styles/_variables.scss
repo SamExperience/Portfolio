@@ -1,112 +1,176 @@
-/* 
-  Default theme (light)
-*/
+/* ============================================================
+   Theme variables — reorganized and documented (values unchanged)
+   ============================================================ */
 
+/* =========================
+   Default theme (light)
+   ========================= */
 :root {
-  /* text- typografy and colors */
-  --primary-color: #1e1e1e; /* main color */
-  --secondary-color: #fff; /* secondary color */
-  --text-tertiary: #10569d; /* tertiary color */
-  --title-color: #0067cd; /* primary title color */
-  --title-color-hover: #4997e6; /* title color hover */
+  /* -------------------------
+     Typography: text colors
+     ------------------------- */
+  --primary-color: rgb(30, 30, 30); /* main body text color */
+  --secondary-color: rgb(255, 255, 255); /* secondary / inverse text color */
+  --text-tertiary: rgb(16, 86, 157); /* tertiary accent text */
+  --title-color: rgb(0, 103, 205); /* main title color */
+  --title-color-hover: rgb(73, 151, 230); /* title hover color */
 
-  /* font family are global */
+  /* -------------------------
+     Fonts
+     ------------------------- */
   --font-secondary: 'Source Sans Pro', sans-serif;
   --font-primary: 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial;
 
-  /* background */
+  /* -------------------------
+     Page backgrounds
+     ------------------------- */
   --bg-background: rgb(255, 255, 255); /* page background color */
-  --bg-header: rgba(255, 255, 255, 0.4); /* header background color */
-  --bg-hero: rgba(255, 255, 255, 0); /* background for hero section */
-  --bg-content: #ffffffac; /* background used for elements on the page */
+  --bg-header: rgba(255, 255, 255, 0.4); /* header background */
+  --bg-hero: rgba(255, 255, 255, 0); /* hero section background */
+  --bg-content: #ffffffac; /* content element background */
+
+  /* -------------------------
+     Hero / profile / icon backgrounds
+     ------------------------- */
   --bg-header-project: rgb(148, 148, 148);
-  /* backgrounds used in the hero section for the icon show */
-  --bg-tech-icons-1: rgba(100, 84, 84, 0.388);
-  --bg-tech-icons-2: rgba(71, 41, 237, 0.11);
+  --bg-tech-icons-1: rgba(100, 84, 84, 0.388); /* tech icon background 1 */
+  --bg-tech-icons-2: rgba(71, 41, 237, 0.11); /* tech icon background 2 */
+  --bg-profile-card: rgba(84, 0, 0, 0); /* profile card background in hero */
 
-  --bg-profile-card: rgba(84, 0, 0, 0); /* background personal card in hero section */
+  /* -------------------------
+     Buttons: generic & card specific
+     ------------------------- */
+  --bg-button: rgba(164, 164, 164, 0.5); /* generic button background */
+  --bg-button-hover: rgba(175, 175, 175, 0.5); /* generic button hover */
 
-  /* backgrounds for buttons */
-  --bg-button: rgb(211, 211, 211);
-  --bg-button-hover: rgba(164, 164, 164, 0.5);
+  --bg-button-card: linear-gradient(135deg, rgb(57, 150, 244) 60%, rgba(221, 0, 255, 0.758) 100%);
+  --bg-button-card-hover: linear-gradient(
+    135deg,
+    var(--text-tertiary) 0%,
+    rgba(255, 0, 0, 0.566) 100%
+  );
 
-  /* background for bullets */
-  --bg-bullet: rgb(211, 211, 211);
+  /* -------------------------
+     Bullets & arrows
+     ------------------------- */
+  --bg-bullet: rgb(211, 211, 211); /* bullet background (light theme) */
 
-  /* background for arrow buttons for to scroll the page*/
-  --bg-arrow: rgba(211, 211, 211, 0.289);
+  --bg-arrow: rgba(211, 211, 211, 0.289); /* arrow background (scroll buttons) */
   --bg-arrow-hover: rgba(162, 162, 162, 0.505);
 
-  /* background for toogle button for to change thema */
+  /* -------------------------
+     Toggle / theme control
+     ------------------------- */
   --background-toggle-white-theme: rgb(11, 11, 11);
   --background-toggle-dark-theme: #0067cd;
 
-  /* social icons  */
+  /* -------------------------
+     Social icons
+     ------------------------- */
   --bg--social-link: rgba(0, 0, 0, 0.05);
   --bg--social-link-hover: rgba(0, 0, 0, 0.15);
   --color-fill-social: rgba(228, 228, 234, 0.8);
   --color-fill-social-hover: #4997e6;
 
-  /* bord & shadow */
-  --box-shadow-header: 0 0px 5px 0px rgba(107, 107, 107, 0.425); /* shadow for heade  */
-  --shadow-profile-card: 0px 1px 12px 0px #3628913a; /* shadow for profile card in hero section */
-  --shadow-button: 0px 1px 2px 0px #55555549; /* shadow for buttons */
-
-  /* shadow for items into page */
-  --shadow-content: 0px 1px 2px 0px #55555549;
+  /* -------------------------
+     Borders & shadows
+     ------------------------- */
+  --box-shadow-header: 0 0px 5px 0px rgba(107, 107, 107, 0.425); /* header shadow */
+  --shadow-profile-card: 0px 1px 12px 0px #3628913a; /* profile card shadow */
+  --shadow-button: 0px 1px 2px 0px #55555549; /* generic button shadow */
+  --shadow-bullets: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(255, 255, 255, 0.25);
+  --shadow-content: 0px 1px 2px 0px #55555549; /* content item shadow */
   --shadow-content-hover: 1px 1px 10px 0px rgba(118, 118, 118, 0.332);
 
-  --shadow-icon-hero: 0 0 1px 0 rgba(115, 115, 115, 0.525); /* shadow icon in technologies show in hero section */
+  --shadow-icon-hero: 0 0 1px 0 rgba(115, 115, 115, 0.525); /* hero icon shadow */
 
-  --shadow-btt-card: 0 0 2px 0 rgb(110, 93, 173); /* shadow for buttons in cards */
+  --shadow-btt-card: 0px 1px 2px 0px rgba(11, 14, 18, 0.486); /* card button shadow */
+  --border-btt-card-hover: 1px solid rgba(20, 169, 255, 0.5);
+  --border-content: 1px solid rgba(77, 77, 77, 0.147); /* content border */
 
-  --border-content: 1px solid rgba(77, 77, 77, 0.147); /* border for items into pahe */
-
-  /* height & width */
+  /* -------------------------
+     Sizes & layout
+     ------------------------- */
   --height-header: 66px;
   --width-header: 100%;
   --height-100vh: 100vh;
 }
 
-/* 
-  Dark theme
-*/
+/* =========================
+   Dark theme
+   Mirror the same logical groups as :root for easy comparison
+   ========================= */
 [data-theme='dark'] {
-  /* text */
+  /* -------------------------
+     Typography: text colors
+     ------------------------- */
   --primary-color: rgba(228, 228, 234, 0.8);
   --secondary-color: rgba(137, 137, 145, 0.8);
   --text-tertiary: #10569d;
   --title-color: #0c77e2d5;
   --title-color-hover: #4997e6;
 
-  /* background */
+  /* -------------------------
+     Fonts (kept global / same as light)
+     ------------------------- */
+  /* (font variables remain in :root) */
+
+  /* -------------------------
+     Page backgrounds
+     ------------------------- */
   --background-toggle-white-theme: rgba(135, 135, 135, 0.533);
   --background-toggle-dark-theme: #0067cd;
   --bg-background: rgb(24 24 27 / 1);
 
-  /* backgrounds used for TECHNOLOGIES SHOW into hero section */
+  /* -------------------------
+     Hero / icon backgrounds for dark
+     ------------------------- */
   --bg-tech-icons-1: rgba(255, 0, 0, 0.09);
   --bg-tech-icons-2: rgba(47, 0, 255, 0.07);
 
-  /* background for profile card */
+  /* -------------------------
+     Profile card backgrounds
+     ------------------------- */
   --bg-profile-card: rgba(255, 255, 255, 0.03);
   --bg-profile-card-hover: rgba(255, 255, 255, 0.05);
 
-  --bg-button: rgba(255, 255, 255, 0.351);
+  /* -------------------------
+     Buttons: card-specific in dark
+     ------------------------- */
+  --bg-button-card: linear-gradient(
+    135deg,
+    var(--text-tertiary) 60%,
+    rgba(221, 0, 255, 0.758) 100%
+  );
+  --bg-button-card-hover: linear-gradient(
+    135deg,
+    var(--text-tertiary) 0%,
+    rgba(255, 0, 0, 0.566) 100%
+  );
+
+  /* -------------------------
+     Arrows, bullets and other small backgrounds
+     ------------------------- */
   --bg-arrow-hover: rgba(162, 162, 162, 0.505);
-  --bg-bullet: rgb(58, 58, 58);
+  --bg-bullet: rgb(105, 105, 105);
   --bg-arrow: rgba(211, 211, 211, 0.289);
   --bg-arrow-hover: rgba(211, 211, 211, 0.505);
   --bg-header: rgba(24, 24, 27, 0.5);
-  --bg-hero: radial-gradient(circle, rgb(25, 25, 30) 30%, rgb(24 24 27 / 1) 70%);
+  --bg-hero: radial-gradient(circle, rgba(17, 17, 36, 0.779) 30%, rgb(24 24 27 / 1) 70%);
   --bg-content: rgb(33, 33, 38);
+
+  /* -------------------------
+     Social icons (dark)
+     ------------------------- */
   --bg--social-link: rgba(249, 249, 249, 0.05);
   --bg--social-link-hover: rgba(249, 249, 249, 0.1);
   --color-fill-social: rgba(228, 228, 234, 0.8);
   --color-fill-social-hover: #4997e6;
 
-  /* bord & shadow */
+  /* -------------------------
+     Borders & shadows (dark)
+     ------------------------- */
   --shadow-icon-hero-hover: 0px 20px 30px 0px rgba(20, 107, 221, 0.181);
   --shadow-text-hero: 0px 0px 150px rgba(20, 107, 221, 0.448);
   --shadow-profile-hover: 0px 2px 13px 1px rgba(91, 187, 255, 0.699);
@@ -117,8 +181,11 @@
   --shadow-icon-hero: 0 0 1px 0 rgba(115, 115, 115, 0.525);
   --border-content: 1px solid rgba(0, 212, 255, 0.1);
   --border-profile-hover: 2px solid rgba(0, 103, 205, 0.12);
+  --shadow-bullets: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 0 6px 0 rgba(255, 255, 255, 0.1);
 
-  /* height & width */
+  /* -------------------------
+     Sizes & layout (dark)
+     ------------------------- */
   --height-header: 66px;
   --width-header: 100%;
   --height-100vh: 100vh;

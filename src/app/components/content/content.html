@@ -5,7 +5,12 @@
   <!-- PROJECTS -->
   <section id="projects-section">
     <h3>Projects</h3>
-    <app-projects-list></app-projects-list>
+
+    <app-projects-list *ngIf="projects$; else load" [projects$]="projects$"></app-projects-list>
+
+    <ng-template #load>
+      <p>Loading</p>
+    </ng-template>
   </section>
 
   <!-- ABOUT ME - CONTACT & CV -->

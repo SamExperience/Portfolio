@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { Project } from '../../models/project';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './project-card.html',
-  styleUrl: './project-card.scss',
+  styleUrls: ['./project-card.scss'],
 })
-export class ProjectCard {}
+export class ProjectCardComponent {
+  @Input() public project?: Project;
+}
