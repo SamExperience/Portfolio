@@ -1,138 +1,80 @@
-<div class="project">
+<div *ngIf="project$ | async as project; else notFound" class="project">
   <!-- HEADER -->
   <header class="project__header">
-    <h1 class="project__title">Titolo</h1>
-    <p class="project__header-description">
-      descrizione: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem quaerat
-      cumque aliquam doloremque assumenda mollitia.
-    </p>
+    <h1 class="project__title">{{ project.title }}</h1>
+    <p class="project__header-description">{{ project.shortDescription }}</p>
     <div class="project__tags">
-      <span class="project__tag">HTML</span>
-      <span class="project__tag">CSS</span>
-      <span class="project__tag">JQUERY</span>
-      <span class="project__tag">Responsive</span>
+      <span *ngFor="let tag of project.projectTags" class="project__tag">{{ tag }}</span>
     </div>
   </header>
+
   <!-- CONTAINER -->
   <div class="container">
-    <!-- INTRO / DESCRIZIONE GENERALE -->
+    <!-- INTRO / DESCRIPTION -->
     <section class="project__intro">
-      <h2 class="project__section-title">Descrizione</h2>
-      <p class="project__intro-text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quidem quaerat cumque aliquam
-        doloremque assumenda mollitia, eligendi necessitatibus, illo voluptate ex quos quibusdam
-        magnam incidunt nobis! Cumque consequuntur alias optio.
-      </p>
+      <h2 class="project__section-title">Description</h2>
+      <p class="project__intro-text">{{ project.description }}</p>
     </section>
 
-    <!-- OBIETTIVI -->
+    <!-- OBJECTIVES -->
     <section class="project__objectives">
-      <h2 class="project__section-title">Obiettivi</h2>
+      <h2 class="project__section-title">Objectives</h2>
       <ul class="project__objectives-list">
-        <li class="project__objective-item">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi officia sunt atque
-          animi quis fugit pariatur cum.
-        </li>
-        <li class="project__objective-item">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi officia sunt atque
-          animi quis fugit pariatur cum.
-        </li>
-        <li class="project__objective-item">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi officia sunt atque
-          animi quis fugit pariatur cum.
+        <li *ngFor="let goal of project.objectif" class="project__objective-item">
+          {{ goal }}
         </li>
       </ul>
     </section>
 
-    <!-- TECNOLOGIE UTILIZZATE -->
-    <section class="project__technologies">
-      <h2 class="project__section-title">Tecnologie utilizzate</h2>
+    <!-- TECHNOLOGIES USED -->
+    <section class="project__technologies" *ngIf="project.techUsed && project.techUsed.length > 0">
+      <h2 class="project__section-title">Technologies used</h2>
+
       <div class="project__tech-categories">
-        <div class="project__tech-category">
-          <h3 class="project__tech-category-title">Frontend</h3>
-          <span class="project__tech-item">HTML</span>
-          <span class="project__tech-item">CSS</span>
-        </div>
-
-        <div class="project__tech-category">
-          <h3 class="project__tech-category-title">Interazioni</h3>
-          <span class="project__tech-item">jQuery</span>
-          <span class="project__tech-item">Animations</span>
-        </div>
-
-        <div class="project__tech-category">
-          <h3 class="project__tech-category-title">Design</h3>
-          <span class="project__tech-item">Responsive</span>
-          <span class="project__tech-item">Figma</span>
+        <div *ngFor="let category of project.techUsed" class="project__tech-category">
+          <h3 class="project__tech-category-title">{{ category.title }}</h3>
+          <ul class="project__tech-list">
+            <li *ngFor="let tech of category.names" class="project__tech-item">
+              <span>{{ tech }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- GALLERIA -->
-    <section class="project__gallery">
+    <section class="project__gallery" *ngIf="project.imgURL && project.imgURL.length > 0">
       <h2 class="project__section-title">Galleria</h2>
       <div class="project__gallery-grid">
-        <figure class="project__gallery-item">
-          <img
-            class="project__image"
-            src="../../../assets/images/logo/project-icon-dark.png"
-            alt="Screenshot 1"
-          />
-        </figure>
-        <figure class="project__gallery-item">
-          <img
-            class="project__image"
-            src="../../../assets/images/profile/SamueleDeriu.webp"
-            alt="Screenshot 2"
-          />
-        </figure>
-        <figure class="project__gallery-item">
-          <img
-            class="project__image"
-            src="../../../assets/images/logo/project-icon-dark.png"
-            alt="Screenshot 3"
-          />
+        <figure *ngFor="let image of project.imgURL" class="project__gallery-item">
+          <img class="project__image" [src]="image.url" [alt]="image.title" />
         </figure>
       </div>
     </section>
 
     <!-- RISULTATI -->
-    <section class="project__results">
+    <section class="project__results" *ngIf="project.results">
       <h2 class="project__section-title">Risultati</h2>
-      <p class="project__results-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid praesentium illo nostrum
-        sequi omnis ex, beatae nisi eaque inventore eum aspernatur iste doloremque excepturi soluta.
-      </p>
+      <p class="project__results-text">{{ project.results }}</p>
     </section>
 
     <!-- COSA HO IMPARATO -->
-    <section class="project__learned">
+    <section class="project__learned" *ngIf="project.whatLearned && project.whatLearned.length > 0">
       <h2 class="project__section-title">Cosa ho imparato</h2>
       <ul>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui consectetur, officiis,
-          accusantium ipsa doloribus laborum sint facere, sit autem fuga amet sapiente maxime
-          voluptate ducimus voluptatem iusto aliquid quisquam.
-        </li>
-
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui consectetur, officiis,
-          accusantium ipsa doloribus laborum sint facere, sit autem fuga amet sapiente maxime
-          voluptate ducimus voluptatem iusto aliquid quisquam.
-        </li>
-
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui consectetur, officiis,
-          accusantium ipsa doloribus laborum sint facere, sit autem fuga amet sapiente maxime
-          voluptate ducimus voluptatem iusto aliquid quisquam.
-        </li>
+        <li *ngFor="let lesson of project.whatLearned">{{ lesson }}</li>
       </ul>
     </section>
   </div>
+
   <!-- FOOTER -->
-  <footer class="project__footer">
-    <span class="project__footer-item">© 2025 Samuele Deriu</span>
+  <footer class="project__footer" *ngIf="project.personalData">
+    <span class="project__footer-item"> © 2025 {{ project.personalData.name }} </span>
     <span class="project__footer-item">Swiss 👑 Made</span>
     <span class="project__footer-item">Developed with Angular 20</span>
   </footer>
 </div>
+
+<ng-template #notFound>
+  <p>Progetto non trovato 😞</p>
+</ng-template>
