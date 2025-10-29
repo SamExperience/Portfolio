@@ -1,0 +1,82 @@
+{
+  "HEADER": {
+    "NAV": {
+      "PROJECTS": "Progetti",
+      "ABOUT": "Chi sono",
+      "CONTACT": "Contatti"
+    },
+    "TOGGLE_THEME": "Cambia tema",
+    "MENU": "Menu"
+  },
+  "MENU": {
+    "MENU": "Menu",
+    "PROJECTS": "Progetti",
+    "ABOUT": "Chi sono",
+    "CONTACT": "Contatti",
+    "CLOSE": "Chiudi menu"
+  },
+  "HERO": {
+    "ARIA_LABEL": "sito portfolio",
+    "NAME": "Samuele Deriu",
+    "ROLE": "Sviluppatore informatico",
+    "TEXT1": "Intelligenti,",
+    "TEXT2": "Scalabili.",
+    "TEXT3": "App web affidabili.",
+    "TECH_TITLE": "Tecnologie dietro le quinte"
+  },
+  "PROJECTS_SECTION": {
+    "TITLE": "Progetti",
+    "LOADING": "Caricamento"
+  },
+  "PROJECTS": {
+    "TITLE": "Progetti",
+    "LOADING": "Caricamento"
+  },
+  "PROJECT": {
+    "DESCRIPTION": "Descrizione",
+    "OBJECTIVES": "Obiettivi",
+    "TECH_USED": "Tecnologie utilizzate",
+    "GALLERY": "Galleria",
+    "RESULTS": "Risultati",
+    "LEARNED": "Cosa ho imparato",
+    "NOT_FOUND": "Progetto non trovato 😞",
+    "IMG_ALT": "Immagine del progetto: {{title}}",
+    "AUTHOR_IMG_ALT": "Immagine del profilo di {{name}}",
+    "VIEW": "Vedi progetto →",
+    "DEMO": "Demo↗️",
+    "REPO": "Repo🔗",
+    "CARD": {
+      "LABEL": "Scheda progetto",
+      "VIEW": "Vedi progetto →",
+      "DEMO": "Demo↗️",
+      "REPO": "Repo🔗"
+    },
+    "FOOTER": {
+      "SWISS": "Swiss 👑 Made",
+      "ANGULAR": "Sviluppato con Angular 20"
+    }
+  },
+  "ABOUT": {
+    "TITLE": "Chi sono",
+    "PAR_1": "Sono uno sviluppatore Full-Stack junior specializzato in applicazioni web moderne e responsive costruite con Angular e TypeScript sul front-end, e Node.js + Express sul back-end. Combino lo sviluppo di UI basato su componenti, SCSS e le migliori pratiche di accessibilità con solide competenze di backend (REST API e database relazionali/NoSQL) per fornire soluzioni pulite, manutenibili e performanti.",
+    "PAR_2": "Il mio workflow si basa su TypeScript, Git, test unitari di base e containerizzazione (Docker). Amo risolvere problemi e imparare continuamente — porto resilienza, focus e mentalità pratica ad ogni progetto. Fuori dal lavoro costruisco progetti personali e partecipo a meetup tech locali per crescere e condividere conoscenze.",
+    "PAR_3": "Vedi i miei progetti su",
+    "GITHUB": "GitHub"
+  },
+  "CONTACT": {
+    "TITLE": "Contatti",
+    "EMAIL": "samuele.deriu.dev@gmail.com",
+    "LINKEDIN": "LinkedIn",
+    "GITHUB": "GitHub",
+    "DOWNLOAD_CV": "Scarica CV",
+    "CV_EN": "CV Eng",
+    "CV_FR": "CV Fr",
+    "CV_EN_LABEL": "Scarica CV in inglese",
+    "CV_FR_LABEL": "Scarica CV in francese"
+  },
+  "FOOTER": {
+    "NAME": "Samuele Deriu",
+    "SWISS_MADE": "Swiss Made",
+    "DEVELOPED_WITH": "Sviluppato con"
+  }
+}

@@ -1,9 +1,12 @@
-<div class="card" [attr.aria-label]="'Project card: ' + project?.title">
+<div
+  class="card"
+  [attr.aria-label]="('PROJECT.CARD.LABEL' | translate) + ': ' + (project?.title || '')"
+>
   <!-- IMG CARD -->
   <div class="card__img">
     <img
       [src]="project?.imgURL?.[0]?.url ?? 'assets/images/default-img.png'"
-      [alt]="'Project image for ' + project?.title"
+      [attr.alt]="'PROJECT.IMG_ALT' | translate : { title: project?.title }"
     />
   </div>
 
@@ -23,7 +26,7 @@
       <span>
         <img
           [src]="project?.personalData?.urlImg ?? 'assets/images/default-img.png'"
-          [alt]="'Profile image of ' + project?.personalData?.name"
+          [attr.alt]="'PROJECT.AUTHOR_IMG_ALT' | translate : { name: project?.personalData?.name }"
         />
         <p>
           <strong>{{ project?.personalData?.name }}</strong
@@ -33,23 +36,28 @@
       </span>
 
       <span>
-        <a
-          [routerLink]="['/project', project?.id]"
-          routerLinkActive="router-link-active"
-          target="_blank"
-          >View project →</a
-        >
+        <a [href]="getProjectUrl(project?.id)" target="_blank" rel="noopener noreferrer">
+          {{ 'PROJECT.VIEW' | translate }}
+        </a>
       </span>
     </div>
 
     <!-- ACTIONS -->
     <div class="card__actions">
-      <a href="https://github.com/SamExperience/Portfolio" target="_blank" rel="noopener noreferrer"
-        ><span class="text">Demo↗️</span></a
+      <a
+        href="https://github.com/SamExperience/Portfolio"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-      <a href="https://github.com/SamExperience/Portfolio" target="_blank" rel="noopener noreferrer"
-        ><span class="text">Repo🔗</span></a
+        <span class="text">{{ 'PROJECT.DEMO' | translate }}</span>
+      </a>
+      <a
+        href="https://github.com/SamExperience/Portfolio"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        <span class="text">{{ 'PROJECT.REPO' | translate }}</span>
+      </a>
     </div>
   </div>
 </div>

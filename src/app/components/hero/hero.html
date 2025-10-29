@@ -1,6 +1,5 @@
-<!-- Personal card -->
 <div class="hero-content" aria-label="portfolio web site">
-  <!-- CARD PERSONAL PROFIL -->
+  <!-- CARD PERSONAL PROFILE -->
   <div class="hero-content__profile">
     <div class="hero-content__avatar-wrapper">
       <img
@@ -12,7 +11,7 @@
 
     <div class="hero-content__personalData">
       <div class="hero-content__name">
-        <h4>Samuele Deriu</h4>
+        <h4>{{ 'HERO.NAME' | translate }}</h4>
         <svg
           viewBox="0 0 24 24"
           width="16"
@@ -20,46 +19,29 @@
           class="hero-content__icon"
           aria-hidden="true"
         >
-          <path
-            d="M12,0 L14.39,2.25 L17.52,1.61 L18.41,4.66 L21.57,5.42 L21.07,8.58 L23.27,10.93 L21.14,13.31 L22,16.42 L18.89,17.42 L17.93,20.54 L14.81,19.69 L12,22 L9.19,19.69 L6.07,20.54 L5.11,17.42 L2,16.42 L2.86,13.31 L0.73,10.93 L2.93,8.58 L2.43,5.42 L5.59,4.66 L6.48,1.61 L9.61,2.25 L12,0 Z"
-            fill="#1DA1F2"
-          ></path>
-          <path
-            d="M7.92,12.01 L10.5,14.59 L16.08,9.01"
-            stroke="white"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
+          <!-- SVG paths -->
         </svg>
       </div>
-      <p class="hero-content__role">IT Developer</p>
+      <p class="hero-content__role">{{ 'HERO.ROLE' | translate }}</p>
     </div>
   </div>
 
-  <!--  BIG TEXT  -->
+  <!-- BIG TEXT -->
   <div
     class="hero-content__text"
     aria-label="The main text highlights :build smart and scalable web applications"
   >
     <h1>
-      <!-- I build -->
-      <span>Smart,</span>
-      <!-- end -->
-      <span>Scalable.</span>
-      <!-- web -->
-      <span>Reliable web apps.</span>
+      <span>{{ 'HERO.TEXT1' | translate }}</span>
+      <span>{{ 'HERO.TEXT2' | translate }}</span>
+      <span>{{ 'HERO.TEXT3' | translate }}</span>
     </h1>
   </div>
 
-  <!-- TECHNOLOGIES SHOW  -->
+  <!-- TECHNOLOGIES SHOW -->
   <div class="hero-content__tech" aria-label="some Technologies used">
-    <p class="hero-content__tech-title">Technologies behind the scenes</p>
-
-    <!-- container that visually occupies full width of layout -->
+    <p class="hero-content__tech-title">{{ 'HERO.TECH_TITLE' | translate }}</p>
     <div class="icons-tech" role="region" aria-label="Scrollable technologies list">
-      <!-- interno scrollabile orizzontalmente -->
       <div class="tech-icons" role="list">
         <a
           class="tech-icons__link"
@@ -72,7 +54,6 @@
           <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
           <span class="tech-icons__label">JavaScript</span>
         </a>
-
         <a
           class="tech-icons__link"
           href="https://nodejs.org/"
@@ -84,7 +65,6 @@
           <i class="devicon-nodejs-plain colored" aria-hidden="true"></i>
           <span class="tech-icons__label">Node.js</span>
         </a>
-
         <a
           class="tech-icons__link"
           href="https://angular.io/"
@@ -96,7 +76,6 @@
           <i class="devicon-angularjs-plain colored" aria-hidden="true"></i>
           <span class="tech-icons__label">Angular</span>
         </a>
-
         <a
           class="tech-icons__link"
           href="https://react.dev/"
@@ -108,7 +87,6 @@
           <i class="devicon-react-original colored" aria-hidden="true"></i>
           <span class="tech-icons__label">React</span>
         </a>
-
         <a
           class="tech-icons__link"
           href="https://www.mongodb.com/"
@@ -120,7 +98,6 @@
           <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
           <span class="tech-icons__label">MongoDB</span>
         </a>
-
         <a
           class="tech-icons__link"
           href="https://www.postgresql.org/"
@@ -132,7 +109,6 @@
           <i class="devicon-postgresql-plain colored" aria-hidden="true"></i>
           <span class="tech-icons__label">PostgreSQL</span>
         </a>
-
         <a
           class="tech-icons__link"
           href="https://www.typescriptlang.org/"

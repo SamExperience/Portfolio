@@ -1,0 +1,82 @@
+{
+  "HEADER": {
+    "NAV": {
+      "PROJECTS": "Projects",
+      "ABOUT": "About me",
+      "CONTACT": "Contact"
+    },
+    "TOGGLE_THEME": "Toggle theme",
+    "MENU": "Menu"
+  },
+  "MENU": {
+    "MENU": "Menu",
+    "PROJECTS": "Projects",
+    "ABOUT": "About me",
+    "CONTACT": "Contact",
+    "CLOSE": "Close menu"
+  },
+  "HERO": {
+    "ARIA_LABEL": "portfolio web site",
+    "NAME": "Samuele Deriu",
+    "ROLE": "IT Developer",
+    "TEXT1": "Smart,",
+    "TEXT2": "Scalable.",
+    "TEXT3": "Reliable web apps.",
+    "TECH_TITLE": "Technologies behind the scenes"
+  },
+  "PROJECTS_SECTION": {
+    "TITLE": "Projects",
+    "LOADING": "Loading"
+  },
+  "PROJECTS": {
+    "TITLE": "Projects",
+    "LOADING": "Loading"
+  },
+  "PROJECT": {
+    "DESCRIPTION": "Description",
+    "OBJECTIVES": "Objectives",
+    "TECH_USED": "Technologies used",
+    "GALLERY": "Gallery",
+    "RESULTS": "Results",
+    "LEARNED": "What I learned",
+    "NOT_FOUND": "Project not found 😞",
+    "IMG_ALT": "Project image for {{title}}",
+    "AUTHOR_IMG_ALT": "Profile image of {{name}}",
+    "VIEW": "View project →",
+    "DEMO": "Demo↗️",
+    "REPO": "Repo🔗",
+    "CARD": {
+      "LABEL": "Project card",
+      "VIEW": "View project →",
+      "DEMO": "Demo↗️",
+      "REPO": "Repo🔗"
+    },
+    "FOOTER": {
+      "SWISS": "Swiss 👑 Made",
+      "ANGULAR": "Developed with Angular 20"
+    }
+  },
+  "ABOUT": {
+    "TITLE": "About",
+    "PAR_1": "I'm a Junior Full-Stack Developer specializing in modern, responsive web applications built with Angular and TypeScript on the front end, and Node.js + Express on the back end. I combine component-driven UI development, SCSS and accessibility best practices with solid backend skills (REST APIs and relational/NoSQL databases) to deliver clean, maintainable and high-performing solutions.",
+    "PAR_2": "My workflow relies on TypeScript, Git, basic unit testing and containerization (Docker). I love solving problems and learning continuously — I bring resilience, focus and a practical delivery mindset to every project. Outside of work I build personal projects and attend local tech meetups to grow and share knowledge with the community.",
+    "PAR_3": "See my projects on",
+    "GITHUB": "GitHub"
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "EMAIL": "samuele.deriu.dev@gmail.com",
+    "LINKEDIN": "LinkedIn",
+    "GITHUB": "GitHub",
+    "DOWNLOAD_CV": "Download CV",
+    "CV_EN": "CV Eng",
+    "CV_FR": "CV Fr",
+    "CV_EN_LABEL": "Download CV in English",
+    "CV_FR_LABEL": "Download CV in French"
+  },
+  "FOOTER": {
+    "NAME": "Samuele Deriu",
+    "SWISS_MADE": "Swiss Made",
+    "DEVELOPED_WITH": "Developed with"
+  }
+}

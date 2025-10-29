@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   selector: 'app-menu-mobile',
-  imports: [],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './menu-mobile.html',
   styleUrl: './menu-mobile.scss',
 })

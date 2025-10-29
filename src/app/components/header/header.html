@@ -5,26 +5,35 @@
       <img src="../../../assets/images/logo/Logo_page.png" alt="logo site" />
     </a>
   </div>
+
   <!-- MENU -->
   <div class="header-component__cont">
     <nav class="header-component__nav">
       <ul>
-        <li><a href="#projects-section">Project</a></li>
-        <li><a href="#about-section">About me</a></li>
-        <li><a href="#contact-section">Contact</a></li>
+        <li>
+          <a href="#projects-section">{{ 'HEADER.NAV.PROJECTS' | translate }}</a>
+        </li>
+        <li>
+          <a href="#about-section">{{ 'HEADER.NAV.ABOUT' | translate }}</a>
+        </li>
+        <li>
+          <a href="#contact-section">{{ 'HEADER.NAV.CONTACT' | translate }}</a>
+        </li>
       </ul>
     </nav>
   </div>
 
   <!-- TOOLS -->
   <div class="header-component__tools">
+    <app-language-selector [languages]="['en', 'it', 'fr']"></app-language-selector>
+
     <label class="switch">
       <input
         type="checkbox"
         (click)="onToggle()"
         id="theme-toggle"
         [attr.aria-pressed]="themeService.isDark()"
-        title="Toggle theme"
+        title="{{ 'HEADER.TOGGLE_THEME' | translate }}"
       />
       <span class="slider round" aria-hidden="true"></span>
     </label>

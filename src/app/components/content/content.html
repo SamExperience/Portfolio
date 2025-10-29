@@ -4,26 +4,27 @@
 
   <!-- PROJECTS -->
   <section id="projects-section">
-    <h3>Projects</h3>
+    <h3>{{ 'PROJECTS.TITLE' | translate }}</h3>
 
     <app-projects-list *ngIf="projects$; else load" [projects$]="projects$"></app-projects-list>
 
     <ng-template #load>
-      <p>Loading</p>
+      <p>{{ 'PROJECTS.LOADING' | translate }}</p>
     </ng-template>
   </section>
 
   <!-- ABOUT ME - CONTACT & CV -->
   <section id="about-section" class="content__about">
-    <app-about></app-about> <app-contact id="contact-section"></app-contact>
+    <app-about></app-about>
+    <app-contact id="contact-section"></app-contact>
   </section>
 </div>
 
 <!-- ARROW-DISPLAY -->
 <div class="nav-arrows" [class.visible]="showArrows">
   <a href="#hero-section">
-    <span id="nav-up"
-      ><svg
+    <span id="nav-up">
+      <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
         viewBox="0 -960 960 960"
@@ -35,8 +36,8 @@
     </span>
   </a>
 
-  <a href="#contact-section"
-    ><span id="nav-down">
+  <a href="#contact-section">
+    <span id="nav-down">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"

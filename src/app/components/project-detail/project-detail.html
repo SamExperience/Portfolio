@@ -1,80 +1,113 @@
 <div *ngIf="project$ | async as project; else notFound" class="project">
   <!-- HEADER -->
-  <header class="project__header">
-    <h1 class="project__title">{{ project.title }}</h1>
-    <p class="project__header-description">{{ project.shortDescription }}</p>
-    <div class="project__tags">
-      <span *ngFor="let tag of project.projectTags" class="project__tag">{{ tag }}</span>
+  <header class="header">
+    <div class="header__info">
+      <span class="header__category">{{ project.category || 'Web Development' }}</span>
+      <h1 class="header__title">{{ project.title }}</h1>
+      <p class="header__description">{{ project.shortDescription }}</p>
+
+      <div class="header__links">
+        <a
+          *ngIf="project.liveUrl"
+          class="btn btn-primary"
+          [href]="project.liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Live demo</a
+        >
+        <a
+          *ngIf="project.githubUrl"
+          class="btn btn-secondary"
+          [href]="project.githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          >View code</a
+        >
+      </div>
+
+      <div class="header__tags">
+        <span *ngFor="let tag of project.projectTags" class="project__tag">{{ tag }}</span>
+      </div>
+    </div>
+
+    <div class="header__img">
+      <img
+        src="../../../assets/images/projects/hero-project-dark.webp"
+        alt="project.title + ' - hero image'"
+      />
     </div>
   </header>
 
-  <!-- CONTAINER -->
-  <div class="container">
-    <!-- INTRO / DESCRIPTION -->
-    <section class="project__intro">
-      <h2 class="project__section-title">Description</h2>
-      <p class="project__intro-text">{{ project.description }}</p>
-    </section>
+  <main>
+    <div class="container">
+      <!-- INTRO / DESCRIPTION -->
+      <section class="project__intro">
+        <h2 class="project__section-title">{{ 'PROJECT.DESCRIPTION' | translate }}</h2>
+        <p class="project__intro-text">{{ project.description }}</p>
+      </section>
 
-    <!-- OBJECTIVES -->
-    <section class="project__objectives">
-      <h2 class="project__section-title">Objectives</h2>
-      <ul class="project__objectives-list">
-        <li *ngFor="let goal of project.objectif" class="project__objective-item">
-          {{ goal }}
-        </li>
-      </ul>
-    </section>
+      <!-- OBJECTIVES -->
+      <section class="project__objectives" *ngIf="project.objectif && project.objectif.length">
+        <h2 class="project__section-title">{{ 'PROJECT.OBJECTIVES' | translate }}</h2>
+        <ul class="project__objectives-list">
+          <li *ngFor="let goal of project.objectif" class="project__objective-item">
+            {{ goal }}
+          </li>
+        </ul>
+      </section>
 
-    <!-- TECHNOLOGIES USED -->
-    <section class="project__technologies" *ngIf="project.techUsed && project.techUsed.length > 0">
-      <h2 class="project__section-title">Technologies used</h2>
+      <!-- TECHNOLOGIES USED -->
+      <section
+        class="project__technologies"
+        *ngIf="project.techUsed && project.techUsed.length > 0"
+      >
+        <h2 class="project__section-title">{{ 'PROJECT.TECH_USED' | translate }}</h2>
 
-      <div class="project__tech-categories">
-        <div *ngFor="let category of project.techUsed" class="project__tech-category">
-          <h3 class="project__tech-category-title">{{ category.title }}</h3>
-          <ul class="project__tech-list">
-            <li *ngFor="let tech of category.names" class="project__tech-item">
-              <span>{{ tech }}</span>
-            </li>
-          </ul>
+        <div class="project__tech-categories">
+          <div *ngFor="let category of project.techUsed" class="project__tech-category">
+            <h3 class="project__tech-category-title">{{ category.title }}</h3>
+            <ul class="project__tech-list">
+              <li *ngFor="let tech of category.names" class="project__tech-item">
+                <span>{{ tech }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- GALLERIA -->
-    <section class="project__gallery" *ngIf="project.imgURL && project.imgURL.length > 0">
-      <h2 class="project__section-title">Galleria</h2>
-      <div class="project__gallery-grid">
-        <figure *ngFor="let image of project.imgURL" class="project__gallery-item">
-          <img class="project__image" [src]="image.url" [alt]="image.title" />
-        </figure>
-      </div>
-    </section>
+      <!-- GALLERY -->
+      <section class="project__gallery" *ngIf="project.imgURL && project.imgURL.length > 0">
+        <h2 class="project__section-title">{{ 'PROJECT.GALLERY' | translate }}</h2>
+        <div class="project__gallery-grid">
+          <figure *ngFor="let image of project.imgURL" class="project__gallery-item">
+            <img class="project__image" [src]="image.url" [alt]="image.title" />
+          </figure>
+        </div>
+      </section>
 
-    <!-- RISULTATI -->
-    <section class="project__results" *ngIf="project.results">
-      <h2 class="project__section-title">Risultati</h2>
-      <p class="project__results-text">{{ project.results }}</p>
-    </section>
+      <!-- RESULTS -->
+      <section class="project__results" *ngIf="project.results">
+        <h2 class="project__section-title">{{ 'PROJECT.RESULTS' | translate }}</h2>
+        <p class="project__results-text">{{ project.results }}</p>
+      </section>
 
-    <!-- COSA HO IMPARATO -->
-    <section class="project__learned" *ngIf="project.whatLearned && project.whatLearned.length > 0">
-      <h2 class="project__section-title">Cosa ho imparato</h2>
-      <ul>
-        <li *ngFor="let lesson of project.whatLearned">{{ lesson }}</li>
-      </ul>
-    </section>
-  </div>
+      <!-- WHAT I LEARNED -->
+      <section
+        class="project__learned"
+        *ngIf="project.whatLearned && project.whatLearned.length > 0"
+      >
+        <h2 class="project__section-title">{{ 'PROJECT.LEARNED' | translate }}</h2>
+        <ul>
+          <li *ngFor="let lesson of project.whatLearned">{{ lesson }}</li>
+        </ul>
+      </section>
+    </div>
+  </main>
 
-  <!-- FOOTER -->
-  <footer class="project__footer" *ngIf="project.personalData">
-    <span class="project__footer-item"> © 2025 {{ project.personalData.name }} </span>
-    <span class="project__footer-item">Swiss 👑 Made</span>
-    <span class="project__footer-item">Developed with Angular 20</span>
-  </footer>
+  <!-- footer component -->
+  <app-footer *ngIf="project.personalData"></app-footer>
 </div>
 
 <ng-template #notFound>
-  <p>Progetto non trovato 😞</p>
+  <p>{{ 'PROJECT.NOT_FOUND' | translate }}</p>
 </ng-template>

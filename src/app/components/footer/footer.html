@@ -1,22 +1,17 @@
-<!-- <footer class="footer">
-  <div class="footer-content">
-    <span>© 2025 Samuele Deriu</span>
-    <span>Swiss 👑 Made</span>
-    <span>Developed with Angular 20</span>
-  </div>
-</footer>
- -->
-
 <footer class="footer" role="contentinfo" aria-label="Site footer">
   <div class="footer-content">
-    <span class="footer-item">© <span id="footer-year">2025</span> Samuele Deriu</span>
+    <span class="footer-item">
+      © <span id="footer-year">2025</span> {{ 'FOOTER.NAME' | translate }}
+    </span>
 
     <span class="footer-sep" aria-hidden="true"></span>
 
-    <span class="footer-item">Swiss <span aria-hidden="true">👑</span> Made</span>
+    <span class="footer-item">
+      {{ 'FOOTER.SWISS_MADE' | translate }} <span aria-hidden="true">👑</span>
+    </span>
 
     <span class="footer-sep" aria-hidden="true"></span>
 
-    <span class="footer-item">Developed with Angular 20</span>
+    <span class="footer-item">{{ 'FOOTER.DEVELOPED_WITH' | translate }} Angular 20</span>
   </div>
 </footer>

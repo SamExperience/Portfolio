@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Personal Portfolio",
+    "shortDescription": "A modern personal portfolio to showcase projects with a responsive design and advanced Angular components.",
+    "projectTags": ["Angular", "SCSS", "Responsive Design", "SPA"],
+    "description": "This project is my personal portfolio built as a Single Page Application (SPA) with Angular 19. It includes dynamic sections for projects, skills and contact information. No external backend is used — data is served from a local JSON file and business logic is handled by an Angular service for simplicity and fast iteration.",
+    "objectif": [
+      "Present my projects and skills in a professional, result-focused way.",
+      "Deliver a modern, responsive and accessible design that works across devices.",
+      "Implement a clean client-side data flow using a local JSON data source and Angular services.",
+      "Demonstrate advanced Angular, SCSS and state-management best practices."
+    ],
+    "techUsed": [
+      {
+        "title": "Frontend",
+        "names": ["Angular 19", "TypeScript", "SCSS/SASS", "HTML5", "CSS3"]
+      },
+      {
+        "title": "Data & State",
+        "names": ["Local JSON data file", "Angular service for data handling", "RxJS (observables)"]
+      },
+      {
+        "title": "Tools",
+        "names": ["Git", "VS Code", "Postman"]
+      }
+    ],
+    "imgURL": [
+      {
+        "url": "assets/images/projects/main-img.jpg",
+        "title": "Portfolio homepage"
+      }
+    ],
+    "results": "Delivered a production-ready portfolio that increased my online visibility and made my work easier to evaluate for recruiters. The client-side architecture (JSON + service) enabled fast updates, predictable behavior, and simplified deployment without a backend.",
+    "whatLearned": [
+      "Designed maintainable Angular components and clear parent-child communication using Input/Output.",
+      "Built a robust client-side data flow using a local JSON file and Angular services to simulate an API.",
+      "Improved performance and responsiveness across devices through SCSS optimizations and lazy-loading strategies.",
+      "Adopted best practices for building modular, testable SPAs ready for future backend integration."
+    ],
+    "personalData": {
+      "urlImg": "assets/images/profile/SamueleDeriu.webp",
+      "name": "Samuele Deriu",
+      "role": "Developer"
+    }
+  }
+]

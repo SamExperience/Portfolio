@@ -37,3 +37,17 @@ app-root {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+h1,
+h2,
+h3,
+p,
+span,
+div {
+  -webkit-user-select: none;
+  user-select: none;
+  /*  pointer-events: none; */ // blockclick
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+}

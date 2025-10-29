@@ -5,12 +5,14 @@ import { Project } from '../../models/project';
 import { DataService } from '../../services/data-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-project-detail',
   // uncomment `standalone: true` if you want a standalone component
   // standalone: true,
-  imports: [CommonModule],
+  imports: [Footer, CommonModule, TranslateModule],
   templateUrl: './project-detail.html',
   styleUrls: ['./project-detail.scss'],
 })

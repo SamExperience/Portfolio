@@ -1,11 +1,12 @@
 // src/app/components/menu-icon/menu-icon.ts
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
   selector: 'app-menu-icon',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './menu-icon.html',
   styleUrls: ['./menu-icon.scss'],
 })

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Personnel",
+    "shortDescription": "Un portfolio personnel moderne pour présenter des projets avec un design responsive et des composants Angular avancés.",
+    "projectTags": ["Angular", "SCSS", "Design Responsive", "SPA"],
+    "description": "Ce projet est mon portfolio personnel, construit comme une Single Page Application (SPA) avec Angular 19. Il inclut des sections dynamiques pour les projets, compétences et contacts. Aucun backend externe n'est utilisé — les données proviennent d'un fichier JSON local et la logique métier est gérée par un service Angular pour simplifier et accélérer les itérations.",
+    "objectif": [
+      "Présenter mes projets et compétences de manière professionnelle et orientée résultats.",
+      "Offrir un design moderne, responsive et accessible sur tous les appareils.",
+      "Mettre en place un flux de données côté client propre en utilisant un fichier JSON local et des services Angular.",
+      "Démontrer des bonnes pratiques avancées en Angular, SCSS et gestion de l'état."
+    ],
+    "techUsed": [
+      {
+        "title": "Frontend",
+        "names": ["Angular 19", "TypeScript", "SCSS/SASS", "HTML5", "CSS3"]
+      },
+      {
+        "title": "Données & État",
+        "names": [
+          "Fichier JSON local",
+          "Service Angular pour la gestion des données",
+          "RxJS (observables)"
+        ]
+      },
+      {
+        "title": "Outils",
+        "names": ["Git", "VS Code", "Postman"]
+      }
+    ],
+    "imgURL": [
+      {
+        "url": "assets/images/projects/main-img.jpg",
+        "title": "Page d'accueil du portfolio"
+      }
+    ],
+    "results": "Portfolio prêt pour la production qui a augmenté ma visibilité en ligne et facilité l’évaluation de mon travail pour les recruteurs. L’architecture côté client (JSON + service) permet des mises à jour rapides, un comportement prévisible et un déploiement simplifié sans backend.",
+    "whatLearned": [
+      "Conception de composants Angular maintenables et communication claire parent-enfant via Input/Output.",
+      "Création d’un flux de données côté client robuste utilisant un fichier JSON local et des services Angular pour simuler une API.",
+      "Amélioration de la performance et de la réactivité sur tous les appareils via des optimisations SCSS et lazy-loading.",
+      "Adoption des bonnes pratiques pour construire des SPA modulaires, testables et prêtes pour une future intégration backend."
+    ],
+    "personalData": {
+      "urlImg": "assets/images/profile/SamueleDeriu.webp",
+      "name": "Samuele Deriu",
+      "role": "Développeur"
+    }
+  }
+]

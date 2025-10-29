@@ -3,11 +3,19 @@ import { MenuIconComponent } from '../menu-icon/menu-icon';
 import { CommonModule } from '@angular/common';
 import { MenuMobile } from '../menu-mobile/menu-mobile';
 import { ThemeService } from '../../services/theme-service';
-import { Injectable } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageSelectorComponent } from '../language-selector/language-selector';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MenuIconComponent, MenuMobile],
+  imports: [
+    CommonModule,
+    MenuIconComponent,
+    MenuMobile,
+    TranslateModule,
+    LanguageSelectorComponent,
+  ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

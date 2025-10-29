@@ -6,10 +6,14 @@ $padding-footer: 20px;
 $font-titles-primary: #0067cd;
 $border-bottom-titles-primary: 1px solid #6795e0;
 $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
+
 :host {
   display: block;
   position: relative;
+  box-sizing: border-box;
 }
+
+/* BACK BUTTON (if used) */
 .project__back-btn {
   position: absolute;
   top: 1.5rem;
@@ -43,54 +47,99 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
   }
 }
 
+/* ROOT */
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   color: var(--primary-color);
   background: var(--bg-background);
 
-  &__header {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  /* HEADER (hero) */
+  .header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-items: center;
-    padding: 20px;
+    gap: 1.5rem;
+    height: 80vh;
+    padding: 2rem;
     background: var(--bg-header-project);
-  }
 
-  &__title {
-    font-size: 2.3rem;
-    font-weight: bold;
-    color: $font-titles-primary;
-  }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+      height: 100%;
+      color: var(--secondary-color);
+      padding-left: 2rem;
+    }
 
-  &__header-description {
-    color: #242424;
-    font-size: 1.1rem;
-    text-align: center;
-  }
+    &__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
 
-  &__tags {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    gap: 10px;
-    justify-content: center;
-    color: #0067cd;
-    margin-bottom: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        max-height: 70vh;
+      }
+    }
+
+    &__category {
+      display: inline-block;
+      font-weight: 700;
+      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.25rem 0.6rem;
+      border-radius: 8px;
+    }
+
+    &__title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-top: 0.25rem;
+      color: var(--secondary-color);
+    }
+
+    &__description {
+      color: var(--secondary-color);
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
+    &__tags {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    &__links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
   }
 
   &__tag {
-    background: #d8dce2;
-    border-radius: 999px;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 5px 9px;
+    margin: 0;
+    background: var(--bg-bullet);
     box-shadow: $shadow-bullets;
+    border-radius: 45px;
+    font-weight: 600;
   }
 
   .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 40px 20px;
   }
@@ -104,6 +153,7 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
     font-size: 1.4rem;
     margin-bottom: 9px;
     border-bottom: $border-bottom-titles-primary;
+    padding-bottom: 8px;
   }
 
   &__intro-text {
@@ -116,16 +166,13 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
 
   &__objectives-list {
     display: block;
-    list-style: circle;
-    text-align: justify;
+    list-style: disc;
+    text-align: left;
     padding-inline-start: 40px;
 
     li {
       margin-bottom: 20px;
     }
-  }
-
-  &__objective-item {
   }
 
   &__technologies {
@@ -145,13 +192,12 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
     display: flex;
     flex-direction: column;
     max-height: 400px;
+    overflow: hidden;
   }
 
   &__tech-category-title {
-    display: block;
     font-size: 1.17rem;
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
+    margin-bottom: 0.5rem;
     flex-shrink: 0;
   }
 
@@ -163,7 +209,6 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
     flex-wrap: wrap;
     gap: 0.5rem;
     overflow-y: auto;
-    overflow-x: hidden;
     flex: 1;
 
     &::-webkit-scrollbar {
@@ -186,8 +231,6 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
   }
 
   &__tech-item {
-    list-style: none;
-
     span {
       display: inline-block;
       box-shadow: $shadow-bullets;
@@ -212,10 +255,9 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
 
   &__gallery-grid {
     display: grid;
-    align-items: center;
-    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
+    align-items: start;
   }
 
   &__gallery-item {
@@ -228,7 +270,7 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
     @include hover-shadow-ligth();
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   }
 
   &__image {
@@ -251,8 +293,8 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
 
     ul {
       display: block;
-      list-style: circle;
-      text-align: justify;
+      list-style: disc;
+      text-align: left;
       padding-inline-start: 40px;
 
       li {
@@ -271,22 +313,37 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
     border-top: $border-bottom-titles-primary;
     text-align: center;
   }
-
-  &__footer-item {
-  }
 }
 
-@media screen and (max-width: 768px) {
-  .project__back-btn {
-    top: 1rem;
-    left: 1rem;
-    width: 40px;
-    height: 40px;
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
 
-    svg {
-      width: 20px;
-      height: 20px;
-    }
+.btn-primary {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+  .header {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 1.5rem;
   }
 
   .project__tech-category {
@@ -294,8 +351,12 @@ $shadow-bullets: 0 2px 2px rgba(0, 0, 0, 0.11);
   }
 }
 
-@media screen and (max-widht: 500px) {
+@media screen and (max-width: 500px) {
   .container {
-    padding: 40px 5px;
+    padding: 40px 12px;
+  }
+
+  .header__info {
+    padding-left: 1rem;
   }
 }
