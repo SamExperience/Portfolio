@@ -31,7 +31,11 @@
   /* -------------------------
      Hero / profile / icon backgrounds
      ------------------------- */
-  --bg-header-project: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-header-project: linear-gradient(
+    135deg,
+    rgb(127, 21, 253, 0.7) 70%,
+    rgb(237, 1, 0, 0.7) 100%
+  );
   --bg-tech-icons-1: rgba(100, 84, 84, 0.388); /* tech icon background 1 */
   --bg-tech-icons-2: rgba(71, 41, 237, 0.11); /* tech icon background 2 */
   --bg-profile-card: rgba(84, 0, 0, 0); /* profile card background in hero */
@@ -124,6 +128,7 @@
   /* -------------------------
      Hero / icon backgrounds for dark
      ------------------------- */
+  --bg-header-project: linear-gradient(135deg, rgba(17, 17, 36, 0.779) 0%, rgb(24 24 27 / 1) 100%);
   --bg-tech-icons-1: rgba(255, 0, 0, 0.19);
   --bg-tech-icons-2: rgba(47, 0, 255, 0.17);
 

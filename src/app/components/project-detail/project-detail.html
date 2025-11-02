@@ -1,111 +1,243 @@
 <div *ngIf="project$ | async as project; else notFound" class="project">
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header__info">
-      <span class="header__category">{{ project.category || 'Web Development' }}</span>
-      <h1 class="header__title">{{ project.title }}</h1>
-      <p class="header__description">{{ project.shortDescription }}</p>
+  <header class="project__header">
+    <a
+      routerLink="/"
+      class="project__btt-back"
+      aria-label="{{ 'PROJECT.BACK_TO_LIST' | translate }}"
+    >
+      ←
+    </a>
 
-      <div class="header__links">
+    <div class="project__meta">
+      <span class="project__category">{{ project?.category }}</span>
+      <h1 class="project__title">{{ project?.title }}</h1>
+      <p class="project__short-description">{{ project?.shortDescription }}</p>
+
+      <div class="project__links" role="group" aria-label="{{ 'PROJECT.LINKS' | translate }}">
         <a
-          *ngIf="project.liveUrl"
-          class="btn btn-primary"
+          *ngIf="project?.liveUrl"
+          class="btt__header btt-primary"
           [href]="project.liveUrl"
           target="_blank"
           rel="noopener noreferrer"
-          >Live demo</a
         >
+          {{ 'PROJECT.LIVE_WEBSITE' | translate }}
+        </a>
         <a
-          *ngIf="project.githubUrl"
-          class="btn btn-secondary"
+          *ngIf="project?.githubUrl"
+          class="btt__header btt-secondary"
           [href]="project.githubUrl"
           target="_blank"
           rel="noopener noreferrer"
-          >View code</a
         >
+          {{ 'PROJECT.GO_TO_REPOSITORY' | translate }}
+        </a>
       </div>
 
-      <div class="header__tags">
-        <span *ngFor="let tag of project.projectTags" class="project__tag">{{ tag }}</span>
+      <div class="project__bullets">
+        <ul aria-label="{{ 'PROJECT.TECH_STACK' | translate }}">
+          <li *ngFor="let tag of project?.projectTags">{{ tag }}</li>
+        </ul>
       </div>
     </div>
 
-    <div class="header__img">
+    <figure class="project__hero" *ngIf="project?.imgURL?.length">
       <img
-        src="../../../assets/images/projects/hero-project-dark.webp"
-        alt="project.title + ' - hero image'"
+        id="img-hero"
+        fetchpriority="high"
+        [src]="project?.heroImage || 'assets/images/default-img.png'"
+        alt="Project hero mockup"
       />
-    </div>
+      <figcaption class="sr-only">{{ project?.imgURL?.[0]?.title || '' }}</figcaption>
+    </figure>
   </header>
 
-  <main>
-    <div class="container">
-      <!-- INTRO / DESCRIPTION -->
-      <section class="project__intro">
-        <h2 class="project__section-title">{{ 'PROJECT.DESCRIPTION' | translate }}</h2>
-        <p class="project__intro-text">{{ project.description }}</p>
+  <div class="project-layout">
+    <aside class="aside" aria-label="{{ 'PROJECT.PROJECT_INFO' | translate }}">
+      <div class="aside__info animate-on-scroll">
+        <h2>{{ 'PROJECT.PROJECT_INFO' | translate }}</h2>
+        <dl>
+          <div class="info-item">
+            <dt>{{ 'PROJECT.ROLE' | translate }}</dt>
+            <dd>{{ project?.role }}</dd>
+          </div>
+
+          <div class="info-item">
+            <dt>{{ 'PROJECT.TIMELINE' | translate }}</dt>
+            <dd>{{ project?.duration }}</dd>
+          </div>
+
+          <div class="info-item">
+            <dt>{{ 'PROJECT.TEAM_SIZE' | translate }}</dt>
+            <dd>{{ project?.teamSize }}</dd>
+          </div>
+
+          <div class="info-item">
+            <dt>{{ 'PROJECT.YEAR' | translate }}</dt>
+            <dd>{{ project?.year }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="aside__tech-stack animate-on-scroll">
+        <h2>{{ 'PROJECT.TECH_STACK' | translate }}</h2>
+        <div *ngFor="let techCategory of project?.techUsed" class="tech-category">
+          <div class="tech-tags">
+            <h3 class="tech-category-title">{{ techCategory?.title }}</h3>
+            <span *ngFor="let tech of techCategory?.names" class="tech-tag">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aside__links animate-on-scroll">
+        <h2>{{ 'PROJECT.LINKS' | translate }}</h2>
+        <a
+          *ngIf="project?.liveUrl"
+          [href]="project.liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ 'PROJECT.LIVE_WEBSITE' | translate }}
+        </a>
+        <a
+          *ngIf="project?.githubUrl"
+          [href]="project.githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ 'PROJECT.GO_TO_REPOSITORY' | translate }}
+        </a>
+      </div>
+    </aside>
+
+    <main class="project-content">
+      <section class="content-section animate-on-scroll">
+        <h2>📝 {{ 'PROJECT.OVERVIEW' | translate }}</h2>
+        <p>{{ project?.description }}</p>
       </section>
 
-      <!-- OBJECTIVES -->
-      <section class="project__objectives" *ngIf="project.objectif && project.objectif.length">
-        <h2 class="project__section-title">{{ 'PROJECT.OBJECTIVES' | translate }}</h2>
-        <ul class="project__objectives-list">
-          <li *ngFor="let goal of project.objectif" class="project__objective-item">
-            {{ goal }}
-          </li>
+      <section class="content-section animate-on-scroll" *ngIf="project?.problemStatement">
+        <h2>❓ {{ 'PROJECT.PROBLEM' | translate }}</h2>
+        <p class="section-text">{{ project?.problemStatement }}</p>
+      </section>
+
+      <section class="content-section animate-on-scroll">
+        <h2>🎯 {{ 'PROJECT.OBJECTIVES' | translate }}</h2>
+        <ul class="objectives-list">
+          <li *ngFor="let objective of project?.objectif">{{ objective }}</li>
         </ul>
       </section>
 
-      <!-- TECHNOLOGIES USED -->
-      <section
-        class="project__technologies"
-        *ngIf="project.techUsed && project.techUsed.length > 0"
-      >
-        <h2 class="project__section-title">{{ 'PROJECT.TECH_USED' | translate }}</h2>
+      <section class="content-section animate-on-scroll" *ngIf="project?.developmentProcess">
+        <h2>🔄 {{ 'PROJECT.PROCESS' | translate }}</h2>
+        <ol class="process-timeline">
+          <li *ngFor="let phase of project?.developmentProcess" class="process-item">
+            <h3>{{ phase?.phase }}</h3>
+            <p>{{ phase?.description }}</p>
+            <span class="process-duration" *ngIf="phase?.duration">{{ phase?.duration }}</span>
+          </li>
+        </ol>
+      </section>
 
-        <div class="project__tech-categories">
-          <div *ngFor="let category of project.techUsed" class="project__tech-category">
-            <h3 class="project__tech-category-title">{{ category.title }}</h3>
-            <ul class="project__tech-list">
-              <li *ngFor="let tech of category.names" class="project__tech-item">
-                <span>{{ tech }}</span>
-              </li>
-            </ul>
+      <section class="content-section animate-on-scroll">
+        <div class="features-grid">
+          <h2>✨ {{ 'PROJECT.FEATURES' | translate }}</h2>
+
+          <div class="feature-card" *ngFor="let feature of project?.features">
+            <div class="feature-icon">{{ feature?.icon }}</div>
+            <h3 class="feature-title">{{ feature?.title }}</h3>
+            <p class="feature-description">{{ feature?.description }}</p>
           </div>
         </div>
       </section>
 
-      <!-- GALLERY -->
-      <section class="project__gallery" *ngIf="project.imgURL && project.imgURL.length > 0">
-        <h2 class="project__section-title">{{ 'PROJECT.GALLERY' | translate }}</h2>
-        <div class="project__gallery-grid">
-          <figure *ngFor="let image of project.imgURL" class="project__gallery-item">
-            <img class="project__image" [src]="image.url" [alt]="image.title" />
+      <section class="content-section animate-on-scroll" *ngIf="project?.technicalDecisions">
+        <h2>⚖️ {{ 'PROJECT.TECHNICAL_DECISIONS' | translate }}</h2>
+        <dl class="decisions-list">
+          <div class="decision-item" *ngFor="let decision of project?.technicalDecisions">
+            <dt>{{ decision?.question }}</dt>
+            <dd>{{ decision?.answer }}</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="content-section animate-on-scroll">
+        <h2>🖼️ {{ 'PROJECT.GALLERY' | translate }}</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item" *ngFor="let image of project?.imgURL; trackBy: trackByFn">
+            <img
+              [src]="image?.url"
+              [alt]="image?.altText || image?.title || ''"
+              [title]="image?.title || ''"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">{{ image?.title }}</figcaption>
           </figure>
         </div>
       </section>
 
-      <!-- RESULTS -->
-      <section class="project__results" *ngIf="project.results">
-        <h2 class="project__section-title">{{ 'PROJECT.RESULTS' | translate }}</h2>
-        <p class="project__results-text">{{ project.results }}</p>
+      <section class="content-section animate-on-scroll">
+        <h2>🎯 {{ 'PROJECT.CHALLENGES' | translate }}</h2>
+        <div class="challenge-item" *ngFor="let challenge of project?.challenges; let i = index">
+          <div class="challenge-problem">
+            <h3>⚠️ {{ 'PROJECT.CHALLENGE' | translate }} {{ i + 1 }}</h3>
+            <p>{{ challenge?.problem }}</p>
+          </div>
+          <div class="challenge-solution">
+            <h3>✅ {{ 'PROJECT.SOLUTION' | translate }}</h3>
+            <p>{{ challenge?.solution }}</p>
+          </div>
+        </div>
       </section>
 
-      <!-- WHAT I LEARNED -->
-      <section
-        class="project__learned"
-        *ngIf="project.whatLearned && project.whatLearned.length > 0"
-      >
-        <h2 class="project__section-title">{{ 'PROJECT.LEARNED' | translate }}</h2>
-        <ul>
-          <li *ngFor="let lesson of project.whatLearned">{{ lesson }}</li>
+      <section class="content-section animate-on-scroll" *ngIf="project?.accessibility">
+        <h2>♿ {{ 'PROJECT.ACCESSIBILITY' | translate }}</h2>
+        <ul class="learned-list">
+          <li *ngFor="let item of project?.accessibility">{{ item }}</li>
         </ul>
       </section>
-    </div>
-  </main>
 
-  <!-- footer component -->
-  <app-footer *ngIf="project.personalData"></app-footer>
+      <section class="content-section animate-on-scroll">
+        <h2>📊 {{ 'PROJECT.RESULTS' | translate }}</h2>
+        <div class="results-metrics">
+          <div class="metric-card" *ngFor="let metric of project?.metrics">
+            <span class="metric-value">{{ metric?.value }}</span>
+            <span class="metric-label">{{ metric?.label }}</span>
+          </div>
+        </div>
+        <p class="section-text">{{ project?.results }}</p>
+      </section>
+
+      <section class="content-section animate-on-scroll">
+        <h2>🎓 {{ 'PROJECT.LEARNED' | translate }}</h2>
+        <ul class="learned-list">
+          <li *ngFor="let learning of project?.whatLearned">{{ learning }}</li>
+        </ul>
+      </section>
+
+      <section class="content-section animate-on-scroll" *ngIf="project?.futureImprovements">
+        <h2>🚀 {{ 'PROJECT.FUTURE' | translate }}</h2>
+        <ul class="roadmap-list">
+          <li *ngFor="let improvement of project?.futureImprovements">{{ improvement }}</li>
+        </ul>
+      </section>
+
+      <section class="content-section cta-section">
+        <h2>💼 {{ 'PROJECT.CTA_TITLE' | translate }}</h2>
+        <p>{{ 'PROJECT.CTA_TEXT' | translate }}</p>
+        <div class="cta-buttons">
+          <a routerLink="/projects" class="btt__header btt-primary">{{
+            'PROJECT.VIEW_ALL_PROJECTS' | translate
+          }}</a>
+          <a routerLink="/contact" class="btt__header btt-secondary">{{
+            'PROJECT.CONTACT_ME' | translate
+          }}</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <app-footer></app-footer>
 </div>
 
 <ng-template #notFound>

@@ -4,38 +4,52 @@ export interface Project {
   shortDescription: string;
   projectTags: string[];
 
-  // 🆕 AGGIUNGI QUESTI
-  heroImage: string; // Immagine principale grande
-  category: string; // "Web Development", "Mobile App"
-  role: string; // "Full-stack Developer"
-  duration: string; // "3 months"
-  year: number; // 2024
-  teamSize: string; // "Solo" o "5 people"
-  liveUrl?: string; // Link progetto live
-  githubUrl?: string; // Link GitHub
-  caseStudyUrl?: string; // Link caso studio
+  // optional / additional metadata
+  heroImage?: string;
+  category?: string;
+  role?: string;
+  duration?: string;
+  year?: number;
+  teamSize?: string;
+  liveUrl?: string;
+  githubUrl?: string;
 
-  // Esistenti migliorati
-  description: string;
-  objectif: string[];
+  // content
+  description?: string;
+  problemStatement?: string;
+  objectif?: string[];
 
-  // 🆕 Features con icone
+  // features / challenges / decisions
   features?: Array<{
     icon: string;
     title: string;
     description: string;
   }>;
 
-  // 🆕 Challenges & Solutions
   challenges?: Array<{
     problem: string;
     solution: string;
   }>;
 
-  techUsed?: Array<{ title: string; names: string[] }>;
-  imgURL?: Array<{ url: string; title: string }>;
+  developmentProcess?: Array<{
+    phase: string;
+    description: string;
+    duration?: string;
+  }>;
 
-  // 🆕 Metrics
+  technicalDecisions?: Array<{
+    question: string;
+    answer: string;
+  }>;
+
+  techUsed?: Array<{ title: string; names: string[] }>;
+
+  imgURL?: Array<{
+    url: string;
+    title: string;
+    altText?: string;
+  }>;
+
   metrics?: Array<{
     value: string;
     label: string;
@@ -43,9 +57,12 @@ export interface Project {
 
   results?: string;
   whatLearned?: string[];
+  accessibility?: string[];
+  futureImprovements?: string[];
+
   personalData?: {
-    urlImg: string;
-    name: string;
-    role: string;
+    urlImg?: string;
+    name?: string;
+    role?: string;
   };
 }

@@ -1,22 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { Project } from '../../models/project';
-import { DataService } from '../../services/data-service';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
+
+import { Project } from '../../models/project';
+import { DataService } from '../../services/data-service';
 import { Footer } from '../footer/footer';
+
+/**
+ * Simple summary:
+ * - Loads a project based on the route `id` and exposes it as `project$` for the template (use async pipe).
+ * - Manages UI flags: `loading`, `notFound`, and `serverError` so the template can show proper states.
+ * - When the project data is available, sets up an IntersectionObserver that finds elements with
+ *   the `.animate-on-scroll` class (inside this component only) and adds `.is-visible` to trigger CSS animations.
+ * - Uses a single, reusable observer instance and disconnects it in ngOnDestroy to avoid memory leaks.
+ *
+ * Key benefits:
+ * - Keeps data loading reactive (no manual subscribe).
+ * - Limits DOM queries to this component (safer than querying the whole document).
+ * - Encapsulates scroll-triggered animation setup and cleanup in a predictable way.
+ */
 
 @Component({
   selector: 'app-project-detail',
-  // uncomment `standalone: true` if you want a standalone component
-  // standalone: true,
-  imports: [Footer, CommonModule, TranslateModule],
+  standalone: true,
+  imports: [Footer, CommonModule, TranslateModule, RouterLink],
   templateUrl: './project-detail.html',
   styleUrls: ['./project-detail.scss'],
 })
-export class ProjectDetail implements OnInit {
+export class ProjectDetail implements OnInit, OnDestroy {
   // Observable exposed to the template; use async pipe there.
   project$!: Observable<Project | null>;
 
@@ -25,6 +40,9 @@ export class ProjectDetail implements OnInit {
   notFound = false;
   serverError = false;
 
+  // IntersectionObserver instance (single, reusable)
+  private observer: IntersectionObserver | null = null;
+
   /**
    * Constructor
    * - Injects DataService for fetching project data.
@@ -32,12 +50,60 @@ export class ProjectDetail implements OnInit {
    * - Injects Router for optional programmatic navigation.
    *
    * Note: Constructor should not contain logic — it only sets up injected deps.
+   *
+   * We also inject ElementRef to query elements ONLY inside this component's DOM
+   * (safer than document.querySelectorAll).
    */
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private hostRef: ElementRef<HTMLElement>
   ) {}
+
+  /**
+   * Create the observer once (idempotent)
+   */
+  private createObserverIfNeeded(): void {
+    if (this.observer) return;
+
+    this.observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[], observerRef) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add('is-visible');
+            observerRef.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+  }
+
+  /**
+   * Observe elements after the template DOM has been updated.
+   * Using hostRef.nativeElement.querySelectorAll limits the search to this component's DOM.
+   * We use setTimeout(..., 0) to schedule the call after Angular has applied the template
+   * (useful when the HTML is rendered by the async pipe).
+   */
+  private observeElements(): void {
+    this.createObserverIfNeeded();
+
+    setTimeout(() => {
+      if (!this.observer) return;
+
+      // search only inside the component (not the whole document)
+      const root = this.hostRef.nativeElement;
+      const elements = root.querySelectorAll<HTMLElement>('.animate-on-scroll');
+
+      // DEBUG: show how many elements were found
+      console.log('[ProjectDetail] observeElements found', elements.length, 'elements inside host');
+
+      elements.forEach((el) => {
+        this.observer!.observe(el);
+      });
+    }, 0);
+  }
 
   /**
    * ngOnInit
@@ -61,6 +127,7 @@ export class ProjectDetail implements OnInit {
 
         // Validate id exists and is a number (adjust if your IDs are strings/UUIDs)
         const id = idParam ? Number(idParam) : NaN;
+
         if (!idParam || Number.isNaN(id)) {
           // invalid id — show not found and return an empty observable
           this.notFound = true;
@@ -75,15 +142,6 @@ export class ProjectDetail implements OnInit {
 
         // call the service
         return this.dataService.getProjectByID(id).pipe(
-          tap(() => (this.loading = false)),
-          map((proj) => {
-            // if backend uses `null` for not found, propagate null
-            if (!proj) {
-              this.notFound = true;
-              return null;
-            }
-            return proj;
-          }),
           catchError((err) => {
             // differentiate errors if your service exposes status (e.g. 404)
             // for now treat any error as server error / not found fallback
@@ -91,9 +149,43 @@ export class ProjectDetail implements OnInit {
             this.serverError = true;
             console.error('Failed to load project', err);
             return of(null);
+          }),
+          tap((proj) => {
+            this.loading = false;
+            // debug log to understand the flow
+            console.log('[ProjectDetail] project loaded in tap:', proj);
+            if (proj) {
+              // Observe elements ONLY when the project exists.
+              this.observeElements();
+            } else {
+              this.notFound = true;
+            }
+          }),
+          map((proj) => {
+            // if backend uses `null` for not found, propagate null
+            if (!proj) {
+              this.notFound = true;
+              return null;
+            }
+            return proj;
           })
         );
       })
     );
+  }
+
+  /**
+   * ngOnDestroy
+   * - Clean up IntersectionObserver to avoid memory leaks
+   */
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+      this.observer = null;
+    }
+  }
+  /* function for ngfor  */
+  trackByFn(index: number, item: any): number {
+    return item.id; // o qualsiasi identificatore unico
   }
 }

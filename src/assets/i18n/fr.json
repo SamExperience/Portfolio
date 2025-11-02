@@ -5,7 +5,7 @@
       "ABOUT": "À propos",
       "CONTACT": "Contact"
     },
-    "TOGGLE_THEME": "Changer le thème",
+    "TOGGLE_THEME": "Changer de thème",
     "MENU": "Menu"
   },
   "MENU": {
@@ -16,13 +16,13 @@
     "CLOSE": "Fermer le menu"
   },
   "HERO": {
-    "ARIA_LABEL": "site portfolio",
+    "ARIA_LABEL": "site web portfolio",
     "NAME": "Samuele Deriu",
-    "ROLE": "Développeur informatique",
-    "TEXT1": "Intelligentes,",
-    "TEXT2": "Évolutives.",
+    "ROLE": "Développeur IT",
+    "TEXT1": "Intelligent,",
+    "TEXT2": "Scalable.",
     "TEXT3": "Applications web fiables.",
-    "TECH_TITLE": "Technologies en coulisse"
+    "TECH_TITLE": "Technologies en coulisses"
   },
   "PROJECTS_SECTION": {
     "TITLE": "Projets",
@@ -33,14 +33,37 @@
     "LOADING": "Chargement"
   },
   "PROJECT": {
+    "OVERVIEW": "Aperçu",
+    "PROBLEM": "Le problème",
     "DESCRIPTION": "Description",
     "OBJECTIVES": "Objectifs",
+    "PROCESS": "Processus de développement",
+    "FEATURES": "Fonctionnalités clés",
+    "TECHNICAL_DECISIONS": "Décisions techniques clés",
     "TECH_USED": "Technologies utilisées",
-    "GALLERY": "Galerie",
-    "RESULTS": "Résultats",
+    "GALLERY": "Galerie du projet",
+    "CHALLENGES": "Défis et solutions",
+    "ACCESSIBILITY": "Accessibilité",
+    "RESULTS": "Résultats et impact",
     "LEARNED": "Ce que j'ai appris",
+    "FUTURE": "Améliorations futures",
+    "CTA_TITLE": "Intéressé par ce projet ?",
+    "CTA_TEXT": "Découvrez d'autres projets ou contactez-moi pour des collaborations.",
+    "VIEW_ALL_PROJECTS": "Voir tous les projets",
+    "CONTACT_ME": "Me contacter",
+    "CHALLENGE": "Défi",
+    "SOLUTION": "Solution",
+    "PROJECT_INFO": "Infos sur le projet",
+    "ROLE": "Rôle",
+    "TIMELINE": "Durée",
+    "TEAM_SIZE": "Taille de l'équipe",
+    "YEAR": "Année",
+    "TECH_STACK": "Stack technologique",
+    "LINKS": "Liens",
+    "LIVE_WEBSITE": "Site en ligne ➡️",
+    "GO_TO_REPOSITORY": "Aller au dépôt ➡️",
     "NOT_FOUND": "Projet non trouvé 😞",
-    "IMG_ALT": "Image du projet : {{title}}",
+    "IMG_ALT": "Image du projet pour {{title}}",
     "AUTHOR_IMG_ALT": "Image du profil de {{name}}",
     "VIEW": "Voir le projet →",
     "DEMO": "Démo↗️",
@@ -58,9 +81,9 @@
   },
   "ABOUT": {
     "TITLE": "À propos",
-    "PAR_1": "Je suis un développeur Full-Stack junior spécialisé dans des applications web modernes et réactives construites avec Angular et TypeScript côté front-end, et Node.js + Express côté back-end. Je combine le développement d'UI orienté composants, SCSS et bonnes pratiques d'accessibilité avec des compétences solides en back-end (REST APIs et bases de données relationnelles/NoSQL) pour fournir des solutions propres, maintenables et performantes.",
-    "PAR_2": "Mon workflow repose sur TypeScript, Git, tests unitaires de base et containerisation (Docker). J'adore résoudre des problèmes et apprendre continuellement — j'apporte résilience, concentration et pragmatisme à chaque projet. En dehors du travail, je crée des projets personnels et participe à des meetups tech locaux pour apprendre et partager des connaissances.",
-    "PAR_3": "Voir mes projets sur",
+    "PAR_1": "Je suis un développeur Full-Stack junior spécialisé dans les applications web modernes et responsives, développées avec Angular et TypeScript sur le front-end et Node.js + Express sur le back-end. Je combine le développement UI basé sur les composants, SCSS et les bonnes pratiques d'accessibilité avec des compétences solides en back-end (REST APIs et bases de données relationnelles/NoSQL) pour fournir des solutions propres, maintenables et performantes.",
+    "PAR_2": "Mon workflow repose sur TypeScript, Git, des tests unitaires basiques et la containerisation (Docker). J'aime résoudre des problèmes et apprendre continuellement — j'apporte résilience, concentration et approche pratique à chaque projet. En dehors du travail, je développe des projets personnels et participe à des meetups tech locaux pour grandir et partager mes connaissances avec la communauté.",
+    "PAR_3": "Découvrez mes projets sur",
     "GITHUB": "GitHub"
   },
   "CONTACT": {
@@ -68,15 +91,15 @@
     "EMAIL": "samuele.deriu.dev@gmail.com",
     "LINKEDIN": "LinkedIn",
     "GITHUB": "GitHub",
-    "DOWNLOAD_CV": "Télécharger le CV",
-    "CV_EN": "CV Eng",
-    "CV_FR": "CV Fr",
+    "DOWNLOAD_CV": "Télécharger CV",
+    "CV_EN": "CV Anglais",
+    "CV_FR": "CV Français",
     "CV_EN_LABEL": "Télécharger le CV en anglais",
     "CV_FR_LABEL": "Télécharger le CV en français"
   },
   "FOOTER": {
     "NAME": "Samuele Deriu",
-    "SWISS_MADE": "Swiss Made",
+    "SWISS_MADE": "Swiss 👑 Made",
     "DEVELOPED_WITH": "Développé avec"
   }
 }
