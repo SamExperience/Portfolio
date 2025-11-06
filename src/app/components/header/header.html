@@ -26,18 +26,7 @@
   <!-- TOOLS -->
   <div class="header-component__tools">
     <app-language-selector [languages]="['en', 'it', 'fr']"></app-language-selector>
-
-    <label class="switch">
-      <input
-        type="checkbox"
-        (click)="onToggle()"
-        id="theme-toggle"
-        [attr.aria-pressed]="themeService.isDark()"
-        title="{{ 'HEADER.TOGGLE_THEME' | translate }}"
-      />
-      <span class="slider round" aria-hidden="true"></span>
-    </label>
-
+    <app-toggle-theme></app-toggle-theme>
     <app-menu-icon (click)="toggleMenu()"></app-menu-icon>
   </div>
 </div>

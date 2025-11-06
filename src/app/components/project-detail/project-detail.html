@@ -1,5 +1,6 @@
 <div *ngIf="project$ | async as project; else notFound" class="project">
-  <header class="project__header">
+  <!-- ===TOOLS-HEADER=== -->
+  <div class="tools-header">
     <a
       routerLink="/"
       class="project__btt-back"
@@ -7,7 +8,9 @@
     >
       ←
     </a>
-
+  </div>
+  <!-- ===HEADER=== -->
+  <header class="project__header">
     <div class="project__meta">
       <span class="project__category">{{ project?.category }}</span>
       <h1 class="project__title">{{ project?.title }}</h1>
@@ -51,8 +54,9 @@
       <figcaption class="sr-only">{{ project?.imgURL?.[0]?.title || '' }}</figcaption>
     </figure>
   </header>
-
+  <!-- ===PROJECT-LAYOUT=== -->
   <div class="project-layout">
+    <!-- ===ASIDE=== -->
     <aside class="aside" aria-label="{{ 'PROJECT.PROJECT_INFO' | translate }}">
       <div class="aside__info animate-on-scroll">
         <h2>{{ 'PROJECT.PROJECT_INFO' | translate }}</h2>
@@ -109,7 +113,7 @@
         </a>
       </div>
     </aside>
-
+    <!-- ===MAIN=== -->
     <main class="project-content">
       <section class="content-section animate-on-scroll">
         <h2>📝 {{ 'PROJECT.OVERVIEW' | translate }}</h2>
@@ -236,7 +240,7 @@
       </section>
     </main>
   </div>
-
+  <!-- ===FOOTER=== -->
   <app-footer></app-footer>
 </div>
 

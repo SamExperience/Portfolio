@@ -5,11 +5,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
-
+import { ToggleTheme } from '../toggle-theme/toggle-theme';
 import { Project } from '../../models/project';
 import { DataService } from '../../services/data-service';
 import { Footer } from '../footer/footer';
-
+import { ThemeService } from '../../services/theme-service';
 /**
  * Simple summary:
  * - Loads a project based on the route `id` and exposes it as `project$` for the template (use async pipe).
@@ -27,7 +27,7 @@ import { Footer } from '../footer/footer';
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [Footer, CommonModule, TranslateModule, RouterLink],
+  imports: [Footer, CommonModule, TranslateModule, RouterLink, ToggleTheme],
   templateUrl: './project-detail.html',
   styleUrls: ['./project-detail.scss'],
 })
@@ -58,7 +58,8 @@ export class ProjectDetail implements OnInit, OnDestroy {
     private dataService: DataService,
     private route: ActivatedRoute,
     private router: Router,
-    private hostRef: ElementRef<HTMLElement>
+    private hostRef: ElementRef<HTMLElement>,
+    private theme: ThemeService
   ) {}
 
   /**

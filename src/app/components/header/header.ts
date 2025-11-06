@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { MenuIconComponent } from '../menu-icon/menu-icon';
 import { CommonModule } from '@angular/common';
 import { MenuMobile } from '../menu-mobile/menu-mobile';
-import { ThemeService } from '../../services/theme-service';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageSelectorComponent } from '../language-selector/language-selector';
-
+import { ToggleTheme } from '../toggle-theme/toggle-theme';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -15,14 +14,13 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
     MenuMobile,
     TranslateModule,
     LanguageSelectorComponent,
+    ToggleTheme,
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
   isMenuOpen = false;
-
-  constructor(public themeService: ThemeService) {}
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
@@ -33,9 +31,5 @@ export class Header {
   handleCloseMenu(): void {
     this.isMenuOpen = false;
     document.body.classList.remove('menu-open');
-  }
-
-  onToggle() {
-    this.themeService.toggle();
   }
 }
