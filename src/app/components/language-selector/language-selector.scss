@@ -2,26 +2,37 @@
   position: relative;
   display: inline-block;
   font-family: 'Inter', sans-serif;
-
+  border: 0px;
   .lang-toggle {
     display: flex;
     align-items: center;
     gap: 6px;
     padding: 4px 8px;
-    border-radius: 6px;
-    background: #f8f9fa;
+    border-radius: 8px;
+    background: var(--bg-content);
+    color: var(--primary-color);
     cursor: pointer;
     font-weight: 500;
     font-size: 0.875rem;
     transition: background 0.2s, transform 0.2s;
+    border: 1px solid rgba(49, 49, 49, 0.171);
 
     &:hover {
-      background: #e9ecef;
+      background: var(--bg-button-hover);
     }
 
-    .flag svg {
+    .flag {
+      display: flex;
+      align-items: center;
       width: 20px;
-      height: 14px;
+      justify-content: center;
+      padding: 0px;
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+      }
+
       display: block;
     }
 
@@ -29,7 +40,7 @@
       font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
-      color: #495057;
+      color: var(--primary-color);
     }
 
     .arrow {
@@ -48,9 +59,10 @@
     top: calc(100% + 4px);
     right: 0;
     min-width: 120px;
-    background: #ffffff;
+    background: var(--bg-content);
+
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /*  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
     padding: 4px 0;
     list-style: none;
     margin: 0;
@@ -67,7 +79,7 @@
       text-align: left;
       cursor: pointer;
       font-size: 0.875rem;
-      color: #212529;
+      color: var(--primary-color);
       transition: background 0.15s;
 
       &:hover {

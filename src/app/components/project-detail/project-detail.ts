@@ -27,7 +27,7 @@ import { ThemeService } from '../../services/theme-service';
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [Footer, CommonModule, TranslateModule, RouterLink, ToggleTheme],
+  imports: [Footer, CommonModule, TranslateModule, RouterLink],
   templateUrl: './project-detail.html',
   styleUrls: ['./project-detail.scss'],
 })

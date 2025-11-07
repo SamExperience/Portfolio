@@ -6,8 +6,10 @@
     [attr.aria-expanded]="langOpen"
     aria-label="Language selector"
   >
-    <span class="flag" [innerHTML]="svgMap[currentLang]"></span>
-    <span class="code">{{ currentLang.toUpperCase() }}</span>
+    <span class="flag"
+      ><img [src]="'assets/images/SVG/' + currentLang + '.svg'" [alt]="getLangLabel(currentLang)"
+    /></span>
+    <!--  <span class="code">{{ currentLang.toUpperCase() }}</span> -->
 
     <span class="arrow" aria-hidden="true">▾</span>
   </button>
@@ -25,7 +27,13 @@
       [attr.aria-selected]="lang === currentLang"
     >
       <button class="lang-item" (click)="changeLanguage(lang, $event)">
-        <span class="flag" [innerHTML]="svgMap[lang]"></span>
+        <span class="flag"
+          ><img
+            [src]="'assets/images/SVG/' + lang + '.svg'"
+            [alt]="getLangLabel(lang)"
+            width="20"
+            height="14"
+        /></span>
         <span class="label">{{ lang.toUpperCase() }}</span>
       </button>
     </li>
