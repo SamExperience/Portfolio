@@ -10,6 +10,7 @@
   --text-tertiary: rgb(16, 86, 157); /* tertiary accent text */
   --title-color: rgb(0, 103, 205); /* main title color */
   --title-color-hover: rgb(73, 151, 230); /* title hover color */
+  --text-score: linear-gradient(-90deg, rgb(205, 92, 0), rgb(236, 177, 68));
 
   /* -------------------------
      Fonts
@@ -24,7 +25,7 @@
      Page backgrounds
      ------------------------- */
   --bg-background: rgb(255, 255, 255); /* page background color */
-  --bg-header: rgba(255, 255, 255, 0.4); /* header background */
+  --bg-header: rgba(255, 255, 255, 0.2); /* header background */
   --bg-hero: rgba(255, 255, 255, 0); /* hero section background */
   --bg-content: #ffffffac; /* content element background */
 
@@ -57,6 +58,7 @@
      Bullets & arrows
      ------------------------- */
   --bg-bullet: rgb(211, 211, 211); /* bullet background (light theme) */
+  --bg-bullet-hero: rgba(211, 211, 211, 0.75); /* bullet background (light theme) */
 
   --bg-arrow: rgba(211, 211, 211, 0.289); /* arrow background (scroll buttons) */
   --bg-arrow-hover: rgba(162, 162, 162, 0.505);
@@ -84,9 +86,9 @@
   --shadow-bullets: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(255, 255, 255, 0.25);
   --shadow-content: 0px 1px 2px 0px #55555549; /* content item shadow */
   --shadow-content-hover: 1px 1px 10px 0px rgba(118, 118, 118, 0.332);
-
+  --shadow-little-card: 0px 5px 15px 0px rgba(112, 134, 164, 0.2);
   --shadow-icon-hero: 0 0 1px 0 rgba(115, 115, 115, 0.525); /* hero icon shadow */
-
+  --shadow-cont-header: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.09);
   --shadow-btt-card: 0px 1px 2px 0px rgba(11, 14, 18, 0.486); /* card button shadow */
   --border-btt-card-hover: 1px solid rgba(20, 169, 255, 0.5);
   --border-content: 1px solid rgba(77, 77, 77, 0.147); /* content border */
@@ -112,6 +114,7 @@
   --text-tertiary: #10569d;
   --title-color: #0c77e2d5;
   --title-color-hover: #4997e6;
+  --text-score: linear-gradient(-90deg, rgb(205, 92, 0), rgb(236, 177, 68));
 
   /* -------------------------
      Fonts (kept global / same as light)
@@ -131,6 +134,7 @@
   --bg-header-project: linear-gradient(135deg, rgba(17, 17, 36, 0.779) 0%, rgb(24 24 27 / 1) 100%);
   --bg-tech-icons-1: rgba(255, 0, 0, 0.19);
   --bg-tech-icons-2: rgba(47, 0, 255, 0.17);
+  --bg-header: rgba(255, 255, 255, 0); /* header background */
 
   /* -------------------------
      Profile card backgrounds
@@ -162,6 +166,7 @@
   --bg-header: rgba(24, 24, 27, 0.5);
   --bg-hero: radial-gradient(circle, rgba(17, 17, 36, 0.779) 30%, rgb(24 24 27 / 1) 70%);
   --bg-content: rgb(33, 33, 38);
+  --bg-bullet-hero: rgba(211, 211, 211, 0.2); /* bullet background (light theme) */
 
   /* -------------------------
      Social icons (dark)
@@ -179,13 +184,14 @@
   --shadow-profile-hover: 0px 2px 13px 1px rgba(91, 187, 255, 0.699);
   --box-shadow-header: 0px 0px 2px rgba(20, 107, 221, 0.232);
   --shadow-profile-card: 0 16px 40px rgba(0, 103, 205, 0.12);
-  --shadow-content: 0px 0px 2px 1px #1f3e9449;
+  --shadow-content: 0px 0px 2px 1px rgba(31, 62, 148, 0.286);
   --shadow-content-hover: 0px 0px 15px 0px rgba(199, 199, 199, 0.23);
   --shadow-icon-hero: 0 0 1px 0 rgba(115, 115, 115, 0.525);
   --border-content: 1px solid rgba(0, 212, 255, 0.1);
   --border-profile-hover: 2px solid rgba(0, 103, 205, 0.12);
   --shadow-bullets: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 0 6px 0 rgba(255, 255, 255, 0.1);
-
+  --shadow-little-card: 0px 5px 15px 0px rgba(20, 107, 221, 0.2);
+  --shadow-cont-header: 0 0 10px 0 rgba(31, 62, 148, 0.286);
   /* -------------------------
      Sizes & layout (dark)
      ------------------------- */
