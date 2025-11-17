@@ -2,143 +2,112 @@
   {
     "id": 1,
     "title": "Personal Portfolio - Single Page Application",
-    "shortDescription": "Modern, responsive portfolio website built with Angular 20, showcasing full-stack development skills and design capabilities",
+    "shortDescription": "Modern and responsive portfolio site built with Angular 20, showcasing full-stack skills and design capabilities",
     "projectTags": ["Angular 20", "TypeScript", "SCSS", "RxJS", "Responsive Design", "SPA"],
     "category": "Web Development",
     "role": "Full-Stack Developer & Designer",
     "duration": "2 months",
     "year": 2024,
-    "teamSize": "Solo project",
+    "teamSize": "Individual project",
     "liveUrl": "https://samexperience.github.io/Portfolio",
     "githubUrl": "https://github.com/SamExperience/Portfolio",
-    "description": "Designed and developed a comprehensive Single Page Application portfolio website from scratch using Angular 20. The project demonstrates advanced frontend development skills, modern UI/UX design principles, and optimization techniques. Built with a mobile-first approach, the portfolio features smooth animations, dynamic content loading, and an intuitive navigation system. Implemented cutting-edge Angular features including Signals for reactive state management and standalone components for better modularity.",
-    "problemStatement": "As a developer seeking opportunities, I needed a professional platform to showcase my work that would stand out from generic portfolio templates. Generic solutions lacked the flexibility to highlight my unique skills and didn't perform well on mobile devices. Many existing portfolios were either overly complex or too simplistic, failing to demonstrate both technical capability and design sensibility.",
-    "objectif": [
-      "Create a professional online presence to showcase development skills and projects",
-      "Implement modern Angular 20 features (Signals, standalone components) for optimal performance",
-      "Design an intuitive, accessible, and visually appealing user interface",
-      "Achieve excellent performance scores (90+ on Lighthouse) and SEO optimization",
-      "Ensure full responsiveness across all devices and screen sizes",
-      "Demonstrate proficiency in frontend architecture and best practices"
-    ],
+
+    "personalData": {
+      "name": "Samuele Deriu",
+      "role": "IT Developer",
+      "urlImg": "assets/images/profile/SamueleDeriu.webp"
+    },
+
+    "description": "This project represents the creation of my personal portfolio as a Single Page Application built with Angular 20. The goal was to create a modern, high-performance, visually polished site that reflects my technical and design skills, going beyond pre-made templates. I wanted a smooth experience with responsive animations and a modular structure based on standalone components. The interface combines lightness, accessibility, and visual identity, ensuring high performance even on mobile devices. During development, I focused on every detail: from content planning to layout design, to optimizing resource and code loading. The result is a portfolio that not only showcases my projects but also serves as an example of good front-end design and development.",
+
+    "problemStatement": "Many developer portfolios look very similar, are not performant, or are not optimized for mobile. I wanted a solution that combined professionalism, flexibility, and coherent design, without relying on static templates or limited visual tools. This project was created to address this exact problem: building a custom, easily extensible, technically solid portfolio that highlights real Angular development skills and attention to UX.",
+
     "developmentProcess": [
       {
-        "phase": "Research & Planning",
-        "description": "Analyzed competitor portfolios, defined user personas (recruiters, fellow developers, clients), created wireframes in Figma, and established project requirements",
-        "duration": "1 week"
+        "phase": "Research and Planning",
+        "description": "Analysis of other developers' portfolios to identify strengths and areas for improvement. Definition of content structure and communication priorities.",
+        "duration": "about 2–3 days"
       },
       {
-        "phase": "Design System",
-        "description": "Established color palette with dark/light theme support, typography scale, spacing system, and reusable component library following atomic design principles",
-        "duration": "1 week"
+        "phase": "Design and Visual Setup",
+        "description": "Creation of the layout and visual style, balancing text and spacing. Iterative work improving the look during development, implementing light/dark theme support, consistent colors, and typography.",
+        "duration": "iterative"
       },
       {
         "phase": "Component Development",
-        "description": "Built Angular standalone components incrementally, implemented routing structure, integrated animations with Intersection Observer, and created responsive layouts",
-        "duration": "3 weeks"
+        "description": "Development of Angular standalone components and routing setup. Animations implemented with CSS keyframes. Distributed and interactive work throughout development.",
+        "duration": "iterative"
       },
       {
-        "phase": "Content & Optimization",
-        "description": "Created JSON-driven content architecture, optimized images (WebP conversion), implemented lazy loading, and fine-tuned CSS animations for 60fps performance",
-        "duration": "1 week"
+        "phase": "Content and Performance Optimization",
+        "description": "Image compression in WebP format, dependency management, chunk optimization, and content review to ensure high performance and fast loading times.",
+        "duration": "about 2 days"
       },
       {
-        "phase": "Testing & Deployment",
-        "description": "Conducted accessibility testing with NVDA and VoiceOver, performance optimization to achieve 95+ Lighthouse score, cross-browser testing, and GitHub Pages deployment with custom domain",
-        "duration": "2 weeks"
+        "phase": "Testing and Deployment",
+        "description": "Testing across multiple browsers and devices to ensure responsiveness and accessibility. Real-time checks during mobile-first development and final deployment on GitHub Pages with a custom domain.",
+        "duration": "about 1 day"
       }
     ],
-    "technicalDecisions": [
-      {
-        "question": "Why Angular 20 over React/Vue?",
-        "answer": "Chose Angular for its TypeScript-first approach, built-in dependency injection system, comprehensive CLI tooling, and strong opinionated structure that scales well for larger applications. The framework's maturity and enterprise-grade features made it ideal for demonstrating professional development practices."
-      },
-      {
-        "question": "Why Standalone Components?",
-        "answer": "Adopted standalone components to reduce boilerplate code, improve tree-shaking (achieved 15% smaller bundle size), simplify lazy loading configuration, and demonstrate knowledge of Angular's latest architectural patterns. This modern approach eliminates the need for NgModules in most cases."
-      },
-      {
-        "question": "Why SCSS over CSS-in-JS?",
-        "answer": "Selected SCSS for zero runtime overhead (styles compiled at build time), familiar syntax for team collaboration, powerful features like mixins and functions for maintainable code, and better performance compared to CSS-in-JS solutions that add JavaScript parsing costs."
-      },
-      {
-        "question": "Why JSON data store instead of backend API?",
-        "answer": "Implemented local JSON data source for faster development iteration, zero hosting costs, simplified deployment (no backend infrastructure), and instant page loads. This approach also demonstrates clean separation of concerns and makes future backend integration straightforward."
-      }
-    ],
+
     "features": [
       {
         "icon": "⚡",
-        "title": "Performance Optimized",
-        "description": "Lazy loading, code splitting, and optimized assets achieving 95+ Lighthouse score with sub-second load times. Route-based code splitting reduces initial bundle to 30KB."
+        "title": "Optimized Performance",
+        "description": "Lazy loading, code splitting, and optimized assets achieving 95+ on Lighthouse with loading times under one second. Route-based code splitting reduces the initial bundle to 30KB."
       },
       {
         "icon": "🎨",
-        "title": "Modern UI/UX Design",
-        "description": "Custom-designed interface with smooth animations, glassmorphism effects, and intuitive navigation patterns. Micro-interactions provide feedback at 60fps using CSS transforms."
+        "title": "Modern UI/UX",
+        "description": "Custom interface with smooth animations, glassmorphism effects, and intuitive navigation patterns. Micro-interactions at 60fps using CSS transformations."
       },
       {
         "icon": "📱",
         "title": "Fully Responsive",
-        "description": "Mobile-first approach with optimized layouts for smartphones (320px+), tablets, and desktop screens up to 4K. Breakpoints tested on 15+ device sizes."
+        "description": "Mobile-first approach with layouts optimized for smartphones (320px+), tablets, and desktops up to 4K. Breakpoints tested on over 15 devices."
       },
       {
         "icon": "🔧",
         "title": "Modular Architecture",
-        "description": "Component-based structure using Angular standalone components for maintainability and scalability. Clear separation of concerns with services, models, and presentation layers."
+        "description": "Component-based structure with Angular standalone components for maintainability and scalability. Clear separation between services, models, and presentation."
       },
       {
         "icon": "🎯",
         "title": "Dynamic Content",
-        "description": "JSON-driven project showcase with dynamic routing and smooth page transitions. Content updates require only JSON edits, no code changes."
+        "description": "JSON-based showcase with dynamic routing and smooth page transitions. Content updates only require JSON modifications."
       },
       {
         "icon": "♿",
         "title": "Accessibility First",
-        "description": "WCAG 2.1 AA compliant with semantic HTML5, proper ARIA labels, keyboard navigation support, and screen reader compatibility tested with NVDA and VoiceOver."
+        "description": "WCAG 2.1 AA compliance with semantic HTML5, proper ARIA labels, keyboard navigation support, and testing with NVDA and VoiceOver."
       }
     ],
-    "challenges": [
-      {
-        "problem": "Creating smooth scroll animations and transitions while maintaining 60fps performance across all devices, including lower-end mobile phones",
-        "solution": "Implemented CSS transforms and will-change properties for GPU acceleration. Used Intersection Observer API for efficient scroll-triggered animations instead of scroll event listeners. Achieved consistent 60fps performance even on lower-end devices by optimizing animation timing functions, reducing paint operations, and limiting simultaneous animations to 3 elements max."
-      }
-    ],
+
     "accessibility": [
-      "✅ WCAG 2.1 AA compliant (tested with axe DevTools and WAVE browser extension)",
-      "✅ Keyboard navigation support for all interactive elements with visible focus indicators"
+      "Verifiable WCAG 2.1 AA compliance (automatic reports available)",
+      "Full keyboard navigation with clearly visible focus indicators",
+      "Semantic structure and ARIA landmarks optimized for screen readers",
+      "Descriptive alt text on all images and accessible gallery"
     ],
-    "techUsed": [
-      {
-        "title": "Frontend Framework",
-        "names": [
-          "Angular 20",
-          "TypeScript 5.3",
-          "RxJS 7.8",
-          "Signals API",
-          "Standalone Components"
-        ]
-      }
+
+    "futureImprovements": [
+      "Develop a fixed mobile navigation menu on the main page",
+      "Enable fullscreen view for gallery images"
     ],
-    "heroImage": "/assets/images/projects/portfolio/hero-img.webp",
+
+    "heroImage": "assets/images/projects/portfolio/hero-img.webp",
     "imgURL": [
       {
-        "url": "/assets/images/projects/portfolio/card-img.webp",
-        "title": "Portfolio homepage hero section",
-        "altText": "Portfolio homepage featuring animated profile section with gradient background, project showcase cards, and responsive navigation menu"
+        "url": "assets/images/projects/portfolio/card-img.webp",
+        "title": "Hero section of the portfolio homepage",
+        "altText": "Portfolio homepage with animated profile section, gradient background, project cards, and responsive navigation menu"
       }
     ],
+
     "metrics": [
       { "value": "95+", "label": "Lighthouse Score" },
-      { "value": "0.9s", "label": "Initial Load Time" }
-    ],
-    "results": "Successfully deployed a production-ready portfolio website that effectively showcases development capabilities...",
-    "whatLearned": ["Mastered Angular 20's new Signal API..."],
-    "futureImprovements": ["Add headless CMS integration..."],
-    "personalData": {
-      "urlImg": "/assets/images/profile/SamueleDeriu.webp",
-      "name": "Samuele Deriu",
-      "role": "IT Developer"
-    }
+      { "value": "0.9s", "label": "Initial Load Time" },
+      { "value": "309KB", "label": "Bundle Size" }
+    ]
   }
 ]

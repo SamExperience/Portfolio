@@ -1,0 +1,55 @@
+node <<'NODE' > bundle-analysis.txt
+const fs = require('fs');
+const path = 'dist/portfolio/browser/stats.json';
+if (!fs.existsSync(path)) {
+  console.error('ERROR: stats.json non trovato in', path);
+  process.exit(1);
+}
+
+const s = JSON.parse(fs.readFileSync(path, 'utf8'));
+
+// Raccogli tutti i moduli
+let modules = [];
+if (Array.isArray(s.modules) && s.modules.length) {
+  modules = s.modules;
+} else if (Array.isArray(s.chunks) && s.chunks.length) {
+  s.chunks.forEach(c => {
+    if (Array.isArray(c.modules)) modules = modules.concat(c.modules);
+    if (Array.isArray(c.children)) c.children.forEach(ch => {
+      if (Array.isArray(ch.modules)) modules = modules.concat(ch.modules);
+    });
+  });
+} else if (Array.isArray(s.children)) {
+  s.children.forEach(child => {
+    if (Array.isArray(child.modules)) modules = modules.concat(child.modules);
+  });
+}
+
+// Filtra e normalizza
+modules = modules.filter(Boolean).map(m => ({
+  name: m.name || m.identifier || m.id || '<unknown>',
+  size: m.size || 0
+}));
+
+// Ordina decrescente
+modules.sort((a, b) => b.size - a.size);
+
+// Stampa TOP 40 moduli
+console.log('# TOP MODULES (prima 40) — SIZE KB\tMODULE_NAME');
+modules.slice(0, 40).forEach(m => console.log(`${(m.size / 1024).toFixed(1)} KB\t${m.name}`));
+
+// Aggrega per pacchetto
+const map = new Map();
+modules.forEach(m => {
+  const match = m.name.match(/node_modules\/(@?[^\/]+\/?[^\/]*)/);
+  const key = match ? match[1] : (m.name.startsWith('src/') ? 'app-src' : 'other');
+  map.set(key, (map.get(key) || 0) + m.size);
+});
+
+// Stampa TOP 40 pacchetti
+console.log('\n# TOP PACKAGES (aggregate) — SIZE KB\tPACKAGE_NAME');
+Array.from(map.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 40)
+  .forEach(([k, v]) => console.log(`${(v / 1024).toFixed(1)} KB\t${k}`));
+NODE

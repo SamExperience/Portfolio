@@ -26,4 +26,9 @@ export class ProjectCardComponent {
     const tree = this.router.createUrlTree(['/project', id]);
     return window.location.origin + this.router.serializeUrl(tree);
   }
+
+  navigateToProject(id?: number | string): void {
+    if (!id) return;
+    this.router.navigate(['/project', id]);
+  }
 }

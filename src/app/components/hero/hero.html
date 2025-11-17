@@ -1,8 +1,11 @@
-<div class="hero-content" aria-label="portfolio web site">
+<div class="hero-content" aria-labelledby="hero-heading" aria-label="portfolio web site">
   <!-- CARD PERSONAL PROFILE -->
   <div class="hero-content__profile">
     <div class="hero-content__avatar-wrapper">
       <img
+        width="80"
+        height="80"
+        fetchpriority="high"
         src="../../../assets/images/profile/SamueleDeriu.webp"
         alt="Samuele Deriu"
         class="hero-content__avatar"
@@ -19,6 +22,7 @@
           class="hero-content__icon"
           aria-hidden="true"
         >
+          <title>Profile Icon</title>
           <!-- SVG paths -->
         </svg>
       </div>
@@ -31,7 +35,7 @@
     class="hero-content__text"
     aria-label="The main text highlights :build smart and scalable web applications"
   >
-    <h1>
+    <h1 id="hero-heading">
       <span>{{ 'HERO.TEXT1' | translate }}</span>
       <span>{{ 'HERO.TEXT2' | translate }}</span>
       <span>{{ 'HERO.TEXT3' | translate }}</span>
@@ -40,9 +44,10 @@
 
   <!-- TECHNOLOGIES SHOW -->
   <div class="hero-content__tech" aria-label="some Technologies used">
-    <p class="hero-content__tech-title">{{ 'HERO.TECH_TITLE' | translate }}</p>
+    <h2 class="hero-content__tech-title">{{ 'HERO.TECH_TITLE' | translate }}</h2>
     <div class="icons-tech" role="region" aria-label="Scrollable technologies list">
       <div class="tech-icons" role="list">
+        <!-- JavaScript -->
         <a
           class="tech-icons__link"
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -51,9 +56,23 @@
           aria-label="JavaScript"
           role="listitem"
         >
-          <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/javascript-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/javascript-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/javascript-icon.webp"
+              alt="JavaScript icon"
+              class="tech-icons__img"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <span class="tech-icons__label">JavaScript</span>
         </a>
+
+        <!-- Node.js -->
         <a
           class="tech-icons__link"
           href="https://nodejs.org/"
@@ -62,9 +81,23 @@
           aria-label="Node.js"
           role="listitem"
         >
-          <i class="devicon-nodejs-plain colored" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/node-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/node-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/node-icon.webp"
+              alt="Node.js icon"
+              class="tech-icons__img"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <span class="tech-icons__label">Node.js</span>
         </a>
+
+        <!-- Angular -->
         <a
           class="tech-icons__link"
           href="https://angular.io/"
@@ -73,9 +106,23 @@
           aria-label="Angular"
           role="listitem"
         >
-          <i class="devicon-angularjs-plain colored" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/angular-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/angular-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/angular-icon.webp"
+              alt="Angular icon"
+              class="tech-icons__img"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <span class="tech-icons__label">Angular</span>
         </a>
+
+        <!-- React -->
         <a
           class="tech-icons__link"
           href="https://react.dev/"
@@ -84,20 +131,23 @@
           aria-label="React"
           role="listitem"
         >
-          <i class="devicon-react-original colored" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/react-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/react-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/react-icon.webp"
+              alt="React icon"
+              class="tech-icons__img"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <span class="tech-icons__label">React</span>
         </a>
-        <a
-          class="tech-icons__link"
-          href="https://www.mongodb.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="MongoDB"
-          role="listitem"
-        >
-          <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
-          <span class="tech-icons__label">MongoDB</span>
-        </a>
+
+        <!-- PostgreSQL -->
         <a
           class="tech-icons__link"
           href="https://www.postgresql.org/"
@@ -106,9 +156,48 @@
           aria-label="PostgreSQL"
           role="listitem"
         >
-          <i class="devicon-postgresql-plain colored" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/postgree-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/postgree-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/postgree-icon.webp"
+              alt="PostgreSQL icon"
+              class="tech-icons__img"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <span class="tech-icons__label">PostgreSQL</span>
         </a>
+
+        <!-- MongoDB -->
+        <a
+          class="tech-icons__link"
+          href="https://www.mongodb.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="MongoDB"
+          role="listitem"
+        >
+          <picture>
+            <source srcset="assets/images/SVG/optimized/mongo-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/mongo-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/mongo-icon.webp"
+              alt="MongoDB icon"
+              class="tech-icons__img"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <span class="tech-icons__label">MongoDB</span>
+        </a>
+
+        <!-- TypeScript -->
         <a
           class="tech-icons__link"
           href="https://www.typescriptlang.org/"
@@ -117,7 +206,19 @@
           aria-label="TypeScript"
           role="listitem"
         >
-          <i class="devicon-typescript-plain colored" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/typescript-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/typescript-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/typescript-icon.webp"
+              alt="TypeScript icon"
+              class="tech-icons__img"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <span class="tech-icons__label">TypeScript</span>
         </a>
       </div>

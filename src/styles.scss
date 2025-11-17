@@ -1,24 +1,40 @@
 @use 'app/styles/variables' as *;
+@use 'assets/fonts/fonts' as *;
 
-* {
-  margin: 0;
-  padding: 0;
+/* ========== Box model & resets=================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============ CSS custom properties=============== */
 :root {
-  /* ====breack-points for screen layout=== */
+  /* breakpoints (mobile-first) */
   --small: 576px;
   --medium: 768px;
   --large: 992px;
   --extra-large: 1200px;
 }
+
+/* ============= Document / root layout============== */
 html {
   width: 100%;
   height: 100%;
   overflow-x: hidden !important;
   scroll-behavior: smooth;
   background: var(--bg-background);
+  font-family: var(--font-primary);
 }
+
 body {
   width: 100%;
   max-width: 100%;
@@ -27,20 +43,8 @@ body {
   font-family: var(--font-secondary);
   color: var(--primary-color);
 }
-h2,
-h3,
-h4,
-h5 {
-  color: var(--title-color);
-}
 
-app-root {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
+/* ============= Headings and typographic defaults========= */
 h1,
 h2,
 h3,
@@ -49,8 +53,30 @@ span,
 div {
   -webkit-user-select: none;
   user-select: none;
-  /*  pointer-events: none; */ // blockclick
 }
+
+h2,
+h3,
+h4,
+h5 {
+  color: var(--title-color);
+}
+
+/* ===============  App root container============= */
+app-root {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ============== Touch / mobile helpers============ */
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* =========footer pre-allocation ========= */
+app-footer {
+  display: block;
+  min-height: var(--footer-height);
 }

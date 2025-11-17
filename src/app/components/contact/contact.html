@@ -5,15 +5,39 @@
     <!-- INFO -->
     <div class="contact__info" aria-labelledby="contact-title">
       <ul class="contact__list">
+        <!-- EMAIL -->
         <li>
-          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/email-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/email-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/email-icon.webp"
+              alt="Email icon"
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <a href="mailto:samuele.deriu.dev@gmail.com?subject=Contatto%20dal%20sito%20portfolio">
             {{ 'CONTACT.EMAIL' | translate }}
           </a>
         </li>
 
+        <!-- LINKEDIN -->
         <li>
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/linkedin-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/linkedin-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/linkedin-icon.webp"
+              alt="LinkedIn icon"
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <a
             href="https://www.linkedin.com/in/samuelederiu"
             target="_blank"
@@ -23,8 +47,20 @@
           </a>
         </li>
 
+        <!-- GITHUB -->
         <li>
-          <i class="fab fa-github" aria-hidden="true"></i>
+          <picture>
+            <source srcset="assets/images/SVG/optimized/github-icon.avif" type="image/avif" />
+            <source srcset="assets/images/SVG/optimized/github-icon.webp" type="image/webp" />
+            <img
+              src="assets/images/SVG/optimized/github-icon.webp"
+              alt="GitHub icon"
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <a href="https://github.com/SamExperience" target="_blank" rel="noopener noreferrer">
             {{ 'CONTACT.GITHUB' | translate }}
           </a>
@@ -35,23 +71,47 @@
         <h5>{{ 'CONTACT.DOWNLOAD_CV' | translate }}</h5>
 
         <div class="contact__actions-btt">
+          <!-- CV INGLESE -->
           <a
             href="assets/CV Samuele Deriu_eng.pdf"
             download
             class="cv-btn"
             aria-label="{{ 'CONTACT.CV_EN_LABEL' | translate }}"
           >
-            <img src="../../../assets/images/icons/icon_flag_uk.webp" alt="UK flag" />
+            <picture>
+              <source srcset="assets/images/SVG/optimized/en.avif" type="image/avif" />
+              <source srcset="assets/images/SVG/optimized/en.webp" type="image/webp" />
+              <img
+                src="assets/images/SVG/optimized/en.webp"
+                alt="UK flag"
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <span>{{ 'CONTACT.CV_EN' | translate }}</span>
           </a>
 
+          <!-- CV FRANCESE -->
           <a
             href="assets/CV Samuele Deriu_fr.pdf"
             download
             class="cv-btn"
             aria-label="{{ 'CONTACT.CV_FR_LABEL' | translate }}"
           >
-            <img src="../../../assets/images/icons/icon_flag_france.webp" alt="France flag" />
+            <picture>
+              <source srcset="assets/images/SVG/optimized/fr.avif" type="image/avif" />
+              <source srcset="assets/images/SVG/optimized/fr.webp" type="image/webp" />
+              <img
+                src="assets/images/SVG/optimized/fr.webp"
+                alt="France flag"
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <span>{{ 'CONTACT.CV_FR' | translate }}</span>
           </a>
         </div>

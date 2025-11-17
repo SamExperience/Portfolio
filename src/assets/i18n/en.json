@@ -2,26 +2,26 @@
   "HEADER": {
     "NAV": {
       "PROJECTS": "Projects",
-      "ABOUT": "About me",
+      "ABOUT": "About",
       "CONTACT": "Contact"
     },
-    "TOGGLE_THEME": "Toggle theme",
+    "TOGGLE_THEME": "Toggle Theme",
     "MENU": "Menu"
   },
   "MENU": {
     "MENU": "Menu",
     "PROJECTS": "Projects",
-    "ABOUT": "About me",
+    "ABOUT": "About",
     "CONTACT": "Contact",
-    "CLOSE": "Close menu"
+    "CLOSE": "Close Menu"
   },
   "HERO": {
-    "ARIA_LABEL": "portfolio web site",
+    "ARIA_LABEL": "portfolio website",
     "NAME": "Samuele Deriu",
     "ROLE": "IT Developer",
     "TEXT1": "Smart,",
     "TEXT2": "Scalable.",
-    "TEXT3": "Reliable web apps.",
+    "TEXT3": "Reliable web applications.",
     "TECH_TITLE": "Technologies behind the scenes"
   },
   "PROJECTS_SECTION": {
@@ -34,28 +34,28 @@
   },
   "PROJECT": {
     "OVERVIEW": "Overview",
-    "PROBLEM": "The Problem",
+    "PROBLEM": "Problem",
     "DESCRIPTION": "Description",
     "OBJECTIVES": "Objectives",
     "PROCESS": "Development Process",
     "FEATURES": "Key Features",
     "TECHNICAL_DECISIONS": "Key Technical Decisions",
-    "TECH_USED": "Technologies used",
+    "TECH_USED": "Technologies Used",
     "GALLERY": "Project Gallery",
     "CHALLENGES": "Challenges & Solutions",
     "ACCESSIBILITY": "Accessibility",
     "RESULTS": "Results & Impact",
     "LEARNED": "What I Learned",
-    "FUTURE": "Future Enhancements",
+    "FUTURE": "Future Improvements",
     "CTA_TITLE": "Interested in this project?",
-    "CTA_TEXT": "Explore more of my work or get in touch for collaborations.",
+    "CTA_TEXT": "Check out more of my work or contact me for collaborations.",
     "VIEW_ALL_PROJECTS": "View All Projects",
     "CONTACT_ME": "Contact Me",
     "CHALLENGE": "Challenge",
     "SOLUTION": "Solution",
-    "PROJECT_INFO": "Project Info",
+    "PROJECT_INFO": "Project Information",
     "ROLE": "Role",
-    "TIMELINE": "Timeline",
+    "TIMELINE": "Duration",
     "TEAM_SIZE": "Team Size",
     "YEAR": "Year",
     "TECH_STACK": "Tech Stack",
@@ -64,26 +64,26 @@
     "GO_TO_REPOSITORY": "Go to Repository",
     "NOT_FOUND": "Project not found 😞",
     "IMG_ALT": "Project image for {{title}}",
-    "AUTHOR_IMG_ALT": "Profile image of {{name}}",
-    "VIEW": "View project →",
+    "AUTHOR_IMG_ALT": "{{name}}'s profile image",
+    "VIEW": "View Project →",
     "DEMO": "Demo↗️",
     "REPO": "Repo🔗",
     "CARD": {
-      "LABEL": "Project card",
-      "VIEW": "View project →",
+      "LABEL": "Project Card",
+      "VIEW": "View Project →",
       "DEMO": "Demo↗️",
       "REPO": "Repo🔗"
     },
     "FOOTER": {
       "SWISS": "Swiss 👑 Made",
-      "ANGULAR": "Developed with Angular 20"
+      "ANGULAR": "Built with Angular 20"
     }
   },
   "ABOUT": {
     "TITLE": "About",
-    "PAR_1": "I'm a Junior Full-Stack Developer specializing in modern, responsive web applications built with Angular and TypeScript on the front end, and Node.js + Express on the back end. I combine component-driven UI development, SCSS and accessibility best practices with solid backend skills (REST APIs and relational/NoSQL databases) to deliver clean, maintainable and high-performing solutions.",
-    "PAR_2": "My workflow relies on TypeScript, Git, basic unit testing and containerization (Docker). I love solving problems and learning continuously — I bring resilience, focus and a practical delivery mindset to every project. Outside of work I build personal projects and attend local tech meetups to grow and share knowledge with the community.",
-    "PAR_3": "See my projects on",
+    "PAR_1": "I am a Junior Full-Stack Developer specialized in modern, responsive web applications built with Angular and TypeScript on the front-end and Node.js + Express on the back-end. I combine component-based UI development, SCSS, and accessibility best practices with solid back-end skills (REST APIs and relational/NoSQL databases) to deliver clean, maintainable, and high-performance solutions.",
+    "PAR_2": "My workflow is based on TypeScript, Git, basic unit testing, and containerization (Docker). I enjoy problem-solving and continuous learning — bringing resilience, focus, and a practical approach to delivering every project. Outside work, I develop personal projects and attend local tech meetups to grow and share knowledge within the community.",
+    "PAR_3": "Check out my projects on",
     "GITHUB": "GitHub"
   },
   "CONTACT": {
@@ -92,14 +92,14 @@
     "LINKEDIN": "LinkedIn",
     "GITHUB": "GitHub",
     "DOWNLOAD_CV": "Download CV",
-    "CV_EN": "CV Eng",
-    "CV_FR": "CV Fr",
+    "CV_EN": "English CV",
+    "CV_FR": "French CV",
     "CV_EN_LABEL": "Download CV in English",
     "CV_FR_LABEL": "Download CV in French"
   },
   "FOOTER": {
     "NAME": "Samuele Deriu",
     "SWISS_MADE": "Swiss 👑 Made",
-    "DEVELOPED_WITH": "Developed with"
+    "DEVELOPED_WITH": "Built with"
   }
 }

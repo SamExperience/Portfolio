@@ -1,9 +1,11 @@
-<ng-container *ngIf="timerSkeleton; else content"
-  ><ng-container *ngTemplateOutlet="skeletonTemplate"></ng-container
-></ng-container>
+<ng-container *ngIf="!project$; else content">
+  <ng-container aria-busy="true" role="status">
+    <ng-container *ngTemplateOutlet="skeletonTemplate"></ng-container>
+  </ng-container>
+</ng-container>
 
 <ng-template #content>
-  <div *ngIf="project$ | async as project; else notFound" class="project">
+  <div *ngIf="project$ | async as project" class="project" [attr.aria-busy]="timerSkeleton">
     <!-- ===TOOLS-HEADER=== -->
     <div class="tools-header">
       <a
@@ -56,15 +58,54 @@
 
         <!-- hero image -->
         <figure class="project__hero" *ngIf="hasHero(project)">
-          <img
-            width="1200"
-            height="675"
-            style="aspect-ratio: 16/9; width: 100%; height: auto"
-            id="img-hero"
-            fetchpriority="high"
-            [src]="project?.heroImage || project?.imgURL?.[0]?.url || 'assets/images/default-img.png'"
-            [alt]="project?.imgURL?.[0]?.altText || project?.title || 'Project image'"
-          />
+          <picture>
+            <!-- desktop large -->
+            <source
+              media="(min-width: 1200px)"
+              srcset="
+                assets/images/projects/portfolio/hero-large.webp   1920w,
+                assets/images/projects/portfolio/hero-desktop.webp 1280w
+              "
+              type="image/webp"
+            />
+            <!-- desktop / laptop -->
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                assets/images/projects/portfolio/hero-desktop.webp 1280w,
+                assets/images/projects/portfolio/hero-tablet.webp   768w
+              "
+              type="image/webp"
+            />
+            <!-- tablet / mobile large -->
+            <source
+              media="(min-width: 480px)"
+              srcset="
+                assets/images/projects/portfolio/hero-tablet.webp 768w,
+                assets/images/projects/portfolio/hero-mobile.webp 480w
+              "
+              type="image/webp"
+            />
+            <!-- fallback / mobile -->
+            <img
+              id="img-hero"
+              src="assets/images/projects/portfolio/hero-mobile.webp"
+              srcset="
+                assets/images/projects/portfolio/hero-mobile.webp   480w,
+                assets/images/projects/portfolio/hero-tablet.webp   768w,
+                assets/images/projects/portfolio/hero-desktop.webp 1280w,
+                assets/images/projects/portfolio/hero-large.webp   1920w
+              "
+              sizes="(min-width:1200px) 1920px, (min-width:768px) 1280px, (min-width:480px) 768px, 100vw"
+              alt="{{ project?.imgURL?.[0]?.altText || project?.title || 'Project image' }}"
+              width="1920"
+              height="1080"
+              fetchpriority="high"
+              decoding="async"
+              loading="eager"
+            />
+          </picture>
+
           <figcaption class="sr-only">{{ project?.imgURL?.[0]?.title || '' }}</figcaption>
         </figure>
       </div>
@@ -151,7 +192,9 @@
             <li *ngFor="let phase of project?.developmentProcess" class="process-item">
               <h3>{{ phase?.phase }}</h3>
               <p>{{ phase?.description }}</p>
-              <span class="process-duration" *ngIf="phase?.duration">{{ phase?.duration }}</span>
+              <span class="process-duration" *ngIf="phase?.duration != ''">{{
+                phase?.duration
+              }}</span>
             </li>
           </ol>
         </section>
@@ -189,10 +232,6 @@
 
   <!-- ===FOOTER=== -->
   <app-footer></app-footer>
-</ng-template>
-
-<ng-template #notFound>
-  <p role="status" aria-live="polite">{{ 'PROJECT.NOT_FOUND' | translate }}</p>
 </ng-template>
 
 <ng-template #skeletonTemplate>

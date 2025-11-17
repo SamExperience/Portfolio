@@ -12,38 +12,43 @@
     "liveUrl": "https://samexperience.github.io/Portfolio",
     "githubUrl": "https://github.com/SamExperience/Portfolio",
 
-    "description": "Questo progetto rappresenta la realizzazione del mio portfolio personale come Single Page Application costruita con Angular 20. L’obiettivo era creare un sito moderno, performante e visivamente curato che potesse riflettere le mie competenze tecniche e di design, andando oltre i template preconfezionati. Ho voluto un’esperienza fluida, con animazioni reattive e una struttura modulare basata su componenti standalone. L’interfaccia combina leggerezza, accessibilità e identità visiva, garantendo performance elevate anche su dispositivi mobili. Durante lo sviluppo ho curato ogni dettaglio: dalla pianificazione dei contenuti alla progettazione del layout, fino all’ottimizzazione del caricamento delle risorse e del codice. Il risultato è un portfolio che non solo racconta i miei progetti, ma rappresenta esso stesso un esempio di buon design e sviluppo front-end.",
+    "personalData": {
+      "name": "Samuele Deriu",
+      "role": "Sviluppatore IT",
+      "urlImg": "assets/images/profile/SamueleDeriu.webp"
+    },
+
+    "description": "Questo progetto rappresenta la realizzazione del mio portfolio personale come Single Page Application costruita con Angular 20. L'obiettivo era creare un sito moderno, performante e visivamente curato che potesse riflettere le mie competenze tecniche e di design, andando oltre i template preconfezionati. Ho voluto un'esperienza fluida, con animazioni reattive e una struttura modulare basata su componenti standalone. L'interfaccia combina leggerezza, accessibilità e identità visiva, garantendo performance elevate anche su dispositivi mobili. Durante lo sviluppo ho curato ogni dettaglio: dalla pianificazione dei contenuti alla progettazione del layout, fino all'ottimizzazione del caricamento delle risorse e del codice. Il risultato è un portfolio che non solo racconta i miei progetti, ma rappresenta esso stesso un esempio di buon design e sviluppo front-end.",
 
     "problemStatement": "Molti portfolio di sviluppatori risultano troppo simili, poco performanti o non ottimizzati per dispositivi mobili. Cercavo una soluzione che unisse professionalità, flessibilità e design coerente, senza dipendere da template statici o strumenti visivi limitanti. Questo progetto nasce per risolvere proprio quel problema: costruire da zero un portfolio personalizzato, facilmente estendibile e tecnicamente solido, che potesse valorizzare competenze reali di sviluppo Angular e attenzione alla UX.",
 
     "developmentProcess": [
       {
         "phase": "Ricerca e pianificazione",
-        "description": "Analisi dei portfolio di altri sviluppatori per identificare punti di forza e aree di miglioramento. Definizione della struttura dei contenuti e delle priorità comunicative per valorizzare al meglio le competenze tecniche e il messaggio visivo.",
-        "duration": "1 settimana"
+        "description": "Analisi dei portfolio di altri sviluppatori per identificare punti di forza e aree di miglioramento. Definizione della struttura dei contenuti e delle priorità comunicative.",
+        "duration": "circa 2–3 giorni"
       },
       {
         "phase": "Design e impostazione visiva",
-        "description": "Definizione dell’impostazione grafica e del layout direttamente in fase di sviluppo, con attenzione all’equilibrio tra testo, spazi e ritmo visivo. Implementazione della logica per il supporto tema chiaro/scuro e scelta coerente di colori e tipografia per rafforzare l’identità visiva.",
-        "duration": "1 settimana"
+        "description": "Creazione del layout e dello stile visivo, con attenzione a equilibrio tra testo e spazi. Lavoro iterativo migliorando l'aspetto durante lo sviluppo e implementando supporto tema chiaro/scuro, colori e tipografia coerenti.",
+        "duration": "iterativa"
       },
       {
         "phase": "Sviluppo componenti",
-        "description": "Creazione dei componenti standalone Angular e definizione della struttura di routing. Sviluppo dei layout responsive e integrazione delle animazioni basate su Intersection Observer per una navigazione fluida e moderna.",
-        "duration": "3 settimane"
+        "description": "Realizzazione dei componenti Angular standalone e definizione del routing. Implementazione delle animazioni tramite keyframe CSS. Lavoro distribuito e interattivo durante tutto lo sviluppo.",
+        "duration": "iterativa"
       },
       {
         "phase": "Ottimizzazione contenuti e performance",
-        "description": "Ottimizzazione delle immagini in formato WebP e implementazione del lazy loading. Revisione delle animazioni e della struttura dei contenuti per garantire performance elevate e caricamenti rapidi su ogni dispositivo.",
-        "duration": "1 settimana"
+        "description": "Compressione immagini in formato WebP, gestione dipendenze, ottimizzazione dei chunk e revisione dei contenuti per garantire performance elevate e caricamenti rapidi.",
+        "duration": "circa 2 giorni"
       },
       {
         "phase": "Test e deploy",
-        "description": "Test su diversi browser e dispositivi per verificare responsività e accessibilità. Ottimizzazione finale delle performance e pubblicazione del sito tramite GitHub Pages con dominio personalizzato.",
-        "duration": "1 settimana"
+        "description": "Verifica su diversi browser e dispositivi per garantire responsività e accessibilità. Controlli in tempo reale durante lo sviluppo mobile-first e pubblicazione finale su GitHub Pages con dominio personalizzato.",
+        "duration": "circa 1 giorno"
       }
     ],
-
     "features": [
       {
         "icon": "⚡",
@@ -81,16 +86,18 @@
       "Conformità verificabile a WCAG 2.1 AA (report automatici disponibili)",
       "Navigazione completa via tastiera con indicatori di focus chiaramente visibili",
       "Struttura semantica e landmark ARIA ottimizzata per screen reader",
-      "Testo alternativo descrittivo su tutte le immagini e galleria accessibile",
-      "Contrasto colori verificato (rapporti ≥ 4.5:1) per leggibilità su tutte le view"
+      "Testo alternativo descrittivo su tutte le immagini e galleria accessibile"
     ],
 
-    "futureImprovements": ["Integrare CMS headless..."],
+    "futureImprovements": [
+      "sviluppare un menu di navigazione per mobile fisso nella pagina principale",
+      "possibilità di aprire le immagini dela gallery a schermo intero"
+    ],
 
-    "heroImage": "/assets/images/projects/portfolio/hero-img.webp",
+    "heroImage": "assets/images/projects/portfolio/hero-img.webp",
     "imgURL": [
       {
-        "url": "/assets/images/projects/portfolio/card-img.webp",
+        "url": "assets/images/projects/portfolio/card-img.webp",
         "title": "Sezione hero della homepage del portfolio",
         "altText": "Homepage del portfolio con sezione profilo animata, sfondo a gradiente, card dei progetti e menu di navigazione responsive"
       }
@@ -98,7 +105,8 @@
 
     "metrics": [
       { "value": "95+", "label": "Lighthouse Score" },
-      { "value": "0.9s", "label": "Tempo di caricamento iniziale" }
+      { "value": "0.9s", "label": "Tempo di caricamento iniziale" },
+      { "value": "309KB", "label": "Bundle size" }
     ]
   }
 ]

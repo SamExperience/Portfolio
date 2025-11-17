@@ -1,9 +1,20 @@
 import { Routes } from '@angular/router';
-import { Portfolio } from './components/portfolio/portfolio';
-import { ProjectDetail } from './components/project-detail/project-detail';
 
 export const routes: Routes = [
-  { path: '', component: Portfolio, title: 'Samuele Deriu - Portfolio' },
-  { path: 'project/:id', component: ProjectDetail, title: 'Samuele Deriu - Portfolio' },
-  { path: '**', redirectTo: '' },
+  {
+    path: '',
+    loadComponent: () => import('./components/portfolio/portfolio').then((m) => m.Portfolio),
+    title: 'Samuele Deriu - Portfolio',
+  },
+  {
+    path: 'project/:id',
+    loadComponent: () =>
+      import('./components/project-detail/project-detail').then((m) => m.ProjectDetail),
+    title: 'Samuele Deriu - Project Details',
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
