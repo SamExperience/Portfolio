@@ -1,0 +1,243 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio personale - Single Page Application",
+    "shortDescription": "Sito portfolio moderno e responsive costruito con Angular 20, che mostra competenze full-stack e capacità di design",
+    "projectTags": ["Angular 20", "TypeScript", "SCSS", "RxJS", "Responsive Design", "SPA"],
+    "category": "Sviluppo Web",
+    "role": "Sviluppatore Full-Stack & Designer",
+    "duration": "2 mesi",
+    "year": 2024,
+    "teamSize": "Progetto individuale",
+    "liveUrl": "https://samexperience.github.io/Portfolio",
+    "githubUrl": "https://github.com/SamExperience/Portfolio",
+
+    "personalData": {
+      "name": "Samuele Deriu",
+      "role": "Sviluppatore IT",
+      "urlImg": "assets/images/profile/SamueleDeriu.webp"
+    },
+
+    "description": "Questo progetto rappresenta la realizzazione del mio portfolio personale come Single Page Application costruita con Angular 20. L'obiettivo era creare un sito moderno, performante e visivamente curato che potesse riflettere le mie competenze tecniche e di design, andando oltre i template preconfezionati. Ho voluto un'esperienza fluida, con animazioni reattive e una struttura modulare basata su componenti standalone. L'interfaccia combina leggerezza, accessibilità e identità visiva, garantendo performance elevate anche su dispositivi mobili. Durante lo sviluppo ho curato ogni dettaglio: dalla pianificazione dei contenuti alla progettazione del layout, fino all'ottimizzazione del caricamento delle risorse e del codice. Il risultato è un portfolio che non solo racconta i miei progetti, ma rappresenta esso stesso un esempio di buon design e sviluppo front-end.",
+
+    "problemStatement": "Molti portfolio di sviluppatori risultano troppo simili, poco performanti o non ottimizzati per dispositivi mobili. Cercavo una soluzione che unisse professionalità, flessibilità e design coerente, senza dipendere da template statici o strumenti visivi limitanti. Questo progetto nasce per risolvere proprio quel problema: costruire da zero un portfolio personalizzato, facilmente estendibile e tecnicamente solido, che potesse valorizzare competenze reali di sviluppo Angular e attenzione alla UX.",
+
+    "developmentProcess": [
+      {
+        "phase": "Ricerca e pianificazione",
+        "description": "Analisi dei portfolio di altri sviluppatori per identificare punti di forza e aree di miglioramento. Definizione della struttura dei contenuti e delle priorità comunicative.",
+        "duration": "circa 2–3 giorni"
+      },
+      {
+        "phase": "Design e impostazione visiva",
+        "description": "Creazione del layout e dello stile visivo, con attenzione a equilibrio tra testo e spazi. Lavoro iterativo migliorando l'aspetto durante lo sviluppo e implementando supporto tema chiaro/scuro, colori e tipografia coerenti.",
+        "duration": "iterativa"
+      },
+      {
+        "phase": "Sviluppo componenti",
+        "description": "Realizzazione dei componenti Angular standalone e definizione del routing. Implementazione delle animazioni tramite keyframe CSS. Lavoro distribuito e interattivo durante tutto lo sviluppo.",
+        "duration": "iterativa"
+      },
+      {
+        "phase": "Ottimizzazione contenuti e performance",
+        "description": "Compressione immagini in formato WebP, gestione dipendenze, ottimizzazione dei chunk e revisione dei contenuti per garantire performance elevate e caricamenti rapidi.",
+        "duration": "circa 2 giorni"
+      },
+      {
+        "phase": "Test e deploy",
+        "description": "Verifica su diversi browser e dispositivi per garantire responsività e accessibilità. Controlli in tempo reale durante lo sviluppo mobile-first e pubblicazione finale su GitHub Pages con dominio personalizzato.",
+        "duration": "circa 1 giorno"
+      }
+    ],
+    "features": [
+      {
+        "icon": "⚡",
+        "title": "Prestazioni ottimizzate",
+        "description": "Lazy loading, code splitting e asset ottimizzati che raggiungono 95+ su Lighthouse con tempi di caricamento sotto il secondo. Il code splitting per route riduce il bundle iniziale a 30KB."
+      },
+      {
+        "icon": "🎨",
+        "title": "UI/UX moderna",
+        "description": "Interfaccia personalizzata con animazioni fluide, effetti glassmorphism e pattern di navigazione intuitivi. Micro-interazioni a 60fps usando trasformazioni CSS."
+      },
+      {
+        "icon": "📱",
+        "title": "Totalmente responsive",
+        "description": "Approccio mobile-first con layout ottimizzati per smartphone (320px+), tablet e desktop fino a 4K. Breakpoint testati su oltre 15 dispositivi."
+      },
+      {
+        "icon": "🔧",
+        "title": "Architettura modulare",
+        "description": "Struttura component-based con componenti standalone Angular per manutenibilità e scalabilità. Chiara separazione tra servizi, modelli e presentazione."
+      },
+      {
+        "icon": "🎯",
+        "title": "Contenuti dinamici",
+        "description": "Showcase basato su JSON con routing dinamico e transizioni fluide tra le pagine. Gli aggiornamenti dei contenuti richiedono solo modifiche al JSON."
+      },
+      {
+        "icon": "♿",
+        "title": "Accessibilità al primo posto",
+        "description": "Conformità WCAG 2.1 AA con HTML5 semantico, etichette ARIA appropriate, supporto alla navigazione da tastiera e test con NVDA e VoiceOver."
+      }
+    ],
+
+    "accessibility": [
+      "Conformità verificabile a WCAG 2.1 AA (report automatici disponibili)",
+      "Navigazione completa via tastiera con indicatori di focus chiaramente visibili",
+      "Struttura semantica e landmark ARIA ottimizzata per screen reader",
+      "Testo alternativo descrittivo su tutte le immagini e galleria accessibile"
+    ],
+
+    "futureImprovements": [
+      "sviluppare un menu di navigazione per mobile fisso nella pagina principale",
+      "possibilità di aprire le immagini della gallery a schermo intero"
+    ],
+
+    "heroImage": "assets/images/projects/portfolio/hero-img.webp",
+
+    "imgURL": [
+      {
+        "type": "image",
+        "title": "Test 1",
+        "altText": "Test 1 screenshot",
+        "url": "assets/images/projects/portfolio/gallery/1-test-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/1-test-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/1-test-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/1-test-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/1-test-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/1-test-mobile.webp 480w, assets/images/projects/portfolio/gallery/1-test-tablet.webp 768w, assets/images/projects/portfolio/gallery/1-test-desktop.webp 1280w, assets/images/projects/portfolio/gallery/1-test-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/1-test.png"
+      },
+      {
+        "type": "image",
+        "title": "Test 2",
+        "altText": "Test 2 screenshot",
+        "url": "assets/images/projects/portfolio/gallery/2-test-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/2-test-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/2-test-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/2-test-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/2-test-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/2-test-mobile.webp 480w, assets/images/projects/portfolio/gallery/2-test-tablet.webp 768w, assets/images/projects/portfolio/gallery/2-test-desktop.webp 1280w, assets/images/projects/portfolio/gallery/2-test-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/2-test.png"
+      },
+      {
+        "type": "image",
+        "title": "Home page — desktop",
+        "altText": "Homepage desktop screenshot",
+        "url": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/home-page-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/home-page-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/home-page-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/home-page-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/home-page-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/home-page-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/home-page-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Home page — mobile",
+        "altText": "Homepage mobile screenshot",
+        "url": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/home-page-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/home-page-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/home-page-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/home-page-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/home-page-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/home-page-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/home-page-mobile.png"
+      },
+      {
+        "type": "image",
+        "title": "Info section — desktop",
+        "altText": "Info section desktop screenshot",
+        "url": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/info-section-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/info-section-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/info-section-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/info-section-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/info-section-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/info-section-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/info-section-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Info section — mobile",
+        "altText": "Info section mobile screenshot",
+        "url": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/info-section-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/info-section-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/info-section-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/info-section-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/info-section-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/info-section-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/info-section-mobile.png"
+      },
+      {
+        "type": "image",
+        "title": "Project detail — part 3",
+        "altText": "Project detail part 3 screenshot",
+        "url": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/project-detail-part-3-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/project-detail-part-3-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/project-detail-part-3-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp 480w, assets/images/projects/portfolio/gallery/project-detail-part-3-tablet.webp 768w, assets/images/projects/portfolio/gallery/project-detail-part-3-desktop.webp 1280w, assets/images/projects/portfolio/gallery/project-detail-part-3-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/project-detail-part-3.png"
+      },
+      {
+        "type": "video",
+        "title": "Project detail demo",
+        "altText": "Demo video",
+        "url": "assets/images/projects/portfolio/gallery/project-detail-video.mp4",
+        "poster": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp"
+      },
+      {
+        "type": "image",
+        "title": "Projects section — desktop",
+        "altText": "Projects section desktop screenshot",
+        "url": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/projects-section-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/projects-section-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/projects-section-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/projects-section-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/projects-section-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/projects-section-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/projects-section-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Projects section — mobile",
+        "altText": "Projects section mobile screenshot",
+        "url": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/projects-section-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/projects-section-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/projects-section-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/projects-section-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/projects-section-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/projects-section-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/projects-section-mobile.png"
+      }
+    ],
+
+    "metrics": [
+      { "value": "95+", "label": "Lighthouse Score" },
+      { "value": "0.9s", "label": "Tempo di caricamento iniziale" },
+      { "value": "309KB", "label": "Bundle size" }
+    ],
+    "results": "",
+    "whatLearned": []
+  }
+]

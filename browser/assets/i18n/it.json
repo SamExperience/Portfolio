@@ -1,0 +1,105 @@
+{
+  "HEADER": {
+    "NAV": {
+      "PROJECTS": "Progetti",
+      "ABOUT": "Chi sono",
+      "CONTACT": "Contatti"
+    },
+    "TOGGLE_THEME": "Cambia tema",
+    "MENU": "Menu"
+  },
+  "MENU": {
+    "MENU": "Menu",
+    "PROJECTS": "Progetti",
+    "ABOUT": "Chi sono",
+    "CONTACT": "Contatti",
+    "CLOSE": "Chiudi menu"
+  },
+  "HERO": {
+    "ARIA_LABEL": "sito web portfolio",
+    "NAME": "Samuele Deriu",
+    "ROLE": "Sviluppatore IT",
+    "TEXT1": "Intelligente,",
+    "TEXT2": "Scalabile.",
+    "TEXT3": "Applicazioni web affidabili.",
+    "TECH_TITLE": "Tecnologie dietro le quinte"
+  },
+  "PROJECTS_SECTION": {
+    "TITLE": "Progetti",
+    "LOADING": "Caricamento"
+  },
+  "PROJECTS": {
+    "TITLE": "Progetti",
+    "LOADING": "Caricamento"
+  },
+  "PROJECT": {
+    "OVERVIEW": "Panoramica",
+    "PROBLEM": "Il problema",
+    "DESCRIPTION": "Descrizione",
+    "OBJECTIVES": "Obiettivi",
+    "PROCESS": "Processo di sviluppo",
+    "FEATURES": "Caratteristiche principali",
+    "TECHNICAL_DECISIONS": "Decisioni tecniche chiave",
+    "TECH_USED": "Tecnologie utilizzate",
+    "GALLERY": "Galleria del progetto",
+    "CHALLENGES": "Sfide e soluzioni",
+    "ACCESSIBILITY": "Accessibilità",
+    "RESULTS": "Risultati e impatto",
+    "LEARNED": "Cosa ho imparato",
+    "FUTURE": "Miglioramenti futuri",
+    "CTA_TITLE": "Interessato a questo progetto?",
+    "CTA_TEXT": "Scopri altri miei lavori o contattami per collaborazioni.",
+    "VIEW_ALL_PROJECTS": "Vedi tutti i progetti",
+    "CONTACT_ME": "Contattami",
+    "CHALLENGE": "Sfida",
+    "SOLUTION": "Soluzione",
+    "PROJECT_INFO": "Informazioni sul progetto",
+    "ROLE": "Ruolo",
+    "TIMELINE": "Durata",
+    "TEAM_SIZE": "Dimensione del team",
+    "YEAR": "Anno",
+    "TECH_STACK": "Stack tecnologico",
+    "LINKS": "Link",
+    "LIVE_WEBSITE": "Sito Live",
+    "GO_TO_REPOSITORY": "Vai al repository ",
+    "NOT_FOUND": "Progetto non trovato 😞",
+    "IMG_ALT": "Immagine del progetto per {{title}}",
+    "AUTHOR_IMG_ALT": "Immagine del profilo di {{name}}",
+    "VIEW": "Visualizza progetto →",
+    "DEMO": "Demo↗️",
+    "REPO": "Repo🔗",
+    "CARD": {
+      "LABEL": "Scheda progetto",
+      "VIEW": "Visualizza progetto →",
+      "DEMO": "Demo↗️",
+      "REPO": "Repo🔗"
+    },
+    "FOOTER": {
+      "SWISS": "Swiss 👑 Made",
+      "ANGULAR": "Sviluppato con Angular 20"
+    }
+  },
+  "ABOUT": {
+    "TITLE": "Chi sono",
+    "PAR_1": "Sono un Junior Full-Stack Developer specializzato in applicazioni web moderne e responsive, sviluppate con Angular e TypeScript sul front-end e Node.js + Express sul back-end. Combino sviluppo UI basato su componenti, SCSS e best practice di accessibilità con solide competenze back-end (REST API e database relazionali/NoSQL) per fornire soluzioni pulite, manutenibili e ad alte prestazioni.",
+    "PAR_2": "Il mio flusso di lavoro si basa su TypeScript, Git, testing unitario di base e containerizzazione (Docker). Amo risolvere problemi e imparare continuamente — porto resilienza, concentrazione e un approccio pratico alla consegna di ogni progetto. Fuori dal lavoro sviluppo progetti personali e partecipo a meetup tech locali per crescere e condividere conoscenze con la community.",
+    "PAR_3": "Guarda i miei progetti su",
+    "GITHUB": "GitHub"
+  },
+  "CONTACT": {
+    "TITLE": "Contatti",
+    "EMAIL": "samuele.deriu.dev@gmail.com",
+    "LINKEDIN": "LinkedIn",
+    "GITHUB": "GitHub",
+    "DOWNLOAD_CV": "Scarica CV",
+    "CV_EN": "CV Inglese",
+    "CV_FR": "CV Francese",
+    "CV_EN_LABEL": "Scarica CV in inglese",
+    "CV_FR_LABEL": "Scarica CV in francese"
+  },
+  "FOOTER": {
+    "NAME": "Samuele Deriu",
+    "SWISS_MADE": "Swiss 👑 Made",
+    "DEVELOPED_WITH": "Sviluppato con"
+  }
+}
