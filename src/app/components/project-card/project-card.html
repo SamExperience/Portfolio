@@ -1,5 +1,6 @@
 <div
   (click)="navigateToProject(project?.id)"
+  role="link"
   class="card"
   [attr.aria-label]="('PROJECT.CARD.LABEL' | translate) + ': ' + (project?.title || '')"
 >
@@ -8,10 +9,10 @@
     <img
       [src]="project?.imgURL?.[0]?.url || 'assets/images/projects/portfolio/card-img.webp'"
       [srcset]="
-        'assets/images/projects/portfolio/hero-mobile.webp 480w,
-       assets/images/projects/portfolio/hero-tablet.webp 768w,
-       assets/images/projects/portfolio/hero-desktop.webp 1280w,
-       assets/images/projects/portfolio/hero-large.webp 1920w'
+        'assets/images/projects/portfolio/card-img.webp 480w,
+       assets/images/projects/portfolio/card-img.webp 768w,
+       assets/images/projects/portfolio/card-img.webp 1280w,
+       assets/images/projects/portfolio/card-img.webp 1920w'
       "
       sizes="(max-width: 480px) 480px,
            (max-width: 768px) 768px,

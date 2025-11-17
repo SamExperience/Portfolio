@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Portfolio personnel - Single Page Application",
-    "shortDescription": "Site portfolio moderne et responsive construit avec Angular 20, montrant des compétences full-stack et des capacités de design",
+    "title": "Portfolio personnel - Application à page unique",
+    "shortDescription": "Site portfolio moderne et responsive construit avec Angular 20, présentant des compétences full-stack et des capacités de design",
     "projectTags": ["Angular 20", "TypeScript", "SCSS", "RxJS", "Responsive Design", "SPA"],
     "category": "Développement Web",
     "role": "Développeur Full-Stack & Designer",
@@ -11,45 +11,40 @@
     "teamSize": "Projet individuel",
     "liveUrl": "https://samexperience.github.io/Portfolio",
     "githubUrl": "https://github.com/SamExperience/Portfolio",
-
     "personalData": {
       "name": "Samuele Deriu",
       "role": "Développeur IT",
       "urlImg": "assets/images/profile/SamueleDeriu.webp"
     },
-
-    "description": "Ce projet représente la réalisation de mon portfolio personnel en tant que Single Page Application construite avec Angular 20. L'objectif était de créer un site moderne, performant et visuellement soigné qui reflète mes compétences techniques et de design, allant au-delà des templates préfabriqués. J'ai voulu une expérience fluide, avec des animations réactives et une structure modulaire basée sur des composants standalone. L'interface combine légèreté, accessibilité et identité visuelle, garantissant de hautes performances même sur mobile. Pendant le développement, j'ai pris soin de chaque détail : de la planification du contenu à la conception du layout, jusqu'à l'optimisation du chargement des ressources et du code. Le résultat est un portfolio qui non seulement présente mes projets, mais constitue lui-même un exemple de bon design et développement front-end.",
-
-    "problemStatement": "Beaucoup de portfolios de développeurs se ressemblent trop, sont peu performants ou non optimisés pour les mobiles. Je cherchais une solution alliant professionnalisme, flexibilité et design cohérent, sans dépendre de templates statiques ou d'outils limités. Ce projet vise précisément à résoudre ce problème : construire un portfolio personnalisé, extensible et techniquement solide, qui mette en valeur de réelles compétences Angular et une attention particulière à l'UX.",
-
+    "description": "Ce projet représente la réalisation de mon portfolio personnel en tant qu'application à page unique construite avec Angular 20. L'objectif était de créer un site moderne, performant et esthétiquement soigné reflétant mes compétences techniques et de design, au-delà des modèles préfabriqués. J'ai voulu une expérience fluide, avec des animations réactives et une structure modulaire basée sur des composants autonomes. L'interface combine légèreté, accessibilité et identité visuelle, garantissant de hautes performances même sur mobile. Pendant le développement, j'ai soigné chaque détail : de la planification du contenu à la conception de la mise en page, en passant par l'optimisation du chargement des ressources et du code. Le résultat est un portfolio qui non seulement présente mes projets, mais constitue lui-même un exemple de bon design et développement front-end.",
+    "problemStatement": "Beaucoup de portfolios de développeurs se ressemblent trop, sont peu performants ou non optimisés pour le mobile. Je cherchais une solution alliant professionnalisme, flexibilité et design cohérent, sans dépendre de modèles statiques ou d'outils limités. Ce projet a été créé pour résoudre ce problème : construire un portfolio personnalisé, facilement extensible et techniquement solide, mettant en valeur des compétences réelles en développement Angular et une attention particulière à l'UX.",
     "developmentProcess": [
       {
         "phase": "Recherche et planification",
-        "description": "Analyse des portfolios d'autres développeurs pour identifier points forts et axes d'amélioration. Définition de la structure des contenus et des priorités de communication.",
+        "description": "Analyse des portfolios d'autres développeurs pour identifier les points forts et les axes d'amélioration. Définition de la structure du contenu et des priorités de communication.",
         "duration": "environ 2–3 jours"
       },
       {
-        "phase": "Design et mise en page",
-        "description": "Création du layout et du style visuel, en équilibrant texte et espaces. Travail itératif améliorant l'apparence pendant le développement, avec support thème clair/sombre, couleurs et typographie cohérentes.",
-        "duration": "itératif"
+        "phase": "Design et mise en place visuelle",
+        "description": "Création de la mise en page et du style visuel, avec attention à l'équilibre texte/espaces. Travail itératif pour améliorer l'apparence et implémentation du support des thèmes clair/sombre, couleurs et typographie cohérentes.",
+        "duration": "itérative"
       },
       {
         "phase": "Développement des composants",
-        "description": "Réalisation des composants Angular standalone et définition du routing. Animations réalisées avec keyframes CSS. Travail distribué et interactif tout au long du développement.",
-        "duration": "itératif"
+        "description": "Réalisation des composants Angular autonomes et définition du routage. Implémentation des animations via des keyframes CSS. Travail interactif et distribué pendant tout le développement.",
+        "duration": "itérative"
       },
       {
-        "phase": "Optimisation du contenu et performance",
-        "description": "Compression des images au format WebP, gestion des dépendances, optimisation des chunks et révision des contenus pour garantir des performances élevées et des temps de chargement rapides.",
+        "phase": "Optimisation du contenu et des performances",
+        "description": "Compression des images au format WebP, gestion des dépendances, optimisation des chunks et révision du contenu pour garantir de hautes performances et un chargement rapide.",
         "duration": "environ 2 jours"
       },
       {
         "phase": "Tests et déploiement",
-        "description": "Vérification sur différents navigateurs et dispositifs pour garantir responsivité et accessibilité. Contrôles en temps réel pendant le développement mobile-first et publication finale sur GitHub Pages avec domaine personnalisé.",
+        "description": "Vérification sur différents navigateurs et appareils pour assurer la responsivité et l'accessibilité. Contrôles en temps réel pendant le développement mobile-first et publication finale sur GitHub Pages avec domaine personnalisé.",
         "duration": "environ 1 jour"
       }
     ],
-
     "features": [
       {
         "icon": "⚡",
@@ -59,55 +54,181 @@
       {
         "icon": "🎨",
         "title": "UI/UX moderne",
-        "description": "Interface personnalisée avec animations fluides, effets glassmorphism et patterns de navigation intuitifs. Micro-interactions à 60fps utilisant des transformations CSS."
+        "description": "Interface personnalisée avec animations fluides, effets glassmorphism et navigation intuitive. Micro-interactions à 60fps utilisant des transformations CSS."
       },
       {
         "icon": "📱",
         "title": "Totalement responsive",
-        "description": "Approche mobile-first avec layouts optimisés pour smartphone (320px+), tablette et desktop jusqu'à 4K. Points de rupture testés sur plus de 15 appareils."
+        "description": "Approche mobile-first avec des layouts optimisés pour smartphones (320px+), tablettes et desktops jusqu'à 4K. Points de rupture testés sur plus de 15 appareils."
       },
       {
         "icon": "🔧",
         "title": "Architecture modulaire",
-        "description": "Structure basée sur des composants standalone Angular pour maintenabilité et scalabilité. Séparation claire entre services, modèles et présentation."
+        "description": "Structure component-based avec composants Angular autonomes pour la maintenabilité et la scalabilité. Séparation claire entre services, modèles et présentation."
       },
       {
         "icon": "🎯",
-        "title": "Contenus dynamiques",
-        "description": "Showcase basé sur JSON avec routing dynamique et transitions fluides entre les pages. Les mises à jour de contenu nécessitent uniquement des modifications du JSON."
+        "title": "Contenu dynamique",
+        "description": "Showcase basé sur JSON avec routage dynamique et transitions fluides entre les pages. Les mises à jour du contenu nécessitent uniquement des modifications du JSON."
       },
       {
         "icon": "♿",
         "title": "Accessibilité prioritaire",
-        "description": "Conformité WCAG 2.1 AA avec HTML5 sémantique, étiquettes ARIA appropriées, support de navigation au clavier et tests avec NVDA et VoiceOver."
+        "description": "Conformité WCAG 2.1 AA avec HTML5 sémantique, labels ARIA appropriés, navigation clavier supportée et tests avec NVDA et VoiceOver."
       }
     ],
-
     "accessibility": [
-      "Conformité vérifiable à WCAG 2.1 AA (rapports automatiques disponibles)",
+      "Conformité WCAG 2.1 AA vérifiable (rapports automatiques disponibles)",
       "Navigation complète au clavier avec indicateurs de focus clairement visibles",
       "Structure sémantique et landmarks ARIA optimisés pour les lecteurs d'écran",
       "Texte alternatif descriptif sur toutes les images et galerie accessible"
     ],
-
     "futureImprovements": [
-      "Développer un menu de navigation fixe pour mobile sur la page principale",
-      "Possibilité d'afficher les images de la galerie en plein écran"
+      "Développer un menu de navigation mobile fixe sur la page principale",
+      "Possibilité d'ouvrir les images de la galerie en plein écran"
     ],
-
     "heroImage": "assets/images/projects/portfolio/hero-img.webp",
     "imgURL": [
       {
-        "url": "assets/images/projects/portfolio/card-img.webp",
-        "title": "Section hero de la page d'accueil du portfolio",
-        "altText": "Page d'accueil du portfolio avec section profil animée, fond en gradient, cartes projets et menu de navigation responsive"
+        "type": "image",
+        "title": "Test 1",
+        "altText": "Capture d'écran Test 1",
+        "url": "assets/images/projects/portfolio/gallery/1-test-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/1-test-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/1-test-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/1-test-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/1-test-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/1-test-mobile.webp 480w, assets/images/projects/portfolio/gallery/1-test-tablet.webp 768w, assets/images/projects/portfolio/gallery/1-test-desktop.webp 1280w, assets/images/projects/portfolio/gallery/1-test-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/1-test.png"
+      },
+      {
+        "type": "image",
+        "title": "Test 2",
+        "altText": "Capture d'écran Test 2",
+        "url": "assets/images/projects/portfolio/gallery/2-test-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/2-test-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/2-test-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/2-test-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/2-test-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/2-test-mobile.webp 480w, assets/images/projects/portfolio/gallery/2-test-tablet.webp 768w, assets/images/projects/portfolio/gallery/2-test-desktop.webp 1280w, assets/images/projects/portfolio/gallery/2-test-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/2-test.png"
+      },
+      {
+        "type": "image",
+        "title": "Page d'accueil — desktop",
+        "altText": "Capture d'écran page d'accueil desktop",
+        "url": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/home-page-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/home-page-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/home-page-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/home-page-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/home-page-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/home-page-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/home-page-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Page d'accueil — mobile",
+        "altText": "Capture d'écran page d'accueil mobile",
+        "url": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/home-page-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/home-page-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/home-page-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/home-page-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/home-page-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/home-page-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/home-page-mobile.png"
+      },
+      {
+        "type": "image",
+        "title": "Section infos — desktop",
+        "altText": "Capture d'écran section infos desktop",
+        "url": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/info-section-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/info-section-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/info-section-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/info-section-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/info-section-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/info-section-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/info-section-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Section infos — mobile",
+        "altText": "Capture d'écran section infos mobile",
+        "url": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/info-section-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/info-section-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/info-section-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/info-section-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/info-section-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/info-section-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/info-section-mobile.png"
+      },
+      {
+        "type": "image",
+        "title": "Détails projet — partie 3",
+        "altText": "Capture d'écran détails projet partie 3",
+        "url": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/project-detail-part-3-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/project-detail-part-3-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/project-detail-part-3-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp 480w, assets/images/projects/portfolio/gallery/project-detail-part-3-tablet.webp 768w, assets/images/projects/portfolio/gallery/project-detail-part-3-desktop.webp 1280w, assets/images/projects/portfolio/gallery/project-detail-part-3-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/project-detail-part-3.png"
+      },
+      {
+        "type": "video",
+        "title": "Démo détails projet",
+        "altText": "Vidéo démo",
+        "url": "assets/images/projects/portfolio/gallery/project-detail-video.mp4",
+        "poster": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp"
+      },
+      {
+        "type": "image",
+        "title": "Section projets — desktop",
+        "altText": "Capture d'écran section projets desktop",
+        "url": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/projects-section-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/projects-section-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/projects-section-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/projects-section-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/projects-section-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/projects-section-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/projects-section-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Section projets — mobile",
+        "altText": "Capture d'écran section projets mobile",
+        "url": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/projects-section-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/projects-section-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/projects-section-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/projects-section-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/projects-section-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/projects-section-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/projects-section-mobile.png"
       }
     ],
-
     "metrics": [
       { "value": "95+", "label": "Score Lighthouse" },
       { "value": "0.9s", "label": "Temps de chargement initial" },
       { "value": "309KB", "label": "Taille du bundle" }
-    ]
+    ],
+    "results": "",
+    "whatLearned": []
   }
 ]

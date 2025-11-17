@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ɵEmptyOutletComponent } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { Observable, of, Subject } from 'rxjs';
-import { catchError, finalize, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { Project } from '../../models/project';
 import { DataService } from '../../services/data-service';
 import { Footer } from '../footer/footer';
@@ -13,27 +13,30 @@ import { ThemeService } from '../../services/theme-service';
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [Footer, CommonModule, TranslateModule, RouterLink, ɵEmptyOutletComponent],
+  imports: [Footer, CommonModule, TranslateModule, RouterLink],
   templateUrl: './project-detail.html',
   styleUrls: ['./project-detail.scss'],
 })
 export class ProjectDetail implements OnInit, OnDestroy {
-  // Observable of the loaded project. Template uses async pipe.
+  /** Observable stream of the current project data */
   project$!: Observable<Project | null>;
 
-  // skeleton visibility flag and timer ref
-  timerSkeleton = true;
-  private tmpTemplate: ReturnType<typeof setTimeout> | null = null;
+  /** Controls skeleton loader visibility */
+  showSkeleton = true;
 
-  // UI flags
-  loading = true;
+  /** Indicates if the requested project was not found (404) */
   notFound = false;
+
+  /** Indicates if a server error occurred during data fetching */
   serverError = false;
 
-  // IntersectionObserver instance (single, reusable)
+  /** Timer reference for skeleton hide delay */
+  private skeletonTimer: ReturnType<typeof setTimeout> | null = null;
+
+  /** IntersectionObserver instance for scroll animations */
   private observer: IntersectionObserver | null = null;
 
-  // Subject to teardown any internal kickoff subscription
+  /** Subject to handle component cleanup and unsubscribe from observables */
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -43,8 +46,10 @@ export class ProjectDetail implements OnInit, OnDestroy {
     private theme: ThemeService
   ) {}
 
-  // Creates the IntersectionObserver (only once).
-  // Adds '.is-visible' to observed elements when they intersect.
+  /**
+   * Initializes IntersectionObserver if not already created.
+   * Adds 'is-visible' class to elements when they enter the viewport.
+   */
   private createObserverIfNeeded(): void {
     if (this.observer) return;
 
@@ -57,131 +62,133 @@ export class ProjectDetail implements OnInit, OnDestroy {
           }
         });
       },
-      { threshold: 0.15 }
+      {
+        threshold: 0,
+        rootMargin: '50px',
+      }
     );
   }
 
-  // Observes elements with the .animate-on-scroll class inside this component.
+  /**
+   * Observes all elements with '.animate-on-scroll' class for scroll animations.
+   * Retries if elements are not yet rendered in the DOM.
+   */
   private observeElements(): void {
     this.createObserverIfNeeded();
 
-    // small timeout to ensure DOM nodes are rendered
     setTimeout(() => {
       if (!this.observer) return;
       const root = this.hostRef.nativeElement;
       const elements = root.querySelectorAll<HTMLElement>('.animate-on-scroll');
-      elements.forEach((el) => this.observer!.observe(el));
-    }, 0);
+
+      console.log('🔍 Found elements:', elements.length);
+
+      if (elements.length === 0) {
+        console.warn('⚠️ No .animate-on-scroll elements found! Retrying...');
+        setTimeout(() => this.observeElements(), 200);
+        return;
+      }
+
+      elements.forEach((el) => {
+        this.observer!.observe(el);
+      });
+    }, 100);
   }
 
+  /** Clears the skeleton timer if it exists */
+  private clearSkeletonTimer(): void {
+    if (this.skeletonTimer) {
+      clearTimeout(this.skeletonTimer);
+      this.skeletonTimer = null;
+    }
+  }
+
+  /**
+   * Hides the skeleton loader after a specified delay.
+   * @param delayMs Delay in milliseconds before hiding (default: 1000ms)
+   */
+  private hideSkeletonWithDelay(delayMs: number = 1000): void {
+    this.clearSkeletonTimer();
+    this.skeletonTimer = setTimeout(() => {
+      this.showSkeleton = false;
+      this.skeletonTimer = null;
+    }, delayMs);
+  }
+
+  /**
+   * Initializes the component and sets up the reactive data pipeline.
+   * Handles route parameter changes, data loading, error states, and UI updates.
+   */
   ngOnInit(): void {
-    // Build the reactive pipeline that loads the project based on the route id.
-    // The pipeline:
-    //  - resets UI flags on each route change
-    //  - loads data via dataService.getProjectByID
-    //  - handles errors with catchError
-    //  - triggers observeElements() when project is present
-    //  - finalizes by hiding the skeleton after a short delay
     this.project$ = this.route.paramMap.pipe(
       tap(() => {
-        // reset UI flags for a fresh load
-        this.loading = true;
+        this.showSkeleton = true;
         this.notFound = false;
         this.serverError = false;
-
-        // ensure skeleton visible at start
-        this.timerSkeleton = true;
-
-        // clear any previous timer
-        if (this.tmpTemplate) {
-          clearTimeout(this.tmpTemplate);
-          this.tmpTemplate = null;
-        }
+        this.clearSkeletonTimer();
       }),
-      switchMap((params) => {
+      switchMap((params): Observable<Project | null> => {
         const idParam = params.get('id');
         const id = idParam ? Number(idParam) : NaN;
 
         if (!idParam || Number.isNaN(id)) {
-          // invalid id — mark notFound and return null observable
           this.notFound = true;
-          this.loading = false;
+          this.showSkeleton = false;
           return of(null);
         }
 
         return this.dataService.getProjectByID(id).pipe(
-          catchError((err) => {
-            // treat any error as serverError and return null
-            this.loading = false;
-            this.serverError = true;
+          map((project): Project | null => project ?? null),
+          catchError((err): Observable<Project | null> => {
             console.error('Failed to load project', err);
+            this.serverError = true;
+            this.showSkeleton = false;
             return of(null);
           }),
-          tap((proj) => {
-            this.loading = false;
-            if (proj) {
-              // project loaded -> setup scroll animations
+          tap((project) => {
+            if (project) {
               this.observeElements();
+              this.hideSkeletonWithDelay(1000);
             } else {
-              // no project returned
               this.notFound = true;
+              this.showSkeleton = false;
             }
-          }),
-          map((proj) => proj ?? null)
+          })
         );
       }),
-      // ensure single HTTP execution and cached result for multiple subscribers
-      shareReplay(1),
-      // finalize always runs when the inner observable completes (success/error)
-      finalize(() => {
-        // ensure any previous timer cleared
-        if (this.tmpTemplate) {
-          clearTimeout(this.tmpTemplate);
-          this.tmpTemplate = null;
-        }
-
-        // small delay so skeleton transition is smooth (adjust ms if needed)
-        this.tmpTemplate = setTimeout(() => {
-          this.timerSkeleton = false;
-          this.tmpTemplate = null;
-        }, 300);
-      })
+      shareReplay(1)
     );
 
-    // Kickoff subscription: ensures the observable pipeline runs even while the skeleton is shown.
-    // The kickoff subscription is torn down in ngOnDestroy via takeUntil(this.destroy$).
-    this.project$.pipe(takeUntil(this.destroy$)).subscribe({
-      next: () => {
-        // side-effects handled within the pipeline (tap)
-      },
-      error: () => {
-        // errors handled inside the pipeline
-      },
-    });
+    this.project$.pipe(takeUntil(this.destroy$)).subscribe();
   }
 
+  /**
+   * Cleanup lifecycle hook.
+   * Disconnects observer, clears timers, and completes observables.
+   */
   ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
       this.observer = null;
     }
-
-    if (this.tmpTemplate) {
-      clearTimeout(this.tmpTemplate);
-      this.tmpTemplate = null;
-    }
-
-    // teardown kickoff subscription
+    this.clearSkeletonTimer();
     this.destroy$.next();
     this.destroy$.complete();
   }
 
-  // trackBy used in ngFor loops
+  /**
+   * TrackBy function for ngFor optimization.
+   * @returns Unique identifier for each item
+   */
   trackByFn(index: number, item: any): string | number {
     return item?.id ?? item?.url ?? index;
   }
 
-  // returns true if the project has a hero image
+  /**
+   * Checks if the project has a hero image to display.
+   * @param project The project to check
+   * @returns True if hero image exists
+   */
   hasHero(project: Project | null): boolean {
     return !!project && (!!project.heroImage || (project.imgURL?.length ?? 0) > 0);
   }

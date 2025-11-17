@@ -101,8 +101,9 @@
   --height-100vh: 100vh;
 
   --footer-height: 56px;
-}
 
+  --theme-invert: invert(0);
+}
 /* =========================
    Dark theme
    Mirror the same logical groups as :root for easy comparison
@@ -200,4 +201,6 @@
   --height-header: 66px;
   --width-header: 100%;
   --height-100vh: 100vh;
+
+  --theme-invert: invert(1);
 }

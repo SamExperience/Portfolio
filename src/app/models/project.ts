@@ -44,10 +44,30 @@ export interface Project {
 
   techUsed?: Array<{ title: string; names: string[] }>;
 
+  /**
+   * Updated gallery structure:
+   * supports images and video elements.
+   */
   imgURL?: Array<{
-    url: string;
+    url: string; // image or video URL
     title: string;
     altText?: string;
+
+    // NEW: identify if it's an image or a video
+    type?: 'image' | 'video';
+
+    // NEW: responsive images (optional)
+    srcset?: {
+      mobile?: string;
+      tablet?: string;
+      desktop?: string;
+      large?: string;
+      all?: string;
+    };
+
+    // NEW: video-specific fields (optional)
+    poster?: string;
+    captionsUrl?: string;
   }>;
 
   metrics?: Array<{

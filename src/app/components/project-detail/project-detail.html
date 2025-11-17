@@ -1,237 +1,326 @@
-<ng-container *ngIf="!project$; else content">
-  <ng-container aria-busy="true" role="status">
+<ng-container *ngIf="showSkeleton && !serverError && !notFound; else content">
+  <div class="skeleton-container" role="status" aria-busy="true" aria-live="polite">
     <ng-container *ngTemplateOutlet="skeletonTemplate"></ng-container>
-  </ng-container>
+  </div>
 </ng-container>
 
 <ng-template #content>
-  <div *ngIf="project$ | async as project" class="project" [attr.aria-busy]="timerSkeleton">
-    <!-- ===TOOLS-HEADER=== -->
-    <div class="tools-header">
-      <a
-        routerLink="/"
-        class="project__btt-back"
-        aria-label="{{ 'PROJECT.BACK_TO_LIST' | translate }}"
-      >
-        ←
+  <ng-container *ngIf="project$ | async as project; else errorState">
+    <div class="project">
+      <!-- ===TOOLS-HEADER=== -->
+      <div class="tools-header">
+        <a
+          routerLink="/"
+          class="project__btt-back"
+          aria-label="{{ 'PROJECT.BACK_TO_LIST' | translate }}"
+        >
+          ←
+        </a>
+      </div>
+
+      <!-- ===HEADER=== -->
+      <header class="project__header">
+        <div class="header-wrap-grid">
+          <div class="project__meta">
+            <!-- category  -->
+            <span class="project__category">{{ project?.category }}</span>
+            <!-- title -->
+            <h1 class="project__title">{{ project?.title }}</h1>
+            <!-- litle description -->
+            <p class="project__short-description">{{ project?.shortDescription }}</p>
+            <!-- link to demo or repo -->
+            <div class="project__links" role="group" aria-label="{{ 'PROJECT.LINKS' | translate }}">
+              <a
+                *ngIf="project?.liveUrl"
+                class="btt__header btt-primary"
+                [href]="project.liveUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ 'PROJECT.LIVE_WEBSITE' | translate }}
+              </a>
+              <a
+                *ngIf="project?.githubUrl"
+                class="btt__header btt-secondary"
+                [href]="project.githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ 'PROJECT.GO_TO_REPOSITORY' | translate }}
+              </a>
+            </div>
+            <!-- tech bullets -->
+            <div class="project__bullets">
+              <ul aria-label="{{ 'PROJECT.TECH_STACK' | translate }}">
+                <li *ngFor="let tag of project?.projectTags">{{ tag }}</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- hero image -->
+          <figure class="project__hero" *ngIf="hasHero(project)">
+            <picture>
+              <!-- desktop large -->
+              <source
+                media="(min-width: 1200px)"
+                srcset="
+                  assets/images/projects/portfolio/hero-large.webp   1920w,
+                  assets/images/projects/portfolio/hero-desktop.webp 1280w
+                "
+                type="image/webp"
+              />
+              <!-- desktop / laptop -->
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  assets/images/projects/portfolio/hero-desktop.webp 1280w,
+                  assets/images/projects/portfolio/hero-tablet.webp   768w
+                "
+                type="image/webp"
+              />
+              <!-- tablet / mobile large -->
+              <source
+                media="(min-width: 480px)"
+                srcset="
+                  assets/images/projects/portfolio/hero-tablet.webp 768w,
+                  assets/images/projects/portfolio/hero-mobile.webp 480w
+                "
+                type="image/webp"
+              />
+              <!-- fallback / mobile -->
+              <img
+                id="img-hero"
+                src="assets/images/projects/portfolio/hero-mobile.webp"
+                srcset="
+                  assets/images/projects/portfolio/hero-mobile.webp   480w,
+                  assets/images/projects/portfolio/hero-tablet.webp   768w,
+                  assets/images/projects/portfolio/hero-desktop.webp 1280w,
+                  assets/images/projects/portfolio/hero-large.webp   1920w
+                "
+                sizes="(min-width:1200px) 1920px, (min-width:768px) 1280px, (min-width:480px) 768px, 100vw"
+                alt="{{ project?.imgURL?.[0]?.altText || project?.title || 'Project image' }}"
+                width="1920"
+                height="1080"
+                fetchpriority="high"
+                decoding="async"
+                loading="eager"
+              />
+            </picture>
+
+            <figcaption class="sr-only">{{ project?.imgURL?.[0]?.title || '' }}</figcaption>
+          </figure>
+        </div>
+
+        <!-- info - role etc.. -->
+        <div class="project_info">
+          <dl>
+            <div class="info-container" role="group">
+              <dt>{{ 'PROJECT.ROLE' | translate }}</dt>
+              <dd>{{ project?.role }}</dd>
+            </div>
+            <div class="info-container" role="group">
+              <dt>{{ 'PROJECT.TIMELINE' | translate }}</dt>
+              <dd>{{ project?.duration }}</dd>
+            </div>
+            <div class="info-container" role="group">
+              <dt>{{ 'PROJECT.TEAM_SIZE' | translate }}</dt>
+              <dd>{{ project?.teamSize }}</dd>
+            </div>
+            <div class="info-container" role="group">
+              <dt>{{ 'PROJECT.YEAR' | translate }}</dt>
+              <dd>{{ project?.year }}</dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <!-- ===PROJECT-LAYOUT=== -->
+      <div class="project-layout">
+        <!-- ===MAIN=== -->
+        <main class="project-content">
+          <!-- description -->
+          <section class="content-section animate-on-scroll" *ngIf="project?.problemStatement">
+            <h2>💡 {{ 'PROJECT.DESCRIPTION' | translate }}</h2>
+            <p class="section-text">{{ project?.problemStatement }}</p>
+          </section>
+
+          <!-- results -->
+          <section class="content-section animate-on-scroll">
+            <h2>📊 {{ 'PROJECT.RESULTS' | translate }}</h2>
+            <div class="results-metrics">
+              <div class="metric-card" *ngFor="let metric of project?.metrics">
+                <span class="metric-value">{{ metric?.value }}</span>
+                <span class="metric-label">{{ metric?.label }}</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- features card -->
+          <section class="content-section animate-on-scroll">
+            <h2>✨ {{ 'PROJECT.FEATURES' | translate }}</h2>
+            <div class="features-grid">
+              <div class="feature-card" *ngFor="let feature of project?.features">
+                <div class="feature-icon">{{ feature?.icon }}</div>
+                <h3 class="feature-title">{{ feature?.title }}</h3>
+                <p class="feature-description">{{ feature?.description }}</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- gallery -->
+          <section class="content-section animate-on-scroll">
+            <h2>🖼️ {{ 'PROJECT.GALLERY' | translate }}</h2>
+            <div class="gallery-grid" role="list" aria-label="Project gallery">
+              <figure
+                class="gallery-item"
+                *ngFor="let item of project?.imgURL; trackBy: trackByFn; let i = index"
+                role="listitem"
+                tabindex="0"
+              >
+                <!-- IMAGE -->
+                <ng-container *ngIf="item.type !== 'video'">
+                  <picture>
+                    <!-- Desktop (>=1200) -->
+                    <source
+                      media="(min-width: 1200px)"
+                      [attr.srcset]="item.srcset?.desktop"
+                      type="image/webp"
+                    />
+
+                    <!-- Tablet (>=768) -->
+                    <source
+                      media="(min-width: 768px)"
+                      [attr.srcset]="item.srcset?.tablet"
+                      type="image/webp"
+                    />
+
+                    <!-- Mobile (>=480) -->
+                    <source
+                      media="(min-width: 480px)"
+                      [attr.srcset]="item.srcset?.mobile"
+                      type="image/webp"
+                    />
+
+                    <!-- Fallback / img: usa item.srcset.mobile se disponibile, altrimenti item.url -->
+                    <img
+                      [src]="item.srcset?.mobile || item.url"
+                      [attr.srcset]="item.srcset?.all"
+                      sizes="(min-width: 1200px) 1920px, (min-width: 768px) 1280px, (min-width: 480px) 768px, 100vw"
+                      [alt]="item.altText || item.title || 'Project image ' + (i + 1)"
+                      [title]="item.title"
+                      loading="lazy"
+                      decoding="async"
+                      width="1200"
+                      height="675"
+                      [attr.fetchpriority]="i < 2 ? 'high' : 'auto'"
+                      [attr.aria-describedby]="'caption-' + i"
+                    />
+                  </picture>
+                </ng-container>
+
+                <!-- VIDEO -->
+                <ng-container *ngIf="item.type === 'video'">
+                  <video
+                    class="gallery-video"
+                    [attr.poster]="item.poster"
+                    [attr.aria-label]="item.title || 'Project video ' + (i + 1)"
+                    [attr.aria-describedby]="'caption-' + i"
+                    controls
+                    preload="metadata"
+                    playsinline
+                    width="1200"
+                    height="675"
+                  >
+                    <source [src]="item.url" type="video/mp4" />
+
+                    <track
+                      kind="captions"
+                      [src]="item.captionsUrl"
+                      srclang="en"
+                      label="English"
+                      *ngIf="item.captionsUrl"
+                    />
+
+                    <p>
+                      Your browser does not support the video tag.
+                      <a [href]="item.url" download>Download the video</a>.
+                    </p>
+                  </video>
+                </ng-container>
+
+                <figcaption class="gallery-caption" [attr.id]="'caption-' + i">
+                  {{ item.title || 'Image ' + (i + 1) }}
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- flux work -->
+          <section class="content-section animate-on-scroll" *ngIf="project?.developmentProcess">
+            <h2>🔄 {{ 'PROJECT.PROCESS' | translate }}</h2>
+            <ol class="process-timeline">
+              <li *ngFor="let phase of project?.developmentProcess" class="process-item">
+                <h3>{{ phase?.phase }}</h3>
+                <p>{{ phase?.description }}</p>
+                <span class="process-duration" *ngIf="phase?.duration != ''">{{
+                  phase?.duration
+                }}</span>
+              </li>
+            </ol>
+          </section>
+
+          <!-- accessibility -->
+          <section class="content-section animate-on-scroll" *ngIf="project?.accessibility">
+            <h2>♿ {{ 'PROJECT.ACCESSIBILITY' | translate }}</h2>
+            <ul class="learned-list">
+              <li *ngFor="let item of project?.accessibility">{{ item }}</li>
+            </ul>
+          </section>
+
+          <!-- project future -->
+          <section class="content-section animate-on-scroll" *ngIf="project?.futureImprovements">
+            <h2>🚀 {{ 'PROJECT.FUTURE' | translate }}</h2>
+            <ul class="roadmap-list">
+              <li *ngFor="let improvement of project?.futureImprovements">{{ improvement }}</li>
+            </ul>
+          </section>
+
+          <!-- cta  -->
+          <section class="content-section cta-section">
+            <h2>💼 {{ 'PROJECT.CTA_TITLE' | translate }}</h2>
+            <p>{{ 'PROJECT.CTA_TEXT' | translate }}</p>
+            <div class="cta-buttons">
+              <a routerLink="/projects" class="btt-cta">
+                {{ 'PROJECT.VIEW_ALL_PROJECTS' | translate }}</a
+              >
+              <a routerLink="/contact" class="btt-cta">{{ 'PROJECT.CONTACT_ME' | translate }}</a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </ng-container>
+</ng-template>
+
+<ng-template #errorState>
+  <div class="error-container" role="alert">
+    <div *ngIf="notFound" class="error-message">
+      <h2>{{ 'PROJECT.NOT_FOUND_TITLE' | translate }}</h2>
+      <p>{{ 'PROJECT.NOT_FOUND_MESSAGE' | translate }}</p>
+      <a routerLink="/projects" class="btt-primary">
+        {{ 'PROJECT.BACK_TO_LIST' | translate }}
       </a>
     </div>
 
-    <!-- ===HEADER=== -->
-    <header class="project__header">
-      <div class="header-wrap-grid">
-        <div class="project__meta">
-          <!-- category  -->
-          <span class="project__category">{{ project?.category }}</span>
-          <!-- title -->
-          <h1 class="project__title">{{ project?.title }}</h1>
-          <!-- litle description -->
-          <p class="project__short-description">{{ project?.shortDescription }}</p>
-          <!-- link to demo or repo -->
-          <div class="project__links" role="group" aria-label="{{ 'PROJECT.LINKS' | translate }}">
-            <a
-              *ngIf="project?.liveUrl"
-              class="btt__header btt-primary"
-              [href]="project.liveUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ 'PROJECT.LIVE_WEBSITE' | translate }}
-            </a>
-            <a
-              *ngIf="project?.githubUrl"
-              class="btt__header btt-secondary"
-              [href]="project.githubUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ 'PROJECT.GO_TO_REPOSITORY' | translate }}
-            </a>
-          </div>
-          <!-- tech bullets -->
-          <div class="project__bullets">
-            <ul aria-label="{{ 'PROJECT.TECH_STACK' | translate }}">
-              <li *ngFor="let tag of project?.projectTags">{{ tag }}</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- hero image -->
-        <figure class="project__hero" *ngIf="hasHero(project)">
-          <picture>
-            <!-- desktop large -->
-            <source
-              media="(min-width: 1200px)"
-              srcset="
-                assets/images/projects/portfolio/hero-large.webp   1920w,
-                assets/images/projects/portfolio/hero-desktop.webp 1280w
-              "
-              type="image/webp"
-            />
-            <!-- desktop / laptop -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
-                assets/images/projects/portfolio/hero-desktop.webp 1280w,
-                assets/images/projects/portfolio/hero-tablet.webp   768w
-              "
-              type="image/webp"
-            />
-            <!-- tablet / mobile large -->
-            <source
-              media="(min-width: 480px)"
-              srcset="
-                assets/images/projects/portfolio/hero-tablet.webp 768w,
-                assets/images/projects/portfolio/hero-mobile.webp 480w
-              "
-              type="image/webp"
-            />
-            <!-- fallback / mobile -->
-            <img
-              id="img-hero"
-              src="assets/images/projects/portfolio/hero-mobile.webp"
-              srcset="
-                assets/images/projects/portfolio/hero-mobile.webp   480w,
-                assets/images/projects/portfolio/hero-tablet.webp   768w,
-                assets/images/projects/portfolio/hero-desktop.webp 1280w,
-                assets/images/projects/portfolio/hero-large.webp   1920w
-              "
-              sizes="(min-width:1200px) 1920px, (min-width:768px) 1280px, (min-width:480px) 768px, 100vw"
-              alt="{{ project?.imgURL?.[0]?.altText || project?.title || 'Project image' }}"
-              width="1920"
-              height="1080"
-              fetchpriority="high"
-              decoding="async"
-              loading="eager"
-            />
-          </picture>
-
-          <figcaption class="sr-only">{{ project?.imgURL?.[0]?.title || '' }}</figcaption>
-        </figure>
-      </div>
-
-      <!-- info - role etc.. -->
-      <div class="project_info">
-        <dl>
-          <div class="info-container" role="group">
-            <dt>{{ 'PROJECT.ROLE' | translate }}</dt>
-            <dd>{{ project?.role }}</dd>
-          </div>
-          <div class="info-container" role="group">
-            <dt>{{ 'PROJECT.TIMELINE' | translate }}</dt>
-            <dd>{{ project?.duration }}</dd>
-          </div>
-          <div class="info-container" role="group">
-            <dt>{{ 'PROJECT.TEAM_SIZE' | translate }}</dt>
-            <dd>{{ project?.teamSize }}</dd>
-          </div>
-          <div class="info-container" role="group">
-            <dt>{{ 'PROJECT.YEAR' | translate }}</dt>
-            <dd>{{ project?.year }}</dd>
-          </div>
-        </dl>
-      </div>
-    </header>
-
-    <!-- ===PROJECT-LAYOUT=== -->
-    <div class="project-layout">
-      <!-- ===MAIN=== -->
-      <main class="project-content">
-        <!-- description -->
-        <section class="content-section animate-on-scroll" *ngIf="project?.problemStatement">
-          <h2>💡 {{ 'PROJECT.DESCRIPTION' | translate }}</h2>
-          <p class="section-text">{{ project?.problemStatement }}</p>
-        </section>
-
-        <!-- results -->
-        <section class="content-section animate-on-scroll">
-          <h2>📊 {{ 'PROJECT.RESULTS' | translate }}</h2>
-          <div class="results-metrics">
-            <div class="metric-card" *ngFor="let metric of project?.metrics">
-              <span class="metric-value">{{ metric?.value }}</span>
-              <span class="metric-label">{{ metric?.label }}</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- features card -->
-        <section class="content-section animate-on-scroll">
-          <h2>✨ {{ 'PROJECT.FEATURES' | translate }}</h2>
-          <div class="features-grid">
-            <div class="feature-card" *ngFor="let feature of project?.features">
-              <div class="feature-icon">{{ feature?.icon }}</div>
-              <h3 class="feature-title">{{ feature?.title }}</h3>
-              <p class="feature-description">{{ feature?.description }}</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- gallery -->
-        <section class="content-section animate-on-scroll">
-          <h2>🖼️ {{ 'PROJECT.GALLERY' | translate }}</h2>
-          <div class="gallery-grid">
-            <figure class="gallery-item" *ngFor="let image of project?.imgURL; trackBy: trackByFn">
-              <img
-                width="1200"
-                height="675"
-                style="aspect-ratio: 16/9; width: 100%; height: auto"
-                [src]="image?.url"
-                [alt]="image?.altText || image?.title || project?.title || ''"
-                [title]="image?.title || ''"
-                loading="lazy"
-              />
-              <figcaption class="gallery-caption">{{ image?.title }}</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <!-- flux work -->
-        <section class="content-section animate-on-scroll" *ngIf="project?.developmentProcess">
-          <h2>🔄 {{ 'PROJECT.PROCESS' | translate }}</h2>
-          <ol class="process-timeline">
-            <li *ngFor="let phase of project?.developmentProcess" class="process-item">
-              <h3>{{ phase?.phase }}</h3>
-              <p>{{ phase?.description }}</p>
-              <span class="process-duration" *ngIf="phase?.duration != ''">{{
-                phase?.duration
-              }}</span>
-            </li>
-          </ol>
-        </section>
-
-        <!-- accessibility -->
-        <section class="content-section animate-on-scroll" *ngIf="project?.accessibility">
-          <h2>♿ {{ 'PROJECT.ACCESSIBILITY' | translate }}</h2>
-          <ul class="learned-list">
-            <li *ngFor="let item of project?.accessibility">{{ item }}</li>
-          </ul>
-        </section>
-
-        <!-- project future -->
-        <section class="content-section animate-on-scroll" *ngIf="project?.futureImprovements">
-          <h2>🚀 {{ 'PROJECT.FUTURE' | translate }}</h2>
-          <ul class="roadmap-list">
-            <li *ngFor="let improvement of project?.futureImprovements">{{ improvement }}</li>
-          </ul>
-        </section>
-
-        <!-- cta  -->
-        <section class="content-section cta-section">
-          <h2>💼 {{ 'PROJECT.CTA_TITLE' | translate }}</h2>
-          <p>{{ 'PROJECT.CTA_TEXT' | translate }}</p>
-          <div class="cta-buttons">
-            <a routerLink="/projects" class="btt-cta">
-              {{ 'PROJECT.VIEW_ALL_PROJECTS' | translate }}</a
-            >
-            <a routerLink="/contact" class="btt-cta">{{ 'PROJECT.CONTACT_ME' | translate }}</a>
-          </div>
-        </section>
-      </main>
+    <div *ngIf="serverError" class="error-message">
+      <h2>{{ 'PROJECT.ERROR_TITLE' | translate }}</h2>
+      <p>{{ 'PROJECT.ERROR_MESSAGE' | translate }}</p>
+      <button (click)="ngOnInit()" class="btt-primary">
+        {{ 'PROJECT.RETRY' | translate }}
+      </button>
     </div>
   </div>
-
-  <!-- ===FOOTER=== -->
-  <app-footer></app-footer>
 </ng-template>
 
 <ng-template #skeletonTemplate>

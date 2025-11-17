@@ -91,15 +91,144 @@
 
     "futureImprovements": [
       "sviluppare un menu di navigazione per mobile fisso nella pagina principale",
-      "possibilità di aprire le immagini dela gallery a schermo intero"
+      "possibilità di aprire le immagini della gallery a schermo intero"
     ],
 
     "heroImage": "assets/images/projects/portfolio/hero-img.webp",
+
     "imgURL": [
       {
-        "url": "assets/images/projects/portfolio/card-img.webp",
-        "title": "Sezione hero della homepage del portfolio",
-        "altText": "Homepage del portfolio con sezione profilo animata, sfondo a gradiente, card dei progetti e menu di navigazione responsive"
+        "type": "image",
+        "title": "Test 1",
+        "altText": "Test 1 screenshot",
+        "url": "assets/images/projects/portfolio/gallery/1-test-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/1-test-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/1-test-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/1-test-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/1-test-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/1-test-mobile.webp 480w, assets/images/projects/portfolio/gallery/1-test-tablet.webp 768w, assets/images/projects/portfolio/gallery/1-test-desktop.webp 1280w, assets/images/projects/portfolio/gallery/1-test-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/1-test.png"
+      },
+      {
+        "type": "image",
+        "title": "Test 2",
+        "altText": "Test 2 screenshot",
+        "url": "assets/images/projects/portfolio/gallery/2-test-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/2-test-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/2-test-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/2-test-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/2-test-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/2-test-mobile.webp 480w, assets/images/projects/portfolio/gallery/2-test-tablet.webp 768w, assets/images/projects/portfolio/gallery/2-test-desktop.webp 1280w, assets/images/projects/portfolio/gallery/2-test-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/2-test.png"
+      },
+      {
+        "type": "image",
+        "title": "Home page — desktop",
+        "altText": "Homepage desktop screenshot",
+        "url": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/home-page-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/home-page-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/home-page-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/home-page-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/home-page-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/home-page-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/home-page-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/home-page-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Home page — mobile",
+        "altText": "Homepage mobile screenshot",
+        "url": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/home-page-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/home-page-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/home-page-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/home-page-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/home-page-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/home-page-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/home-page-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/home-page-mobile.png"
+      },
+      {
+        "type": "image",
+        "title": "Info section — desktop",
+        "altText": "Info section desktop screenshot",
+        "url": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/info-section-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/info-section-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/info-section-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/info-section-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/info-section-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/info-section-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/info-section-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/info-section-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Info section — mobile",
+        "altText": "Info section mobile screenshot",
+        "url": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/info-section-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/info-section-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/info-section-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/info-section-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/info-section-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/info-section-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/info-section-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/info-section-mobile.png"
+      },
+      {
+        "type": "image",
+        "title": "Project detail — part 3",
+        "altText": "Project detail part 3 screenshot",
+        "url": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/project-detail-part-3-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/project-detail-part-3-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/project-detail-part-3-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp 480w, assets/images/projects/portfolio/gallery/project-detail-part-3-tablet.webp 768w, assets/images/projects/portfolio/gallery/project-detail-part-3-desktop.webp 1280w, assets/images/projects/portfolio/gallery/project-detail-part-3-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/project-detail-part-3.png"
+      },
+      {
+        "type": "video",
+        "title": "Project detail demo",
+        "altText": "Demo video",
+        "url": "assets/images/projects/portfolio/gallery/project-detail-video.mp4",
+        "poster": "assets/images/projects/portfolio/gallery/project-detail-part-3-mobile.webp"
+      },
+      {
+        "type": "image",
+        "title": "Projects section — desktop",
+        "altText": "Projects section desktop screenshot",
+        "url": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/projects-section-desktop-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/projects-section-desktop-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/projects-section-desktop-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/projects-section-desktop-mobile.webp 480w, assets/images/projects/portfolio/gallery/projects-section-desktop-tablet.webp 768w, assets/images/projects/portfolio/gallery/projects-section-desktop-desktop.webp 1280w, assets/images/projects/portfolio/gallery/projects-section-desktop-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/projects-section-desktop.png"
+      },
+      {
+        "type": "image",
+        "title": "Projects section — mobile",
+        "altText": "Projects section mobile screenshot",
+        "url": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp",
+        "srcset": {
+          "mobile": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp",
+          "tablet": "assets/images/projects/portfolio/gallery/projects-section-mobile-tablet.webp",
+          "desktop": "assets/images/projects/portfolio/gallery/projects-section-mobile-desktop.webp",
+          "large": "assets/images/projects/portfolio/gallery/projects-section-mobile-large.webp",
+          "all": "assets/images/projects/portfolio/gallery/projects-section-mobile-mobile.webp 480w, assets/images/projects/portfolio/gallery/projects-section-mobile-tablet.webp 768w, assets/images/projects/portfolio/gallery/projects-section-mobile-desktop.webp 1280w, assets/images/projects/portfolio/gallery/projects-section-mobile-large.webp 1920w"
+        },
+        "original": "assets/images/projects/portfolio/gallery/projects-section-mobile.png"
       }
     ],
 
@@ -107,6 +236,8 @@
       { "value": "95+", "label": "Lighthouse Score" },
       { "value": "0.9s", "label": "Tempo di caricamento iniziale" },
       { "value": "309KB", "label": "Bundle size" }
-    ]
+    ],
+    "results": "",
+    "whatLearned": []
   }
 ]
