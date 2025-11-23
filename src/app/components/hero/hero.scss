@@ -17,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3.25rem;
+  gap: 2rem;
   width: 100%;
   height: var(--height-100vh);
   padding: var(--height-header) 0 0 0;
@@ -495,5 +495,14 @@
     --icon-size-medium: 60px;
     --icon-size-small: 46px;
     --icon-size-center: 45px;
+  }
+  .hero-content {
+    padding-top: 2rem;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero-content {
+    justify-content: space-around;
   }
 }
