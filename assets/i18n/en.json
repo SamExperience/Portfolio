@@ -19,9 +19,10 @@
     "ARIA_LABEL": "portfolio website",
     "NAME": "Samuele Deriu",
     "ROLE": "IT Developer",
-    "TEXT1": "Smart,",
-    "TEXT2": "Scalable.",
-    "TEXT3": "Reliable web applications.",
+    "TEXT1": "Fast",
+    "TEXT2": "Modern",
+    "TEXT3": "Reliable",
+    "TEXTHERO": "Web App",
     "TECH_TITLE": "Technologies behind the scenes"
   },
   "PROJECTS_SECTION": {
