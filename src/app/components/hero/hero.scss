@@ -192,11 +192,11 @@
 
     &-title {
       margin: 0;
-      font-size: 0.85rem;
-      color: var(--text-tertiary);
+      font-size: clamp(1rem, 1.2vw, 2rem);
+      color: var(--title-color);
       text-align: center;
       width: 100%;
-      font-weight: 600;
+      font-weight: 400;
     }
   }
 
@@ -495,10 +495,5 @@
     --icon-size-medium: 60px;
     --icon-size-small: 46px;
     --icon-size-center: 45px;
-  }
-}
-@media screen and (-width: 1080px) {
-  .hero-heading__big-Title {
-    font-weight: 400;
   }
 }
