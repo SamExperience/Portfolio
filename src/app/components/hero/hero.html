@@ -6,7 +6,7 @@
         width="80"
         height="80"
         fetchpriority="high"
-        src="../../../assets/images/profile/SamueleDeriu.webp"
+        src="assets/images/profile/SamueleDeriu.webp"
         alt="Samuele Deriu"
         class="hero-content__avatar"
       />
@@ -33,12 +33,15 @@
   <!-- BIG TEXT -->
   <div
     class="hero-content__text"
-    aria-label="The main text highlights :build smart and scalable web applications"
+    aria-label="Il testo principale evidenzia: crea applicazioni web smart e scalabili"
   >
     <h1 id="hero-heading">
-      <span>{{ 'HERO.TEXT1' | translate }}</span>
-      <span>{{ 'HERO.TEXT2' | translate }}</span>
-      <span>{{ 'HERO.TEXT3' | translate }}</span>
+      <span class="hero-heading__big-Title">{{ 'HERO.TEXTHERO' | translate }}</span>
+      <div class="hero-heading__little-Title-wrapper">
+        <span class="hero-heading__little-Title">{{ 'HERO.TEXT1' | translate }}</span>
+        <span class="hero-heading__little-Title">{{ 'HERO.TEXT2' | translate }}</span>
+        <span class="hero-heading__little-Title">{{ 'HERO.TEXT3' | translate }}</span>
+      </div>
     </h1>
   </div>
 
