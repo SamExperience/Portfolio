@@ -5,11 +5,12 @@
   /* -------------------------
      Typography: text colors
      ------------------------- */
-  --primary-color: rgb(30, 30, 30); /* main body text color */
-  --secondary-color: rgb(255, 255, 255); /* secondary / inverse text color */
-  --text-tertiary: rgb(16, 86, 157); /* tertiary accent text */
-  --title-color: rgb(0, 103, 205); /* main title color */
-  --title-color-hover: rgb(73, 151, 230); /* title hover color */
+  --primary-color: #1a1a1a; /* main body text color */
+  --secondary-color: #ffffff; /* secondary / inverse text color */
+  --text-tertiary: #10569d; /* tertiary accent text */
+  --title-color: #0067cd; /* main title color */
+  /*   --title-color: #0067cd; /* main title color */
+  --title-color-hover: #004a94; /* title hover color */
   --text-score: linear-gradient(-90deg, rgb(205, 92, 0), rgb(236, 177, 68));
 
   /* -------------------------
@@ -26,7 +27,7 @@
      ------------------------- */
   --bg-background: rgb(255, 255, 255); /* page background color */
   --bg-header: rgba(255, 255, 255, 0.2); /* header background */
-  --bg-hero: rgba(255, 255, 255, 0); /* hero section background */
+  --bg-hero: #ffffff00; /* hero section background */
   --bg-content: #ffffffac; /* content element background */
 
   /* -------------------------
@@ -72,8 +73,8 @@
   /* -------------------------
      Social icons
      ------------------------- */
-  --bg--social-link: rgba(0, 0, 0, 0.05);
-  --bg--social-link-hover: rgba(0, 0, 0, 0.15);
+  --bg-social-link: rgba(0, 0, 0, 0.05);
+  --bg-social-link-hover: rgba(0, 0, 0, 0.15);
   --color-fill-social: rgba(228, 228, 234, 0.8);
   --color-fill-social-hover: #4997e6;
 
@@ -112,8 +113,8 @@
   /* -------------------------
      Typography: text colors
      ------------------------- */
-  --primary-color: rgba(228, 228, 234, 0.8);
-  --secondary-color: rgba(137, 137, 145, 0.8);
+  --primary-color: #e7e7ec;
+  --secondary-color: #a0a0a8;
   --text-tertiary: #10569d;
   --title-color: #0c77e2d5;
   --title-color-hover: #4997e6;
@@ -129,7 +130,7 @@
      ------------------------- */
   --background-toggle-white-theme: rgba(135, 135, 135, 0.533);
   --background-toggle-dark-theme: #0067cd;
-  --bg-background: rgb(24 24 27 / 1);
+  --bg-background: #18181b;
 
   /* -------------------------
      Hero / icon backgrounds for dark
@@ -168,7 +169,7 @@
   --bg-arrow-hover: rgba(211, 211, 211, 0.505);
   --bg-header: rgba(24, 24, 27, 0.5);
   --bg-hero: radial-gradient(circle, rgba(17, 17, 36, 0.779) 30%, rgb(24 24 27 / 1) 70%);
-  --bg-content: rgb(33, 33, 38);
+  --bg-content: #212126;
   --bg-bullet-hero: rgba(211, 211, 211, 0.2); /* bullet background (light theme) */
 
   /* -------------------------

@@ -169,7 +169,7 @@
   align-items: center;
   justify-content: space-around;
   border-radius: 10px;
-  background: var(--bg--social-link);
+  background: var(--bg-social-link);
   color: var(--primary-color);
   transition: all 0.3s ease;
   text-decoration: none;
@@ -180,7 +180,7 @@
 }
 
 .social-link:hover {
-  background: var(--bg--social-link-hover);
+  background: var(--bg-social-link-hover);
   color: var(--color-fill-social-hover);
   transform: scale(1.1);
 }
