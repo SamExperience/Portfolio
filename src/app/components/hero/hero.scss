@@ -224,6 +224,8 @@
     --icon-size-small: 48px;
     --icon-size-center: 48px;
 
+    list-style: none;
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -242,34 +244,30 @@
     flex-wrap: nowrap;
     animation: iconsAnimation 3s ease-out forwards;
 
-    > .tech-icons__link {
+    li {
       &:nth-of-type(1),
       &:nth-of-type(7) {
-        i,
-        svg {
+        img {
           animation: growthIcons-big 3s ease-out forwards;
         }
       }
 
       &:nth-of-type(2),
       &:nth-of-type(6) {
-        i,
-        svg {
+        img {
           animation: growthIcons-medium 3s ease-out forwards;
         }
       }
 
       &:nth-of-type(3),
       &:nth-of-type(5) {
-        i,
-        svg {
+        img {
           animation: growthIcons-small 3s ease-out forwards;
         }
       }
 
       &:nth-of-type(4) {
-        i,
-        svg {
+        img {
           font-size: 28px;
           animation: growthIcons-center 3s ease-out forwards;
         }
@@ -310,7 +308,8 @@
       opacity: 0;
       transform: translateY(6px);
       font-size: 0.75rem;
-      color: var(--title-color);
+      color: var(--text-tech-label);
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
       padding: 2px 6px;
       border-radius: 4px;
       pointer-events: none;

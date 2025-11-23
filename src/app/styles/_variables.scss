@@ -9,10 +9,9 @@
   --secondary-color: #ffffff; /* secondary / inverse text color */
   --text-tertiary: #10569d; /* tertiary accent text */
   --title-color: #0067cd; /* main title color */
-  /*   --title-color: #0067cd; /* main title color */
   --title-color-hover: #004a94; /* title hover color */
-  --text-score: linear-gradient(-90deg, rgb(205, 92, 0), rgb(236, 177, 68));
-
+  --text-score: linear-gradient(-90deg, #cd5c00, #ecb144);
+  --text-tech-label: #ffeb3b;
   /* -------------------------
      Fonts
      ------------------------- 
@@ -38,8 +37,8 @@
     rgb(127, 21, 253, 0.7) 70%,
     rgb(237, 1, 0, 0.7) 100%
   );
-  --bg-tech-icons-1: rgba(100, 84, 84, 0.388); /* tech icon background 1 */
-  --bg-tech-icons-2: rgba(71, 41, 237, 0.11); /* tech icon background 2 */
+  --bg-tech-icons-1: rgba(255, 0, 0, 0.49);
+  --bg-tech-icons-2: rgba(47, 0, 255, 0.57);
   --bg-profile-card: rgba(84, 0, 0, 0); /* profile card background in hero */
 
   /* -------------------------
@@ -136,8 +135,8 @@
      Hero / icon backgrounds for dark
      ------------------------- */
   --bg-header-project: linear-gradient(135deg, rgba(17, 17, 36, 0.779) 0%, rgb(24 24 27 / 1) 100%);
-  --bg-tech-icons-1: rgba(255, 0, 0, 0.19);
-  --bg-tech-icons-2: rgba(47, 0, 255, 0.17);
+  --bg-tech-icons-1: rgba(255, 0, 0, 0.29);
+  --bg-tech-icons-2: rgba(47, 0, 255, 0.27);
   --bg-header: rgba(255, 255, 255, 0); /* header background */
 
   /* -------------------------
