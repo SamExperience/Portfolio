@@ -1,10 +1,10 @@
-<label class="switch">
+<label class="switch" for="theme-toggle">
   <input
     type="checkbox"
-    (click)="onToggle()"
     id="theme-toggle"
-    [attr.aria-pressed]="themeService.isDark()"
-    title="{{ 'HEADER.TOGGLE_THEME' | translate }}"
+    (change)="onToggle()"
+    [checked]="themeService.isDark()"
+    aria-label="{{ 'HEADER.TOGGLE_THEME' | translate }}"
   />
   <span class="slider round" aria-hidden="true"></span>
 </label>
