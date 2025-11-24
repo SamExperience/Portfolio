@@ -502,6 +502,7 @@
 }
 @media screen and (min-width: 1024px) {
   .hero-content {
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
   }
 }
