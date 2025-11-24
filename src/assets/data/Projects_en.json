@@ -13,7 +13,7 @@
     "githubUrl": "https://github.com/SamExperience/Portfolio",
     "personalData": {
       "name": "Samuele Deriu",
-      "role": "IT Developer",
+      "role": "Fullstack Developer",
       "urlImg": "assets/images/profile/SamueleDeriu.webp"
     },
     "description": "This project represents the creation of my personal portfolio as a Single Page Application built with Angular 20. The goal was to create a modern, performant, and visually polished site reflecting my technical and design skills, going beyond pre-made templates. I aimed for a smooth experience with reactive animations and a modular structure based on standalone components. The interface combines lightness, accessibility, and visual identity, ensuring high performance even on mobile devices. During development, I focused on every detail: from content planning to layout design, to optimizing resource and code loading. The result is a portfolio that not only showcases my projects but also serves as an example of good design and front-end development.",
