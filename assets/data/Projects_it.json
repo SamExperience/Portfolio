@@ -233,7 +233,7 @@
     ],
 
     "metrics": [
-      { "value": "95+", "label": "Lighthouse Score" },
+      { "value": "99+", "label": "Lighthouse Score" },
       { "value": "0.9s", "label": "Tempo di caricamento iniziale" },
       { "value": "309KB", "label": "Bundle size" }
     ],
