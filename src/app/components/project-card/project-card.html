@@ -1,5 +1,5 @@
 <div
-  (click)="navigateToProject(project?.id)"
+  [routerLink]="['/project', project?.id]"
   role="link"
   class="card"
   [attr.aria-label]="('PROJECT.CARD.LABEL' | translate) + ': ' + (project?.title || '')"
@@ -58,7 +58,7 @@
       </span>
 
       <span>
-        <a [href]="getProjectUrl(project?.id)" rel="noopener noreferrer">
+        <a [routerLink]="['/project', project?.id]">
           {{ 'PROJECT.VIEW' | translate }}
         </a>
       </span>
