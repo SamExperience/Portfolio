@@ -83,10 +83,7 @@
       "Semantic structure and ARIA landmarks optimized for screen readers",
       "Descriptive alternative text on all images and accessible gallery"
     ],
-    "futureImprovements": [
-      "Develop a fixed mobile navigation menu on the main page",
-      "Enable full-screen view for gallery images"
-    ],
+    "futureImprovements": ["Enable full-screen view for gallery images"],
     "heroImage": "assets/images/projects/portfolio/hero-img.webp",
     "imgURL": [
       {

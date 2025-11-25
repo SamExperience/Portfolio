@@ -89,10 +89,7 @@
       "Testo alternativo descrittivo su tutte le immagini e galleria accessibile"
     ],
 
-    "futureImprovements": [
-      "sviluppare un menu di navigazione per mobile fisso nella pagina principale",
-      "possibilità di aprire le immagini della gallery a schermo intero"
-    ],
+    "futureImprovements": ["possibilità di aprire le immagini della gallery a schermo intero"],
 
     "heroImage": "assets/images/projects/portfolio/hero-img.webp",
 

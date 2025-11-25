@@ -83,10 +83,7 @@
       "Structure sémantique et landmarks ARIA optimisés pour les lecteurs d'écran",
       "Texte alternatif descriptif sur toutes les images et galerie accessible"
     ],
-    "futureImprovements": [
-      "Développer un menu de navigation mobile fixe sur la page principale",
-      "Possibilité d'ouvrir les images de la galerie en plein écran"
-    ],
+    "futureImprovements": ["Possibilité d'ouvrir les images de la galerie en plein écran"],
     "heroImage": "assets/images/projects/portfolio/hero-img.webp",
     "imgURL": [
       {
