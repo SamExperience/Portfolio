@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageSelectorComponent } from '../language-selector/language-selector';
-import { ToggleTheme } from '../toggle-theme/toggle-theme';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, TranslateModule, LanguageSelectorComponent, ToggleTheme],
-  templateUrl: './header.html',
-  styleUrl: './header.scss',
+  selector: 'app-nav-menu-mobile',
+  imports: [CommonModule, TranslateModule],
+  templateUrl: './nav-menu-mobile.html',
+  styleUrl: './nav-menu-mobile.scss',
 })
-export class Header implements OnInit {
+export class NavMenuMobile implements OnInit {
   activeLink: string = '#hero-section';
 
   ngOnInit(): void {

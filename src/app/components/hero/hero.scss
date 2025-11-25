@@ -1,6 +1,7 @@
 @use '../../styles/variables' as *;
 
 :host {
+  position: relative;
   display: block;
   width: 100%;
   max-width: 100%;
@@ -13,14 +14,20 @@
 /* ============ COMPONENT-SCOPED STYLES ============ */
 
 .hero-content {
+  position: relative;
+  top: 0px;
+  left: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  margin: 20vw auto;
   gap: 2rem;
   width: 100%;
   height: var(--height-100vh);
-  padding: var(--height-header) 0 0 0;
+  /* padding: var(--height-header) 0 0 0;
+   */
+
   z-index: 0;
   background: var(--bg-hero);
 
@@ -503,6 +510,8 @@
 @media screen and (min-width: 1024px) {
   .hero-content {
     justify-content: center;
+    margin: 0;
+    /* margin: 10vw auto; */
     gap: 1rem;
   }
 }

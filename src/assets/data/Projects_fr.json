@@ -224,7 +224,7 @@
       }
     ],
     "metrics": [
-      { "value": "95+", "label": "Score Lighthouse" },
+      { "value": "99+", "label": "Score Lighthouse" },
       { "value": "0.9s", "label": "Temps de chargement initial" },
       { "value": "309KB", "label": "Taille du bundle" }
     ],

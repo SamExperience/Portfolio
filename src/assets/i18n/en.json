@@ -1,10 +1,6 @@
 {
   "HEADER": {
-    "NAV": {
-      "PROJECTS": "Projects",
-      "ABOUT": "About",
-      "CONTACT": "Contact"
-    },
+    "NAV": { "HOME": "Home", "PROJECTS": "Projects", "ABOUT": "About", "CONTACT": "Contact" },
     "TOGGLE_THEME": "Toggle Theme",
     "MENU": "Menu"
   },

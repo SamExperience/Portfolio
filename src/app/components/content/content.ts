@@ -8,11 +8,11 @@ import { DataService } from '../../services/data-service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { NavMenuMobile } from '../nav-menu-mobile/nav-menu-mobile';
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [Hero, ProjectsList, About, Contact, CommonModule, TranslateModule],
+  imports: [Hero, ProjectsList, About, Contact, CommonModule, TranslateModule, NavMenuMobile],
   templateUrl: './content.html',
   styleUrls: ['./content.scss'],
 })
