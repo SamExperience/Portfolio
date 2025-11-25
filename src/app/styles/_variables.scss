@@ -28,7 +28,7 @@
   --bg-header: rgba(255, 255, 255, 0.2); /* header background */
   --bg-hero: #ffffff00; /* hero section background */
   --bg-content: #ffffffac; /* content element background */
-
+  --bg-menu-mobile: rgb(255, 255, 255);
   /* -------------------------
      Hero / profile / icon backgrounds
      ------------------------- */
@@ -81,6 +81,7 @@
      Borders & shadows
      ------------------------- */
   --box-shadow-header: 0 0px 5px 0px rgba(107, 107, 107, 0.425); /* header shadow */
+  --box-shadow-menu-mobile-top: 0 0px 3px 0px rgba(107, 107, 107, 0.425); /* menu mobile shadow top */
   --shadow-profile-card: 0px 1px 12px 0px #3628913a; /* profile card shadow */
   --shadow-button: 0px 1px 2px 0px #55555549; /* generic button shadow */
   --shadow-bullets: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(255, 255, 255, 0.25);
@@ -101,7 +102,7 @@
   --height-100vh: 100vh;
 
   --footer-height: 56px;
-
+  --height-menu-mobile: 50px;
   --theme-invert: invert(0);
 }
 /* =========================
@@ -138,7 +139,7 @@
   --bg-tech-icons-1: rgba(255, 0, 0, 0.29);
   --bg-tech-icons-2: rgba(47, 0, 255, 0.27);
   --bg-header: rgba(255, 255, 255, 0); /* header background */
-
+  --bg-menu-mobile: rgb(24, 24, 27, 0.9);
   /* -------------------------
      Profile card backgrounds
      ------------------------- */
@@ -186,6 +187,7 @@
   --shadow-text-hero: 0px 0px 150px rgba(20, 107, 221, 0.448);
   --shadow-profile-hover: 0px 2px 13px 1px rgba(91, 187, 255, 0.699);
   --box-shadow-header: 0px 0px 2px rgba(20, 107, 221, 0.232);
+  --box-shadow-menu-mobile-top: 0 0px 5px 0px rgba(107, 107, 107, 0.425); /* menu mobile shadow top */
   --shadow-profile-card: 0 16px 40px rgba(0, 103, 205, 0.12);
   --shadow-content: 0px 0px 2px 1px rgba(31, 62, 148, 0.286);
   --shadow-content-hover: 0px 0px 15px 0px rgba(199, 199, 199, 0.23);
