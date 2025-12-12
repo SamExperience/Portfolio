@@ -20,14 +20,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  margin: 20vw auto;
+  justify-content: end;
+  margin: 0vw auto;
   gap: 2rem;
   width: 100%;
-  height: var(--height-100vh);
-  /* padding: var(--height-header) 0 0 0;
-   */
-
+  /* height: var(--height-100vh); */
+  height: 80vh;
   z-index: 0;
   background: var(--bg-hero);
 
@@ -509,9 +507,7 @@
 }
 @media screen and (min-width: 1024px) {
   .hero-content {
-    justify-content: center;
-    margin: 0;
-    /* margin: 10vw auto; */
-    gap: 1rem;
+    min-height: 90vh;
+    justify-content: end;
   }
 }
