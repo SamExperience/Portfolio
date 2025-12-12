@@ -78,9 +78,10 @@
   },
   "ABOUT": {
     "TITLE": "About",
-    "PAR_1": "I am a Junior Full-Stack Developer specialized in modern, responsive web applications built with Angular and TypeScript on the front-end and Node.js + Express on the back-end. I combine component-based UI development, SCSS, and accessibility best practices with solid back-end skills (REST APIs and relational/NoSQL databases) to deliver clean, maintainable, and high-performance solutions.",
-    "PAR_2": "My workflow is based on TypeScript, Git, basic unit testing, and containerization (Docker). I enjoy problem-solving and continuous learning — bringing resilience, focus, and a practical approach to delivering every project. Outside work, I develop personal projects and attend local tech meetups to grow and share knowledge within the community.",
-    "PAR_3": "Check out my projects on",
+    "PAR_1": "Hi, I'm Samuele, Full-Stack Developer with a somewhat different story. For 10 years, I managed several professional kitchens: I learned how to create quality under pressure, organize chaos, and guide a team toward a perfect result. Today, I bring that same mindset — order, rigor, and complete vision — to web development.",
+    "PAR_2": "I create applications that are well-thought-out from the start. I don't improvise: I listen, analyze your context, study the case, and build on solid foundations. I love every phase — from creative interfaces to high-performance logic — because developing is like cooking: every element matters, the flow must be perfect, and the result must work flawlessly.",
+    "PAR_3": "I'm ultra-organized. I love teams that share this methodical approach, but I'm also autonomous and self-driven. Whether you need to solve a specific problem or scale a project from scratch, I tackle the work with the same dedication: cleanliness, order, attention to detail, and maximum quality in results.",
+    "PAR_4": "If you're looking for a developer who combines solid code, creative vision, and organizational discipline, discover my projects here and let's get in touch.",
     "GITHUB": "GitHub"
   },
   "CONTACT": {
