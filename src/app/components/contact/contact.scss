@@ -108,49 +108,4 @@
     font-weight: 600;
     font-size: 0.95rem;
   }
-
-  .contact__actions-btt {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .cv-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 8px 12px;
-    min-width: 110px;
-    background: var(--bg-bottom);
-    color: var(--primary-color);
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    box-sizing: border-box;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-  }
-
-  .cv-btn img {
-    width: 20px;
-    height: auto;
-    display: inline-block;
-  }
-
-  .cv-btn span {
-    display: inline-block;
-    line-height: 1;
-  }
-
-  .cv-btn:hover,
-  .cv-btn:focus {
-    background: #09539d;
-    box-shadow: var(--shadow-bottom);
-    transform: translateY(-2px);
-  }
-
-  .cv-btn:focus-visible {
-    outline: 3px solid rgba(11, 102, 194, 0.12);
-    outline-offset: 3px;
-  }
 }
