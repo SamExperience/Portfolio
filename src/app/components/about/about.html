@@ -1,4 +1,4 @@
-<div class="about">
+<div class="about" [attr.aria-label]="'ABOUT.TITLE' | translate">
   <h4 class="about__title">{{ 'ABOUT.TITLE' | translate }}</h4>
 
   <div class="about__inner">
@@ -7,9 +7,9 @@
       <p>{{ 'ABOUT.PAR_2' | translate }}</p>
       <p>
         {{ 'ABOUT.PAR_3' | translate }}
-        <a href="https://github.com/SamExperience" target="_blank" rel="noopener noreferrer">
-          {{ 'ABOUT.GITHUB' | translate }} </a
-        >.
+      </p>
+      <p>
+        {{ 'ABOUT.PAR_4' | translate }}
       </p>
     </div>
   </div>

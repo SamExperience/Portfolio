@@ -78,9 +78,10 @@
   },
   "ABOUT": {
     "TITLE": "À propos",
-    "PAR_1": "Je suis un développeur Full-Stack junior spécialisé dans les applications web modernes et responsives, développées avec Angular et TypeScript côté front-end et Node.js + Express côté back-end. Je combine le développement UI basé sur les composants, SCSS et les bonnes pratiques d'accessibilité avec de solides compétences back-end (REST API et bases de données relationnelles/NoSQL) pour fournir des solutions propres, maintenables et performantes.",
-    "PAR_2": "Mon flux de travail repose sur TypeScript, Git, les tests unitaires de base et la containerisation (Docker). J'aime résoudre des problèmes et apprendre continuellement — j'apporte résilience, concentration et approche pratique à la livraison de chaque projet. En dehors du travail, je développe des projets personnels et participe à des meetups tech locaux pour grandir et partager des connaissances avec la communauté.",
-    "PAR_3": "Découvrez mes projets sur",
+    "PAR_1": "Bonjour, je suis Samuele, Full-Stack Developer avec une histoire un peu différente. Pendant 10 ans, j'ai géré plusieurs cuisines professionnelles : j'ai appris à créer de la qualité sous pression, à organiser le chaos, à guider une équipe vers un résultat parfait. Aujourd'hui, j'apporte cette même mentalité — ordre, rigueur, vision globale — au développement web.",
+    "PAR_2": "Je crée des applications bien pensées dès le départ. Je n'improvise pas : j'écoute, j'analyse votre contexte, j'étudie le cas et je construis sur des fondations solides. J'aime chaque phase — des interfaces créatives à la logique hautement performante — parce que développer c'est comme cuisiner : chaque élément compte, le flux doit être parfait, et le résultat doit fonctionner impeccablement.",
+    "PAR_3": "Je suis ultra-organisé. J'aime les équipes qui partagent cette approche méthodique, mais je suis aussi autonome et autodéterminé. Que vous ayez besoin de résoudre un problème spécifique ou de faire évoluer un projet de zéro, j'aborde le travail avec la même dédicace : propreté, ordre, attention aux détails, et qualité maximale dans les résultats.",
+    "PAR_4": "Si vous cherchez un développeur qui allie code solide, vision créative et discipline organisationnelle, découvrez mes projets ici et restons en contact.",
     "GITHUB": "GitHub"
   },
   "CONTACT": {

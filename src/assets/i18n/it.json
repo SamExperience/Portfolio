@@ -83,9 +83,10 @@
   },
   "ABOUT": {
     "TITLE": "Chi sono",
-    "PAR_1": "Sono un Junior Full-Stack Developer specializzato in applicazioni web moderne e responsive, sviluppate con Angular e TypeScript sul front-end e Node.js + Express sul back-end. Combino sviluppo UI basato su componenti, SCSS e best practice di accessibilità con solide competenze back-end (REST API e database relazionali/NoSQL) per fornire soluzioni pulite, manutenibili e ad alte prestazioni.",
-    "PAR_2": "Il mio flusso di lavoro si basa su TypeScript, Git, testing unitario di base e containerizzazione (Docker). Amo risolvere problemi e imparare continuamente — porto resilienza, concentrazione e un approccio pratico alla consegna di ogni progetto. Fuori dal lavoro sviluppo progetti personali e partecipo a meetup tech locali per crescere e condividere conoscenze con la community.",
-    "PAR_3": "Guarda i miei progetti su",
+    "PAR_1": "Ciao, sono Samuele, Full-Stack Developer con una storia un po diversa. Per 10 anni ho gestito diverse cucine professionali: ho imparato a creare qualità sotto pressione, a organizzare caos, a guidare un team verso un risultato perfetto. Oggi porto quella stessa mentalità — ordine, meticolosità, visione d'insieme — nello sviluppo web.",
+    "PAR_2": "Creo applicazioni che sono ben pensate fin dall'inizio. Non improvviso: ascolto, analizzo il tuo contesto, studio il caso e costruisco su fondamenta solide. Mi piacciono tutte le fasi — dalle interfacce creative alla logica performante — perché sviluppare è come cucinare: ogni elemento conta, il flusso deve essere perfetto, e il risultato deve funzionare impeccabilmente.",
+    "PAR_3": "Sono ultra organizzato. Amo team che condividono questo approccio metodico, ma sono anche autonomo e self-driven. Che tu abbia bisogno di risolvere un problema specifico o di scalare un progetto dal ground up, affronto il lavoro con la stessa dedizione: pulizia, ordine, attenzione ai dettagli, e massima qualità nel risultato.",
+    "PAR_4": "Se cerchi un developer che unisce codice solido, visione creativa e disciplina organizzativa, scopri i miei progetti qui e conosciamoci.",
     "GITHUB": "GitHub"
   },
   "CONTACT": {
