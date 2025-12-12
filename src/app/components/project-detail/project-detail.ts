@@ -120,6 +120,7 @@ export class ProjectDetail implements OnInit, OnDestroy {
    * Handles route parameter changes, data loading, error states, and UI updates.
    */
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.project$ = this.route.paramMap.pipe(
       tap(() => {
         this.showSkeleton = true;
