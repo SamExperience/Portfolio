@@ -1,6 +1,6 @@
 # Samuele Deriu - Personal Portfolio
 
-A highly optimized Single Page Application (SPA) developed as a professional portfolio. Designed to overcome the performance limitations of standard templates, it serves as a reactive platform to document technical experience, ensuring instant loading times and a premium user experience across all devices.
+A Single Page Application (SPA) developed as a professional portfolio. Built with Angular 20 standalone components, it uses route-level code splitting and pre-generated responsive WebP assets to document technical experience across desktop, tablet and mobile.
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -27,8 +27,8 @@ A highly optimized Single Page Application (SPA) developed as a professional por
 </p>
 ## 🚀 Key Features
 
-- **Blazing Fast Performance:** Extensive component and JS chunking for a lightweight main payload. Total elimination of First Contentful Paint delays.
-- **Native Multi-language Support:** English, Italian, and French localized JSON data, managed via advanced RxJS patterns (switchMap, shareReplay) for instant client-side updates without redundant network calls.
+- **Performance:** Route-level code splitting via `loadComponent()` and critical CSS inlining (`optimization.styles.inlineCritical`) keep the initial JavaScript and CSS payload small.
+- **Multi-language Support:** English, Italian and French content served as localized JSON (`assets/i18n/<lang>.json`, `assets/data/Projects_<lang>.json`). A language change is pushed through a `switchMap` that requests the matching file; `shareReplay({ bufferSize: 1, refCount: true })` shares that single request among all concurrent subscribers instead of issuing one per component.
 - **Adaptive Theming:** Seamless Dark/Light mode toggle that respects OS-level preferences (`matchMedia`).
 - **Automated Media Optimization:** Custom asynchronous Node.js pre-build engine (`gen-responsive-images.js`) using concurrency limits to generate responsive WebP assets in bulk.
 - **SEO & Accessibility:** Strict semantic HTML structure to overcome classic SPA indexing limitations, complete with ARIA labels.
@@ -50,8 +50,10 @@ src/app/
 ## ⚡ Performance Verification
 
 <p align="center">
-  <img src=".github/assets/lighthouse-scores.png" alt="Lighthouse Perfect Scores" width="800"/>
+  <img src=".github/assets/lighthouse-scores.png" alt="Lighthouse scores" width="800"/>
 </p>
+
+Lighthouse (Chrome DevTools): **100** performance, **100** best practices, **91** accessibility, **83** SEO. Measured on the production build served locally by `server.js` at `http://localhost:8080/`; screenshot added in February 2026.
 
 ## 💻 Development
 
@@ -86,7 +88,7 @@ node dev-scripts/gen-responsive-images.js
 # Build the project
 npm run build
 
-# Start the local Express SSR/Caching server to test the production build
+# Start the local Express static server (gzip + cache headers) to test the production build
 node server.js
 ```
 
