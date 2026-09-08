@@ -31,7 +31,7 @@ export class DataService {
   /**
    * Returns an Observable<Project[]> that is:
    * - lazy-initialized (HTTP request created only on first call),
-   * - retried up to 3 times on failure (inside each get request),
+   * - issued without automatic retry (no retry operator in the pipeline),
    * - shared and replayed so multiple subscribers use the same HTTP call,
    * - protected with catchError to return an empty array fallback in case of error.
    *
