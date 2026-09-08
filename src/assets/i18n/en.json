@@ -78,10 +78,10 @@
   },
   "ABOUT": {
     "TITLE": "About",
-    "PAR_1": "Hi, I'm Samuele, Full-Stack Developer with a somewhat different story. For 10 years, I managed several professional kitchens: I learned how to create quality under pressure, organize chaos, and guide a team toward a perfect result. Today, I bring that same mindset — order, rigor, and complete vision — to web development.",
-    "PAR_2": "I create applications that are well-thought-out from the start. I don't improvise: I listen, analyze your context, study the case, and build on solid foundations. I love every phase — from creative interfaces to high-performance logic — because developing is like cooking: every element matters, the flow must be perfect, and the result must work flawlessly.",
-    "PAR_3": "I'm ultra-organized. I love teams that share this methodical approach, but I'm also autonomous and self-driven. Whether you need to solve a specific problem or scale a project from scratch, I tackle the work with the same dedication: cleanliness, order, attention to detail, and maximum quality in results.",
-    "PAR_4": "If you're looking for a developer who combines solid code, creative vision, and organizational discipline, discover my projects here and let's get in touch.",
+    "PAR_1": "I’m Samuele, a Software Engineer. I mainly work with React, Angular, TypeScript, and Node.js, building complete, maintainable web applications from the frontend to the APIs. I enjoy tackling complex problems with a practical approach, starting by understanding the requirements and turning them into clear, well-structured solutions.",
+    "PAR_2": "My approach starts with understanding the problem. I analyze requirements and constraints, define a clear structure, and turn that understanding into practical solutions, with close attention to architecture, code quality, and user experience. I aim to build solid applications that are easy to understand and designed to evolve over time.",
+    "PAR_3": "In my work, I apply Software Engineering practices such as data validation, authentication and authorization, testing, API management, containerization, and version control with Git. I mainly work on the frontend, while also considering the application as a whole and paying attention to how its different layers interact, from data management to the final user experience.",
+    "PAR_4": "My goal is to contribute to projects where technical reasoning, autonomy, and attention to detail matter, approaching each problem pragmatically, from defining requirements to delivering the solution. Take a look at my projects on GitHub, which I update regularly, to see how I work and what I build.",
     "GITHUB": "GitHub"
   },
   "CONTACT": {
