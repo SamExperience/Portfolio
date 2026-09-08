@@ -83,10 +83,10 @@
   },
   "ABOUT": {
     "TITLE": "Chi sono",
-    "PAR_1": "Ciao, sono Samuele, Full-Stack Developer con una storia un po diversa. Per 10 anni ho gestito diverse cucine professionali: ho imparato a creare qualità sotto pressione, a organizzare caos, a guidare un team verso un risultato perfetto. Oggi porto quella stessa mentalità — ordine, meticolosità, visione d'insieme — nello sviluppo web.",
-    "PAR_2": "Creo applicazioni che sono ben pensate fin dall'inizio. Non improvviso: ascolto, analizzo il tuo contesto, studio il caso e costruisco su fondamenta solide. Mi piacciono tutte le fasi — dalle interfacce creative alla logica performante — perché sviluppare è come cucinare: ogni elemento conta, il flusso deve essere perfetto, e il risultato deve funzionare impeccabilmente.",
-    "PAR_3": "Sono ultra organizzato. Amo team che condividono questo approccio metodico, ma sono anche autonomo e self-driven. Che tu abbia bisogno di risolvere un problema specifico o di scalare un progetto dal ground up, affronto il lavoro con la stessa dedizione: pulizia, ordine, attenzione ai dettagli, e massima qualità nel risultato.",
-    "PAR_4": "Se cerchi un developer che unisce codice solido, visione creativa e disciplina organizzativa, scopri i miei progetti qui e conosciamoci.",
+    "PAR_1": "Sono Samuele, Software Engineer. Lavoro principalmente con React, Angular, TypeScript e Node.js, sviluppando applicazioni web complete e mantenibili, dal frontend alle API. Mi piace affrontare problemi complessi con un approccio concreto, partendo dalla comprensione delle esigenze e arrivando a soluzioni chiare e ben strutturate.",
+    "PAR_2": "Il mio approccio parte dalla comprensione del problema. Analizzo esigenze e vincoli, definisco una struttura chiara e trasformo queste informazioni in soluzioni concrete, con attenzione all’architettura, alla qualità del codice e all’esperienza dell’utente. Mi interessa costruire applicazioni solide, comprensibili e pensate per evolvere nel tempo.",
+    "PAR_3": "Nel mio lavoro utilizzo pratiche di Software Engineering come validazione dei dati, autenticazione e autorizzazione, testing, gestione delle API, containerizzazione e versionamento con Git. Lavoro soprattutto sul frontend, ma considero l’applicazione nel suo insieme e presto attenzione alla comunicazione tra i diversi livelli, dalla gestione dei dati fino all’esperienza finale dell’utente.",
+    "PAR_4": "Il mio obiettivo è contribuire a progetti in cui siano importanti ragionamento tecnico, autonomia e attenzione ai dettagli, affrontando ogni problema in modo pragmatico, dalla definizione dei requisiti fino alla realizzazione della soluzione. Dai uno sguardo ai miei progetti su GitHub, che aggiorno regolarmente, per vedere concretamente come lavoro e cosa costruisco.",
     "GITHUB": "GitHub"
   },
   "CONTACT": {
